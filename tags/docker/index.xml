@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Victor S. Recio</title>
-    <link>http://localhost:1313/tags/docker/</link>
+    <link>https://vsrecio.com/tags/docker/</link>
     <description>Recent content in Docker on Victor S. Recio</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Open-source &lt;a class=&#34;text-muted text-decoration-none&#34; href=&#34;https://github.com/filipecarneiro/hugo-bootstrap-theme/blob/main/LICENSE&#34;&gt;MIT&lt;/a&gt; Licensed.</copyright>
-    <lastBuildDate>Thu, 29 May 2025 22:31:54 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 May 2025 19:54:31 -0400</lastBuildDate>
+    <atom:link href="https://vsrecio.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go Templates for Containers</title>
-      <link>http://localhost:1313/writing/go-templates/</link>
+      <link>https://vsrecio.com/writing/go-templates/</link>
       <pubDate>Mon, 17 May 2021 22:53:58 +0530</pubDate>
-      <guid>http://localhost:1313/writing/go-templates/</guid>
-      <description>&lt;h1 id=&#34;go-templates-introduction&#34;&gt;Go templates introduction!&lt;/h1&gt;&#xA;&lt;p&gt;Golang allows us to manage our containers more effectively. &amp;#x26a1;&lt;/p&gt;&#xA;&lt;p&gt;Golang, also known simply as Go, is a modern programming language known for its simplicity, efficiency, and ease in handling concurrency. A powerful feature of Go that is often overlooked is Go Templates, which allow developers to generate dynamic content from static or dynamic data.&lt;/p&gt;&#xA;&lt;p&gt;Go Templates are incredibly useful when it comes to managing and administering Docker containers and Kubernetes pods. In this article, we will explore how to use Go Templates to do just that.&lt;/p&gt;</description>
+      <guid>https://vsrecio.com/writing/go-templates/</guid>
+      <description>&lt;!-- # Go templates introduction!  --&gt;&#xA;&lt;p&gt;Golang allows us to manage our containers more effectively. &amp;#x26a1;&lt;/p&gt;&#xA;&lt;p&gt;Golang, also known simply as Go, is a modern programming language known for its simplicity, efficiency, and ease in handling concurrency. A powerful feature of Go that is often overlooked is Go Templates, which allow developers to generate dynamic content from static or dynamic data.&lt;/p&gt;&#xA;&lt;p&gt;Go Templates are incredibly useful when it comes to managing and administering Docker containers and Kubernetes pods. In this article, we will explore how to use Go Templates to do just that.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
