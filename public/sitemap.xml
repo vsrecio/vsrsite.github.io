@@ -2,165 +2,160 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/speaking/video1/</loc>
+    <loc>https://vsrecio.com/speaking/video1/</loc>
     <lastmod>2025-05-29T21:17:42-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/speaking/video2/</loc>
+    <loc>https://vsrecio.com/speaking/video2/</loc>
     <lastmod>2025-05-29T21:18:32-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/speaking/video3/</loc>
+    <loc>https://vsrecio.com/speaking/video3/</loc>
     <lastmod>2025-05-29T21:19:43-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/speaking/video4/</loc>
+    <loc>https://vsrecio.com/speaking/video4/</loc>
     <lastmod>2025-05-29T21:20:15-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/speaking/video5/</loc>
+    <loc>https://vsrecio.com/speaking/video5/</loc>
     <lastmod>2025-05-29T21:21:10-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/speaking/video6/</loc>
+    <loc>https://vsrecio.com/speaking/video6/</loc>
     <lastmod>2025-05-29T21:23:23-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/speaking/</loc>
+    <loc>https://vsrecio.com/speaking/</loc>
     <lastmod>2025-05-29T21:23:23-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-05-30T19:22:58-04:00</lastmod>
+    <loc>https://vsrecio.com/</loc>
+    <lastmod>2025-05-30T19:54:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/ci/cd/</loc>
-    <lastmod>2025-05-29T22:34:00-04:00</lastmod>
+    <loc>https://vsrecio.com/writing/</loc>
+    <lastmod>2025-05-30T19:54:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/containers/</loc>
-    <lastmod>2025-05-29T22:34:00-04:00</lastmod>
+    <loc>https://vsrecio.com/tags/ci/cd/</loc>
+    <lastmod>2025-05-30T19:46:18-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/writing/helm-3/</loc>
-    <lastmod>2025-05-29T22:34:00-04:00</lastmod>
+    <loc>https://vsrecio.com/tags/containers/</loc>
+    <lastmod>2025-05-30T19:54:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/deployment/</loc>
-    <lastmod>2025-05-29T22:34:00-04:00</lastmod>
+    <loc>https://vsrecio.com/writing/helm-2/</loc>
+    <lastmod>2025-05-30T19:46:14-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/devops/</loc>
-    <lastmod>2025-05-29T22:34:00-04:00</lastmod>
+    <loc>https://vsrecio.com/tags/deployment/</loc>
+    <lastmod>2025-05-30T19:46:18-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/golang-template/</loc>
-    <lastmod>2025-05-29T22:34:00-04:00</lastmod>
+    <loc>https://vsrecio.com/tags/devops/</loc>
+    <lastmod>2025-05-30T19:46:18-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/helm/</loc>
-    <lastmod>2025-05-29T22:34:00-04:00</lastmod>
+    <loc>https://vsrecio.com/tags/golang-template/</loc>
+    <lastmod>2025-05-30T19:46:18-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/kubernetes/</loc>
-    <lastmod>2025-05-29T22:34:00-04:00</lastmod>
+    <loc>https://vsrecio.com/tags/helm/</loc>
+    <lastmod>2025-05-30T19:46:18-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-05-29T22:34:00-04:00</lastmod>
+    <loc>https://vsrecio.com/tags/kubernetes/</loc>
+    <lastmod>2025-05-30T19:54:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/writing/</loc>
-    <lastmod>2025-05-29T22:34:00-04:00</lastmod>
+    <loc>https://vsrecio.com/tags/</loc>
+    <lastmod>2025-05-30T19:54:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/writing/helm-2/</loc>
-    <lastmod>2025-05-29T22:30:47-04:00</lastmod>
+    <loc>https://vsrecio.com/writing/helm-1/</loc>
+    <lastmod>2025-05-30T19:46:18-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/writing/helm-1/</loc>
-    <lastmod>2025-05-29T22:33:16-04:00</lastmod>
+    <loc>https://vsrecio.com/tags/docker/</loc>
+    <lastmod>2025-05-30T19:54:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/docker/</loc>
-    <lastmod>2025-05-29T22:31:54-04:00</lastmod>
+    <loc>https://vsrecio.com/writing/go-templates/</loc>
+    <lastmod>2025-05-30T19:54:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/writing/go-templates/</loc>
-    <lastmod>2025-05-29T22:31:54-04:00</lastmod>
+    <loc>https://vsrecio.com/tags/golang/</loc>
+    <lastmod>2025-05-30T19:54:31-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/golang/</loc>
-    <lastmod>2025-05-29T22:31:54-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://vsrecio.com/about/</loc>
     <lastmod>2025-05-29T19:20:05-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/authors/</loc>
+    <loc>https://vsrecio.com/authors/</loc>
     <lastmod>2025-05-29T19:19:20-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://vsrecio.com/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/code-of-conduct/</loc>
+    <loc>https://vsrecio.com/code-of-conduct/</loc>
     <lastmod>2025-05-29T15:25:46-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>https://vsrecio.com/contact/</loc>
     <lastmod>2025-05-29T15:25:46-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/privacy/</loc>
+    <loc>https://vsrecio.com/tags/privacy/</loc>
     <lastmod>2025-05-29T15:25:46-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/privacy-policy/</loc>
+    <loc>https://vsrecio.com/privacy-policy/</loc>
     <lastmod>2025-05-29T15:25:46-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/resources/</loc>
+    <loc>https://vsrecio.com/resources/</loc>
     <lastmod>2025-05-30T19:22:58-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://vsrecio.com/series/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/authors/victor-recio/</loc>
+    <loc>https://vsrecio.com/authors/victor-recio/</loc>
     <lastmod>2025-05-29T19:19:20-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
