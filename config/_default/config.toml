@@ -1,4 +1,4 @@
-baseURL = 'https://vsrecio.com/'
+baseURL = 'https://vsr.la'
 title = "Victor S. Recio"
 author = "Victor S. Recio"
 copyright = "Open-source <a class=\"text-muted text-decoration-none\" href=\"https://github.com/filipecarneiro/hugo-bootstrap-theme/blob/main/LICENSE\">MIT</a> Licensed."
