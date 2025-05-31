@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Resources on Victor S. Recio</title>
-    <link>https://vsrecio.com/resources/</link>
+    <link>https://vsr.la/resources/</link>
     <description>Recent content in Resources on Victor S. Recio</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Open-source &lt;a class=&#34;text-muted text-decoration-none&#34; href=&#34;https://github.com/filipecarneiro/hugo-bootstrap-theme/blob/main/LICENSE&#34;&gt;MIT&lt;/a&gt; Licensed.</copyright>
-    <atom:link href="https://vsrecio.com/resources/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://vsr.la/resources/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
