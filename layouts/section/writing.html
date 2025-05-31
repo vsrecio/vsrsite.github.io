@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+<section class="section py-5 text-center bg-light">
+  <div class="container">
+<h1 class="display-4 fw-semibold">Technical Articles</h1>
+<p class="lead text-muted">Insights on development, cloud computing, and best practices in modern software engineering.</p>
+
+  </div>
+</section>
+
+<section class="section container py-5">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+    {{ range .Pages }}
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        {{ with .Params.image }}
+        <img src="{{ . | relURL }}" class="card-img-top" alt="{{ $.Title }}">
+        {{ end }}
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            <a class="stretched-link text-decoration-none text-primary" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h5>
+          {{ with .Params.authors }}
+          <p class="card-subtitle text-muted small">Por {{ index . 0 }}</p>
+          {{ end }}
+          {{/*  <p class="card-text mt-3 text-muted small">{{ .Summary | truncate 160 }}</p>  */}}
+        </div>
+        <div class="card-footer text-muted small">
+          Publicado el {{ .Date.Format "02 Jan 2006" }}
+              {{ with .Params.author }}
+                | Por {{ . }}
+              {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,72 @@
+.home {
+    --bd-purple: #14bf98;
+    --bd-violet: #14bf98;
+    --bd-accent: #ffe484;
+    --bd-violet-rgb: 112.520718,44.062154,249.437846;
+    --bd-accent-rgb: 255,228,132;
+    --bd-pink-rgb: 214,51,132;
+
+    .bd-masthead {
+        padding: 3rem 0;
+        //background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0.01), rgba(var(--bs-body-bg-rgb), 1) 85%),radial-gradient(ellipse at top left, rgba(var(--bs-primary-rgb), 0.5), transparent 50%),radial-gradient(ellipse at top right, rgba(var(--bd-accent-rgb), 0.5), transparent 50%),radial-gradient(ellipse at center right, rgba(var(--bd-violet-rgb), 0.5), transparent 50%),radial-gradient(ellipse at center left, rgba(var(--bd-pink-rgb), 0.5), transparent 50%);
+    }
+
+    .btn-bd-primary {
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet);
+        --bs-btn-border-color: var(--bd-violet);
+        --bs-btn-border-radius: .5rem;
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #C8102E;
+        --bs-btn-hover-border-color: #00704A;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #00704A;
+        --bs-btn-active-border-color: #00704A;
+    }
+}
+
+.btn-primary {
+    --bs-btn-color: #fff !important;
+    --bs-btn-bg: #00704A !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: #C8102E !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+    --bs-btn-disabled-color: #fff !important;
+    --bs-btn-border-color: #00704A !important;
+}
+
+.navbar {
+    @extend .navbar-dark;
+
+    --bd-violet-rgb: 112.520718,44.062154,249.437846;
+    
+    padding: .75rem 0;
+    background-color: #00704A;
+    //background-image: linear-gradient(to bottom, rgba(var(--bd-violet-rgb), 1), rgba(var(--bd-violet-rgb), 0.95));
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.15);
+}
+
+.text-violet {
+    color: #6528e0;
+}
+
+.list {
+    .card {
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.01);
+        }
+    }
+}
+
+.navbar-brand {
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: rotate(-2deg) scale(1.1);
+    }
+}
