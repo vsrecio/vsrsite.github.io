@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Speakings on Victor S. Recio</title>
+    <link>http://localhost:1313/speaking/</link>
+    <description>Recent content in Speakings on Victor S. Recio</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Open-source &lt;a class=&#34;text-muted text-decoration-none&#34; href=&#34;https://github.com/filipecarneiro/hugo-bootstrap-theme/blob/main/LICENSE&#34;&gt;MIT&lt;/a&gt; Licensed.</copyright>
+    <lastBuildDate>Thu, 29 May 2025 21:23:23 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/speaking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/speaking/video1/</link>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/speaking/video1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/speaking/video2/</link>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/speaking/video2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/speaking/video3/</link>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/speaking/video3/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/speaking/video4/</link>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/speaking/video4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/speaking/video5/</link>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/speaking/video5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/speaking/video6/</link>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/speaking/video6/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
