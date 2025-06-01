@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
 
 
@@ -10,7 +10,7 @@
 <meta http-equiv='Content-Security-Policy' content="script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'none'">
     
 
-<link rel="stylesheet" href="/css/style.8c1b9a7e26d6a252c2e24cf19a28d0190e86787d0d194a890a4050e81325b761d1e4545c417cdfce314f68492cbb0551ca74a164493b97da9b1665c3ae7c67ff.css" media="screen" integrity="sha512-jBuafibWolLC4kzxmijQGQ6GeH0NGUqJCkBQ6BMlt2HR5FRcQXzfzjFPaEksuwVRynShZEk7l9qbFmXDrnxn/w==" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/style.css" media="screen">
 
     <title>Demystify Helm: Introduction</title>
 
@@ -19,14 +19,14 @@
   
 
 
-<link rel="canonical" href="https://vsr.lat/page/writing/helm-1/">
+<link rel="canonical" href="http://localhost:1313/page/writing/helm-1/">
 
 
-<link rel="alternate" hreflang="en" href="https://vsr.lat/page/writing/helm-1/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/page/writing/helm-1/">
 
 
 
-<link rel="alternate" hreflang="x-default" href="https://vsr.lat/page/writing/helm-1/">
+<link rel="alternate" hreflang="x-default" href="http://localhost:1313/page/writing/helm-1/">
 
 
 
@@ -43,23 +43,23 @@
 <meta property="og:description" content="
 If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it&rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://vsr.lat/page/writing/helm-1/">
+<meta property="og:url" content="http://localhost:1313/page/writing/helm-1/">
     
       
-        <meta property="og:image" content="https://vsr.lat/images/logo.svg">
+        <meta property="og:image" content="http://localhost:1313/images/logo.svg">
     
     
       
         
       
-        <meta property="og:image" content="https://vsr.lat/images/site-feature-image_hu_4da550a2335ee8d8.png">
+        <meta property="og:image" content="http://localhost:1313/images/site-feature-image_hu_4da550a2335ee8d8.png">
     
   <meta property="article:section" content="page">
   
     <meta property="article:published_time" content="2023-05-22T14:24:59-04:00">
   
   
-    <meta property="article:modified_time" content="2025-06-01T00:13:30-04:00">
+    <meta property="article:modified_time" content="2025-06-01T00:30:56-04:00">
   
   <meta property="og:site_name" content="Victor S. Recio">
 
@@ -76,7 +76,7 @@ If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and d
     
       
       <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:image" content="https://vsr.lat/images/logo.svg">
+      <meta name="twitter:image" content="http://localhost:1313/images/logo.svg">
     <meta name="twitter:title" content="Demystify Helm: Introduction">
 <meta name="twitter:description" content="
 If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it&rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play.">
@@ -98,14 +98,14 @@ If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and d
   "@type": "Article",
   "headline": "Demystify Helm: Introduction",
   "datePublished": "2023-05-22T14:24:59-04:00",
-  "dateModified": "2025-06-01T00:13:30-04:00",
-  "mainEntityOfPage": "https://vsr.lat/",
+  "dateModified": "2025-06-01T00:30:56-04:00",
+  "mainEntityOfPage": "http://localhost:1313/",
   "publisher": {
     "@type": "Organization",
     
     "logo": {
       "@type": "ImageObject",
-      "url": "https://vsr.lat/images/logo.svg"
+      "url": "http://localhost:1313/images/logo.svg"
     },
     "name": "Victor S. Recio"
   },
@@ -127,8 +127,8 @@ If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and d
 
 
     
-<link rel="icon" type="image/svg+xml" href="https://vsr.lat/favicon.svg">
-<link rel="icon" type="image/png" href="https://vsr.lat/favicon.png">
+<link rel="icon" type="image/svg+xml" href="http://localhost:1313/favicon.svg">
+<link rel="icon" type="image/png" href="http://localhost:1313/favicon.png">
 
 </head>
 
@@ -236,7 +236,7 @@ If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and d
 <p>In this article, we will demystify Helm and break it down into simple, understandable terms. Whether you&rsquo;re new to Kubernetes or a seasoned veteran looking for ways to optimize your workflows, this post aims to give you a greater understanding of how Helm can make navigating the vast ocean of Kubernetes easier.</p>
 <h2 id="what-is-helm-chart">What is Helm Chart?</h2>
 <p>A Helm Chart is a package of pre-configured Kubernetes resources. In other words, it is a collection of files that describe a related set of Kubernetes resources. These charts are used to deploy applications or services on a Kubernetes cluster.</p>
-<p>Helm Charts make extensive use of <strong><a href="https://vsrecio.com/blogs/go-templates/" target="_blank" rel="noopener">Go templates</a></strong> to define the Kubernetes resources they manage. Go templates are a powerful way to inject configuration into Kubernetes resources at deploy time.</p>
+<p>Helm Charts make extensive use of <strong><a href="https://vsr.lat/writing/go-templates/" target="_blank" rel="noopener">Go templates</a></strong> to define the Kubernetes resources they manage. Go templates are a powerful way to inject configuration into Kubernetes resources at deploy time.</p>
 <p><strong>YAML</strong>, which stands for <strong>&ldquo;YAML Ain&rsquo;t Markup Language&rdquo;</strong>, is another essential component in the world of Kubernetes and Helm. Kubernetes uses YAML as the format for its resource definitions. These definitions describe the desired state of your Kubernetes resources such as Deployments, Services, and PersistentVolumes among others.</p>
 <p>A single chart can describe something simple, like a standalone web server or something complex like a full-stack web application with backend services, databases, caches, etc.</p>
 <p>The <strong>chart</strong> is a bundle of information necessary to create an instance of a Kubernetes application. This includes the following:</p>
@@ -310,13 +310,10 @@ This structure makes Helm charts organized and easier to manage, even when they 
 
 
 
-<script src="/js/bootstrap/bootstrap.bundle.min.min.fde1bce9cb450c8f28624f696a2e289585ba452e38625ed326071c43be323d194b7f426b132c66f8a5686a3b57013f66a42148f04b208da3ed7d26710b23a763.js" integrity="sha512-/eG86ctFDI8oYk9pai4olYW6RS44Yl7TJgccQ74yPRlLf0JrEyxm&#43;KVoajtXAT9mpCFI8EsgjaPtfSZxCyOnYw==" crossorigin="anonymous" defer></script>
+<script src="/js/bootstrap/bootstrap.bundle.min.js" defer></script>
   
-    <script src="/js/main.min.e8d88c82c0438b527f1aca4115652ba1e2877bf805b75593b23ac0e3fe2b3fe95a467d1feef275355132ba061da6404b0d24d55afabc209b294b1db043be014d.js" integrity="sha512-6NiMgsBDi1J/GspBFWUroeKHe/gFt1WTsjrA4/4rP&#43;laRn0f7vJ1NVEyugYdpkBLDSTVWvq8IJspSx2wQ74BTQ==" crossorigin="anonymous" defer></script>
+    <script src="/js/main.js" defer></script>
   
-  
-
-
 
 </body>
 </html>
