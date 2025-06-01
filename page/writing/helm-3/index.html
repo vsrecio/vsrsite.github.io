@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<meta http-equiv='Content-Security-Policy' content="script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'none'">
+    
+
+<link rel="stylesheet" href="/css/style.css" media="screen">
+
+    <title>Demystify Helm: Creating Charts</title>
+
+<meta name="description" content=" Helm, the package manager for Kubernetes, allows developers to package, version, and share applications. Helm charts streamline the process of defining, installing, and upgrading complex Kubernetes applications. In this article, we&rsquo;ll guide you on how to create a Helm chart and host it using GitHub Pages.
+Creating a Helm Chart Let&rsquo;s start with creating a Helm chart:
+">
+  
+
+
+<link rel="canonical" href="http://localhost:1313/page/writing/helm-3/">
+
+
+<link rel="alternate" hreflang="en" href="http://localhost:1313/page/writing/helm-3/">
+
+
+
+<link rel="alternate" hreflang="x-default" href="http://localhost:1313/page/writing/helm-3/">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Demystify Helm: Creating Charts">
+<meta property="og:description" content="
+Helm, the package manager for Kubernetes, allows developers to package, version, and share applications. Helm charts streamline the process of defining, installing, and upgrading complex Kubernetes applications. In this article, we&rsquo;ll guide you on how to create a Helm chart and host it using GitHub Pages.
+Creating a Helm Chart
+Let&rsquo;s start with creating a Helm chart:">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/page/writing/helm-3/">
+    
+      
+        <meta property="og:image" content="http://localhost:1313/images/logo.svg">
+    
+    
+      
+        
+      
+        <meta property="og:image" content="http://localhost:1313/images/site-feature-image_hu_4da550a2335ee8d8.png">
+    
+  <meta property="article:section" content="page">
+  
+    <meta property="article:published_time" content="2023-07-04T11:57:48-04:00">
+  
+  
+    <meta property="article:modified_time" content="2025-06-01T00:12:47-04:00">
+  
+  <meta property="og:site_name" content="Victor S. Recio">
+
+
+
+
+
+
+
+
+
+
+
+    
+      
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="http://localhost:1313/images/logo.svg">
+    <meta name="twitter:title" content="Demystify Helm: Creating Charts">
+<meta name="twitter:description" content="
+Helm, the package manager for Kubernetes, allows developers to package, version, and share applications. Helm charts streamline the process of defining, installing, and upgrading complex Kubernetes applications. In this article, we&rsquo;ll guide you on how to create a Helm chart and host it using GitHub Pages.
+Creating a Helm Chart
+Let&rsquo;s start with creating a Helm chart:">
+
+
+
+
+
+
+  
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Demystify Helm: Creating Charts",
+  "datePublished": "2023-07-04T11:57:48-04:00",
+  "dateModified": "2025-06-01T00:12:47-04:00",
+  "mainEntityOfPage": "http://localhost:1313/",
+  "publisher": {
+    "@type": "Organization",
+    
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/images/logo.svg"
+    },
+    "name": "Victor S. Recio"
+  },
+  "wordcount" :  399 ,
+  "description": " Helm, the package manager for Kubernetes, allows developers to package, version, and share applications. Helm charts streamline the process of defining, installing, and upgrading complex Kubernetes applications. In this article, we\u0026rsquo;ll guide you on how to create a Helm chart and host it using GitHub Pages.\nCreating a Helm Chart Let\u0026rsquo;s start with creating a Helm chart:\n",
+  "keywords":  null 
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<link rel="icon" type="image/svg+xml" href="http://localhost:1313/favicon.svg">
+<link rel="icon" type="image/png" href="http://localhost:1313/favicon.png">
+
+</head>
+
+<body class="writing single d-flex flex-column min-vh-100"><header class="main-header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="/">
+        
+        <img src="/images/logo.svg" alt="logo" width="30" height="24"
+          class="d-inline-block align-text-top">
+        
+        Victor S. Recio
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="menu-main navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/writing">Writing</a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/resources">Resources</a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/patreon">Patreon</a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/courses">Courses</a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/contact/" title='Contact' aria-label='Contact'>Contact</a>
+          </li>
+          
+          </ul>
+
+        
+        
+
+        
+        
+
+      </div>
+    </div>
+  </nav>
+</header><div id="content">
+        
+<nav class="header-breadcrumb my-2" aria-label="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb my-0">
+            
+            
+                
+                
+                    
+                
+                    
+                
+                    
+                
+            
+                    
+                        <li class="breadcrumb-item">
+                            <a href="/">Home</a>
+                        </li>
+                    
+                
+            
+                    
+                
+            
+                    
+                
+            
+                <li class="breadcrumb-item active" aria-current="page">Demystify Helm: Creating Charts</li>
+            
+        </ol>
+    </div>
+</nav>
+
+
+<div class="container py-3">
+  <!-- # How to Create a Helm Chart and Host it on GitHub Pages -->
+<p>Helm, the package manager for Kubernetes, allows developers to package, version, and share applications. Helm charts streamline the process of defining, installing, and upgrading complex Kubernetes applications. In this article, we&rsquo;ll guide you on how to create a Helm chart and host it using GitHub Pages.</p>
+<h2 id="creating-a-helm-chart">Creating a Helm Chart</h2>
+<p>Let&rsquo;s start with creating a Helm chart:</p>
+<p><strong>1. Installation</strong>: First, you need to have Helm installed. If you haven&rsquo;t done so yet, you can find the instructions <a href="https://helm.sh/docs/intro/install/" target="_blank" rel="noopener">here</a>.</p>
+<p><strong>2. Chart Creation</strong>: Now, let&rsquo;s create a basic chart with the following command:</p>
+<pre tabindex="0"><code>helm create mychart
+</code></pre><p>This will generate a directory with the necessary files to create a Helm chart.</p>
+<p><strong>3. Customization</strong>: Inside the <code>mychart</code> directory, you&rsquo;ll find several YAML files that you can modify according to your application requirements. For instance, the <code>values.yaml</code> file is where you specify the default configuration values, while <code>Chart.yaml</code> contains metadata about the chart itself.</p>
+<h2 id="creating-github-pages">Creating GitHub Pages</h2>
+<p>Now, let&rsquo;s create the GitHub Pages:</p>
+<p>You can use GitHub Pages to showcase some open source projects, host a blog, or even share your résumé. This guide will help get you started on creating your next website. <a href="https://docs.github.com/en/pages/quickstart" target="_blank" rel="noopener">Link text Here</a></p>
+<h2 id="creating-the-helm-package">Creating the Helm Package</h2>
+<p>After setting up GitHub Pages, it&rsquo;s time to create the Helm package:</p>
+<p><strong>1. Chart Packaging</strong>: Go to your chart directory and use the following command to create a packaged chart:</p>
+<pre tabindex="0"><code>helm package mychart
+</code></pre><p>This command will create a .tgz file which includes all the necessary files to deploy your application.</p>
+<p><strong>2. Index Creation</strong>: We need to create an index file that will contain information about chart packages, and where to locate them. Use this command to generate it:</p>
+<pre tabindex="0"><code>helm repo index --url https://&lt;username&gt;.github.io/&lt;repository&gt;/ .
+</code></pre><p>Replace <code>&lt;username&gt;</code> with your GitHub username and <code>&lt;repository&gt;</code> with your GitHub repository name.</p>
+<img src="/images/repo.png" alt="alt text" title="Repository"><h2 id="uploading-the-chart-to-the-repository">Uploading the Chart to the Repository</h2>
+<p>The final step is to upload your Helm chart to your repository:</p>
+<p><strong>1. Add Files to the Repository</strong>: Add the .tgz file and <code>index.yaml</code> file to your GitHub repository.</p>
+<p><strong>2. Commit and Push</strong>: Commit these changes and push them to the <code>master</code> or <code>main</code> branch.</p>
+<p><strong>3. Verify</strong>: To verify that your Helm chart is accessible, you can add your new repo to Helm with this command:</p>
+<pre tabindex="0"><code>helm repo add myrepo https://&lt;username&gt;.github.io/&lt;repository&gt;/
+</code></pre><p>Congratulations! You&rsquo;ve successfully created a Helm chart and hosted it on GitHub Pages. Now, other users can easily access and use your Helm chart by adding your Helm repository.</p>
+
+</div>
+
+
+    </div>
+    <footer class="py-3 mt-auto bg-light">
+  <div class="container py-1 my-1">
+    <div class="d-flex flex-wrap justify-content-between align-items-center">
+      <p class="col-md mb-0 text-muted">Open-source <a class="text-muted text-decoration-none" href="https://github.com/filipecarneiro/hugo-bootstrap-theme/blob/main/LICENSE">MIT</a> Licensed.</p>
+      <ul class="nav col-md-auto justify-content-end">
+        <li class="nav-item"><a href="/code-of-conduct/" class="nav-link px-2 text-muted" title='Code of Conduct' aria-label='Code of Conduct'>Code of Conduct</a></li>
+        <li class="nav-item"><a href="/privacy-policy/" class="nav-link px-2 text-muted" title='Privacy Policy' aria-label='Privacy Policy'>Privacy Policy</a></li>
+        </ul>
+    </div>
+  </div>
+</footer>
+    
+
+
+
+
+<script src="/js/bootstrap/bootstrap.bundle.min.js" defer></script>
+  
+    <script src="/js/main.js" defer></script>
+  
+
+</body>
+</html>
