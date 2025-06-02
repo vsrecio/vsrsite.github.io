@@ -1,8 +1,8 @@
 ---
 title: "Demystify Helm: Managing"
+#type: "writing"
 date: 2023-05-29T14:27:35-04:00
-draft: false
-github_link: "https://github.com/vsrecio/vsrecio.github.io"
+draft: true
 author: "Victor S. Recio"
 tags:
   - Containers
@@ -12,8 +12,8 @@ tags:
   - DevOps
   - CI/CD
   - Deployment
-thumbnail: /images/helm-2.png
-image: /images/helm-2.png
+thumbnail: images/helm-2.png
+image: images/helm-2.png
 description: ""
 toc: 
 ---

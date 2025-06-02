@@ -1,8 +1,8 @@
 ---
 title: "Demystify Helm: Introduction"
+#type: "writing"
 date: 2023-05-22T14:24:59-04:00
-draft: false
-github_link: "https://github.com/vsrecio/vsrecio.github.io"
+draft: true
 author: "Victor S. Recio"
 tags:
   - Containers
@@ -12,8 +12,8 @@ tags:
   - DevOps
   - CI/CD
   - Deployment
-thumbnail: "/images/helm.png"
-image: "/images/helm.png"
+thumbnail: "images/helm.png"
+image: "images/helm.png"
 description: ""
 toc: 
 ---
@@ -28,7 +28,7 @@ In this article, we will demystify Helm and break it down into simple, understan
 ## What is Helm Chart?
 A Helm Chart is a package of pre-configured Kubernetes resources. In other words, it is a collection of files that describe a related set of Kubernetes resources. These charts are used to deploy applications or services on a Kubernetes cluster. 
 
-Helm Charts make extensive use of **[Go templates](https://vsrecio.com/blogs/go-templates/)** to define the Kubernetes resources they manage. Go templates are a powerful way to inject configuration into Kubernetes resources at deploy time.
+Helm Charts make extensive use of **[Go templates](https://vsr.lat/writing/go-templates/)** to define the Kubernetes resources they manage. Go templates are a powerful way to inject configuration into Kubernetes resources at deploy time.
 
 **YAML**, which stands for **"YAML Ain't Markup Language"**, is another essential component in the world of Kubernetes and Helm. Kubernetes uses YAML as the format for its resource definitions. These definitions describe the desired state of your Kubernetes resources such as Deployments, Services, and PersistentVolumes among others.
 

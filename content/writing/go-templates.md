@@ -1,8 +1,8 @@
 ---
 title: "Go Templates for Containers"
 date: 2021-05-17T22:53:58+05:30
-draft: false
-github_link: "https://github.com/vsrecio/vsrecio.github.io"
+#type: "writing"
+draft: true
 author: "Victor S. Recio"
 tags:
   - Containers
@@ -66,7 +66,7 @@ One of the most important steps in the administration of our containers is the v
 * MacAddress
 
 
-![alt text](/images/terminal_1.png "Optional Title")
+![alt text](images/terminal_1.png "Optional Title")
 
 
 ## Go Templates in Kubernetes
@@ -80,7 +80,7 @@ kubectl get pods --sort-by='.status.containerStatuses[0].restartCount'
 ```
 In this case, the Go Template `.status.containerStatuses[0].restartCount` generates a list of the statuses of all pods in the `my_namespace` namespace.
 
-![alt text](/images/terminal_2.png "Optional Title")
+![alt text](images/terminal_2.png "Optional Title")
 
 ## Using Go Templates
 

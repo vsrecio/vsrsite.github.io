@@ -1,8 +1,8 @@
 ---
 title: "Demystify Helm: Creating Charts"
+#type: "writing"
 date: 2023-07-04T11:57:48-04:00
 draft: true
-github_link: "https://github.com/vsrecio/vsrecio.github.io"
 author: "Victor S. Recio"
 tags:
   - Containers
@@ -12,8 +12,8 @@ tags:
   - DevOps
   - CI/CD
   - Deployment
-thumbnail: /images/helm-3.png
-image: /images/helm-3.png
+thumbnail: images/helm-3.png
+image: images/helm-3.png
 description: ""
 toc: 
 ---
@@ -63,7 +63,7 @@ helm repo index --url https://<username>.github.io/<repository>/ .
    
 Replace `<username>` with your GitHub username and `<repository>` with your GitHub repository name.
 
-![alt text](/images/repo.png "Repository")
+![alt text](images/repo.png "Repository")
 
 ## Uploading the Chart to the Repository
 

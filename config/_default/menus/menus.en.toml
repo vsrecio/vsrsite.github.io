@@ -31,15 +31,14 @@ weight = 5
 
 [[main]]
 url = "patreon"
-name = "patreon"
+name = "Patreon"
 weight = 7
 
 
-# [[main]]
-# name = "All"
-# url = "post"
-# weight = 100
-# parent = "blog"
+[[main]]
+name = "Courses"
+url = "courses"
+weight = 8
 
 # [[main]]
 # name = "Hugo"
