@@ -8,7 +8,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://vsr.lat/</loc>
-    <lastmod>2025-06-02T07:38:57-04:00</lastmod>
+    <lastmod>2025-06-02T07:58:59-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -42,8 +42,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://vsr.lat/about/</loc>
-    <lastmod>2025-05-31T23:50:00-04:00</lastmod>
+    <loc>https://vsr.lat/writing/</loc>
+    <lastmod>2025-06-02T07:58:59-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -92,11 +92,6 @@
   </url><url>
     <loc>https://vsr.lat/authors/victor-recio/</loc>
     <lastmod>2025-05-29T19:19:20-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://vsr.lat/writing/</loc>
-    <lastmod>2025-06-02T07:38:57-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
