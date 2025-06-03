@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Victor S. Recio</title>
+    <link>https://vsr.lat/tags/</link>
+    <description>Recent content in Tags on Victor S. Recio</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Open-source &lt;a class=&#34;text-muted text-decoration-none&#34; href=&#34;https://github.com/filipecarneiro/hugo-bootstrap-theme/blob/main/LICENSE&#34;&gt;MIT&lt;/a&gt; Licensed.</copyright>
+    <lastBuildDate>Tue, 03 Jun 2025 13:32:13 -0400</lastBuildDate>
+    <atom:link href="https://vsr.lat/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CI/CD</title>
+      <link>https://vsr.lat/tags/ci/cd/</link>
+      <pubDate>Tue, 04 Jul 2023 11:57:48 -0400</pubDate>
+      <guid>https://vsr.lat/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Containers</title>
+      <link>https://vsr.lat/tags/containers/</link>
+      <pubDate>Tue, 04 Jul 2023 11:57:48 -0400</pubDate>
+      <guid>https://vsr.lat/tags/containers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deployment</title>
+      <link>https://vsr.lat/tags/deployment/</link>
+      <pubDate>Tue, 04 Jul 2023 11:57:48 -0400</pubDate>
+      <guid>https://vsr.lat/tags/deployment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DevOps</title>
+      <link>https://vsr.lat/tags/devops/</link>
+      <pubDate>Tue, 04 Jul 2023 11:57:48 -0400</pubDate>
+      <guid>https://vsr.lat/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Golang Template</title>
+      <link>https://vsr.lat/tags/golang-template/</link>
+      <pubDate>Tue, 04 Jul 2023 11:57:48 -0400</pubDate>
+      <guid>https://vsr.lat/tags/golang-template/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Helm</title>
+      <link>https://vsr.lat/tags/helm/</link>
+      <pubDate>Tue, 04 Jul 2023 11:57:48 -0400</pubDate>
+      <guid>https://vsr.lat/tags/helm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>https://vsr.lat/tags/kubernetes/</link>
+      <pubDate>Tue, 04 Jul 2023 11:57:48 -0400</pubDate>
+      <guid>https://vsr.lat/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://vsr.lat/tags/docker/</link>
+      <pubDate>Mon, 17 May 2021 22:53:58 +0530</pubDate>
+      <guid>https://vsr.lat/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Golang</title>
+      <link>https://vsr.lat/tags/golang/</link>
+      <pubDate>Mon, 17 May 2021 22:53:58 +0530</pubDate>
+      <guid>https://vsr.lat/tags/golang/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Privacy</title>
+      <link>https://vsr.lat/tags/privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vsr.lat/tags/privacy/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
