@@ -8,7 +8,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://vsr.lat/</loc>
-    <lastmod>2025-06-02T07:58:59-04:00</lastmod>
+    <lastmod>2025-06-03T13:32:13-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -39,6 +39,76 @@
   </url><url>
     <loc>https://vsr.lat/page/speaking/video6/</loc>
     <lastmod>2025-05-29T21:23:23-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/tags/ci/cd/</loc>
+    <lastmod>2025-06-03T13:32:13-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/tags/containers/</loc>
+    <lastmod>2025-06-03T13:32:13-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/writing/helm-3/</loc>
+    <lastmod>2025-06-03T13:32:13-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/tags/deployment/</loc>
+    <lastmod>2025-06-03T13:32:13-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/tags/devops/</loc>
+    <lastmod>2025-06-03T13:32:13-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/tags/golang-template/</loc>
+    <lastmod>2025-06-03T13:32:13-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/tags/helm/</loc>
+    <lastmod>2025-06-03T13:32:13-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/tags/kubernetes/</loc>
+    <lastmod>2025-06-03T13:32:13-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/tags/</loc>
+    <lastmod>2025-06-03T13:32:13-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/writing/helm-2/</loc>
+    <lastmod>2025-06-03T13:32:11-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/writing/helm-1/</loc>
+    <lastmod>2025-06-03T13:32:07-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/tags/docker/</loc>
+    <lastmod>2025-06-03T13:32:08-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/writing/go-templates/</loc>
+    <lastmod>2025-06-03T13:32:08-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://vsr.lat/tags/golang/</loc>
+    <lastmod>2025-06-03T13:32:08-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -82,11 +152,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://vsr.lat/series/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://vsr.lat/tags/</loc>
-    <lastmod>2025-05-29T15:25:46-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
