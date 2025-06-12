@@ -8,5 +8,26 @@
     <language>en</language>
     <copyright>Open-source &lt;a class=&#34;text-muted text-decoration-none&#34; href=&#34;https://github.com/filipecarneiro/hugo-bootstrap-theme/blob/main/LICENSE&#34;&gt;MIT&lt;/a&gt; Licensed.</copyright>
     <atom:link href="https://vsr.lat/resources/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes Total: De Cero a Héroe del Cloud Native</title>
+      <link>https://vsr.lat/resources/kubernetes/</link>
+      <pubDate>Mon, 09 Jun 2025 14:15:00 -0400</pubDate>
+      <guid>https://vsr.lat/resources/kubernetes/</guid>
+      <description>&lt;h2 id=&#34;descripción-del-curso&#34;&gt;Descripción del Curso&lt;/h2&gt;&#xA;&lt;p&gt;Bienvenido al curso &lt;strong&gt;Kubernetes Total&lt;/strong&gt;, el programa definitivo que te convertirá en un experto en orquestación de contenedores y el ecosistema Cloud Native. Este no es solo un curso; es una inmersión profunda en la tecnología que impulsa la nube moderna.&lt;/p&gt;&#xA;&lt;p&gt;Partiendo de los fundamentos de Docker, construiremos un conocimiento sólido de la arquitectura de Kubernetes. Avanzaremos a través de la gestión de aplicaciones, redes y almacenamiento, enfocándonos en &lt;strong&gt;soluciones open source robustas y listas para producción&lt;/strong&gt;. Te sumergirás en el mundo de la seguridad, aprendiendo a blindar tus clústeres con herramientas como &lt;strong&gt;Kyverno, Falco y cert-manager&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud Architecture</title>
+      <link>https://vsr.lat/resources/cloud-architect/</link>
+      <pubDate>Mon, 09 Jun 2025 12:12:20 -0400</pubDate>
+      <guid>https://vsr.lat/resources/cloud-architect/</guid>
+      <description>&lt;h2 id=&#34;descripción-del-curso&#34;&gt;Descripción del Curso&lt;/h2&gt;&#xA;&lt;p&gt;Bienvenido al curso definitivo de &lt;strong&gt;Arquitectura de Nube Multi-Cloud&lt;/strong&gt;. En esta formación intensiva y práctica, dominarás los principios, patrones y herramientas para diseñar, implementar y gestionar soluciones robustas en entornos de &lt;strong&gt;AWS, Azure y GCP&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Este programa está diseñado para llevarte de los fundamentos teóricos a la aplicación práctica, preparándote para los desafíos del mundo real en la ingeniería de nube. Aprenderás a construir sistemas &lt;strong&gt;escalables, resilientes, seguros y optimizados en costos&lt;/strong&gt;, utilizando las mejores prácticas de la industria como Infraestructura como Código (IaC), GitOps y arquitecturas serverless.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DevOps</title>
+      <link>https://vsr.lat/resources/devops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vsr.lat/resources/devops/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -15,12 +15,12 @@ weight = 1
 # weight = 3
 
 [[main]]
-url = "writing"
+url = "/writing"
 name = "Writing"
-weight = 4
+weight = 2
 
 [[main]]
-url = "resources"
+url = "/resources"
 name = "Resources"
 weight = 5
 
@@ -30,15 +30,15 @@ weight = 5
 # weight = 6
 
 [[main]]
-url = "patreon"
+url = "https://patreon.com/vsroot"
 name = "Patreon"
 weight = 7
 
 
-[[main]]
-name = "Courses"
-url = "courses"
-weight = 8
+# [[main]]
+# name = "Courses"
+# url = "courses"
+# weight = 8
 
 # [[main]]
 # name = "Hugo"

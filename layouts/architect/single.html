@@ -1,0 +1,117 @@
+{{ define "main" }}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <article>
+                {{ with .Params.image }}
+                <figure class="mb-4"><img class="img-fluid rounded" src="{{ . | relURL }}" alt="Imagen del curso {{ $.Title }}"></figure>
+                {{ end }}
+                
+                <div class="card border">
+                    <div class="card-header border-bottom">
+                        <h3 class="mb-0">{{ .Title }}</h3>
+                    </div>
+                    <div class="card-body">
+                        {{ .Content }}
+                    </div>
+                </div>
+            </article>
+
+            <div class="tab-content pt-4" id="course-pills-tabContent">
+                <div class="tab-pane fade active show" id="course-pills-2" role="tabpanel" aria-labelledby="course-pills-tab-2">
+                    <h4 class="mb-3">Temario del Curso</h4>
+                    <div class="accordion accordion-icon accordion-bg-light" id="accordionTemario">
+
+                        {{ range $index, $module := .Params.modules }}
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-{{ $index }}">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ $index }}" aria-expanded="false" aria-controls="collapse-{{ $index }}">
+                                    🔹 Módulo {{ add $index 1 }}: {{ $module.title }}
+                                </button>
+                            </h6>
+                            <div id="collapse-{{ $index }}" class="accordion-collapse collapse" aria-labelledby="heading-{{ $index }}" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										{{ range .topics }}
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>{{ . }}</span>
+										</li>
+										<hr>
+										{{ end }}
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        {{ end }}
+
+                    </div>
+                    </div>
+            </div>
+            </div>
+
+        <div class="col-lg-4">
+            <div class="card card-body shadow p-4 mb-4">
+                <h4 class="mb-3">Este curso incluye</h4>
+                <ul class="list-group list-group-borderless">
+                    {{ with .Params.instructor }}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-user-tie text-primary"></i>Instructor</span>
+                        <span>{{ . }}</span>
+                    </li>
+                    {{ end }}
+                    {{ with .Params.lectures }}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-video text-primary"></i>Lectures</span>
+                        <span>{{ . }}</span>
+                    </li>
+                    {{ end }}
+                    {{ with .Params.duration }}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-clock text-primary"></i>Duración</span>
+                        <span>{{ . }}</span>
+                    </li>
+                    {{ end }}
+                    {{ with .Params.labs }}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-flask text-primary"></i>Labs</span>
+                        <span>{{ . }}</span>
+                    </li>
+                    {{ end }}
+                    {{ with .Params.skill_level }}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-signal text-primary"></i>Nivel</span>
+                        <span>{{ . }}</span>
+                    </li>
+                    {{ end }}
+                    {{ with .Params.language }}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-globe text-primary"></i>Idioma</span>
+                        <span>{{ . }}</span>
+                    </li>
+                    {{ end }}
+                    {{ with .Params.quiz }}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-question-circle text-primary"></i>Quiz</span>
+                        <span>{{ . }}</span>
+                    </li>
+                    {{ end }}
+                    {{ with .Params.certificate }}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-medal text-primary"></i>Certificado</span>
+                        <span>{{ . }}</span>
+                    </li>
+                    {{ end }}
+                </ul>
+                <div class="text-center mt-4">
+                    <a href="/contact" class="btn btn-lg btn-primary px-5">
+                        <i class="fas fa-sign-in-alt me-2"></i>Inscribirse Ahora
+                    </a>
+                    <p class="text-muted mt-2 mb-0">¡Asegura tu cupo, son limitados!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+{{ end }}

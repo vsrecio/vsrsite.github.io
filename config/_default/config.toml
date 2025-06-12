@@ -8,7 +8,7 @@ copyright = "Open-source <a class=\"text-muted text-decoration-none\" href=\"htt
 timeZone = 'Europe/London'
 
 # Multilingual
-# defaultContentLanguage = "en"
+defaultContentLanguage = "en"
 # defaultContentLanguageInSubdir = true
 
 theme = "hugo-bootstrap-theme"

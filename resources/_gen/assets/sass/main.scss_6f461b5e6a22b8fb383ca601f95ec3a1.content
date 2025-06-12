@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root,
 [data-bs-theme="light"] {
   --bs-blue: #0d6efd;
@@ -9823,6 +9824,42 @@ a .feather-github:hover {
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
   --bs-btn-disabled-color: #fff !important;
   --bs-btn-border-color: #00704A !important;
+}
+
+/* === AJUSTES PARA LA LISTA DE TÓPICOS DEL CURSO === */
+/* 1. Usamos Flexbox para alinear el ícono y el texto */
+.accordion-body .list-unstyled li {
+  display: flex;
+  /* ¡La magia de Flexbox! Activa el contenedor flexible. */
+  align-items: center;
+  /* Alinea verticalmente los items al centro. ¡Adiós desorden! */
+  margin-bottom: 0.8rem;
+  /* Un poco de espacio entre cada tópico. */
+}
+
+/* 2. Damos un pequeño margen al ícono para que no esté pegado al texto */
+.accordion-body .list-unstyled li .fab.fa-youtube {
+  margin-right: 0.8rem;
+  /* Espacio entre el ícono de YouTube y el texto. */
+  flex-shrink: 0;
+  /* Evita que el ícono se encoja si el texto es largo. */
+}
+
+/* 3. Nos aseguramos de que el enlace se vea bien */
+.accordion-body .list-unstyled li a {
+  color: inherit;
+  /* Hereda el color de texto normal del tema. */
+  text-decoration: none;
+  /* Quita el subrayado por defecto del enlace. */
+  transition: color 0.2s;
+  /* Una transición suave para el hover. */
+}
+
+/* 4. (Opcional) Le damos un efecto al pasar el mouse por encima */
+.accordion-body .list-unstyled li a:hover {
+  color: var(--bs-primary);
+  /* Usa el color primario de tu tema (si usas Bootstrap). */
+  text-decoration: underline;
 }
 
 .navbar {

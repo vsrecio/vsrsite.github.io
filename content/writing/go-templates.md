@@ -2,7 +2,7 @@
 title: "Go Templates for Containers"
 date: 2021-05-17T22:53:58+05:30
 #type: "writing"
-draft: true
+draft: false
 author: "Victor S. Recio"
 tags:
   - Containers

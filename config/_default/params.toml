@@ -5,7 +5,7 @@
 # https://gohugo.io/templates/internal/#twitter-cards
 # https://schema.org/Thing
 # https://schema.org/Article
-description = "I’m Victor S. Recio — a software architect, technical leader, and certified KubeAstronaut with deep expertise in Microsoft Azure, DevOps, SRE, and cloud-native technologies. I help teams build scalable, resilient, and secure systems by combining automation, containers, and modern architectural best practices."
+description = "Mi nombre es Victor S. Recio. Soy arquitecto de software, líder técnico y KubeAstronaut certificado, especializado en Microsoft Azure, DevOps, SRE y el ecosistema cloud-native. Mi enfoque es ayudar a equipos a crear sistemas escalables, resilientes y seguros a través de la automatización, contenedores y las mejores prácticas de la arquitectura de software."
 images = ['images/logo.svg','images/site-feature-image.png']
 mainMenuLogo = "images/logo.svg"
 

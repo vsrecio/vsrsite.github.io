@@ -1,4 +1,4 @@
-{{ define "main" }}
+{{/*  {{ define "main" }}
 
 <section class="section bd-masthead">
   <div class="container-xxl">
@@ -7,7 +7,7 @@
       <h1 class="display-4 fw-semibold mb-3">{{ .Site.Title }}</h1>
       <p class="lead mb-4">{{ .Site.Params.Description }}</p>
       <a class="btn btn-bd-primary btn-lg px-4 mb-2" href="#" role="button">Get Started</a>
-      {{/*  <p class="text-muted mb-0">Open-source MIT Licensed.</p>  */}}
+
     </div>
   </div>
 </section>
@@ -17,17 +17,12 @@
 </section>/
 
 <section class="section container my-3">
-  <h3 class="text-secondary text-center my-5">Latest Posts</h3>
+  <h3 class="text-secondary text-center my-5">Artículos Técnicos!</h3>
   {{ partial "latest-posts" . }}
 </section>
 
-{{/*  <section class="section container my-3">
-  <h3 class="text-secondary text-center my-5">Featured Pages</h3>
-  {{ partial "featured-pages" . }}
-</section>  */}}
-
 <section class="section container my-3">
-  <h3 class="text-secondary text-center my-5">Speaking</h3>
+  <h3 class="text-secondary text-center my-5">Conferencias! </h3>
   <div class="row g-4">
     {{ range first 6 (where .Site.RegularPages "Section" "page") }}
       <div class="col-12 col-md-6 col-lg-4">
@@ -44,4 +39,68 @@
   </div>
 </section>
 
+{{ end }}  */}}
+
+{{ define "main" }}
+
+<section class="section bd-masthead">
+  <div class="container-xxl">
+    <div class="col-md-8 mx-auto text-center my-5">
+      <img class="d-block mx-auto mb-3" src="{{ `images/logo.svg` | relURL }}" width="150" height="150" alt="Bootstrap">
+      <h1 class="display-4 fw-semibold mb-3">{{ .Site.Title }}</h1>
+      <p class="lead mb-4">{{ .Site.Params.Description }}</p>
+      {{/*  <a class="btn btn-bd-primary btn-lg px-4 mb-2" href="#" role="button">Get Started</a>  */}}
+      {{/* <p class="text-muted mb-0">Open-source MIT Licensed.</p>  */}}
+    </div>
+  </div>
+</section>
+
+<section class="section container my-3">
+  {{ partial "features" . }}
+</section>/
+
+<section class="section container my-3">
+  <h3 class="text-secondary text-center my-5">Artículos Técnicos!</h3>
+  {{ partial "latest-posts" . }}
+</section>
+
+{{/* <section class="section container my-3">
+  <h3 class="text-secondary text-center my-5">Featured Pages</h3>
+  {{ partial "featured-pages" . }}
+</section>  */}}
+
+
+{{ with .Site.Data.conferencias }}
+<section class="conferencias-section bg-light py-5">
+  <div class="container">
+    
+    <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="display-6 fw-bold">Conferencias y Charlas Técnicas</h2>
+        <p class="text-muted">Compartiendo conocimiento con la comunidad sobre tecnología y desarrollo.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      {{ range . }}
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+            <img src="{{ .thumbnail }}" class="card-img-top" alt="Thumbnail de la charla {{ .title }}">
+          </a>
+          {{/*  <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-bold">{{ .title }}</h5>
+            <p class="card-text text-muted small flex-grow-1">{{ .event }} - {{ .date }}</p>
+            <a href="{{ .url }}" class="btn btn-danger mt-auto" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-youtube me-2"></i>Ver en YouTube
+            </a>
+          </div>  */}}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+{{ end }}
 {{ end }}
