@@ -1,0 +1,1069 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<meta http-equiv='Content-Security-Policy' content="script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'none'">
+    
+
+<link rel="stylesheet" href="/css/style.e7322d74f420cb6e5266a995bea64e88d35be1ab6635be7789ade7d9d033c7e5a5443b41a598dca80787c01e8b397a1a665dda0879690c1c23792f178291469d.css" media="screen" integrity="sha512-5zItdPQgy25SZqmVvqZOiNNb4atmNb53ia3n2dAzx&#43;WlRDtBpZjcqAeHwB6LOXoaZl3aCHlpDBwjeS8XgpFGnQ==" crossorigin="anonymous">
+
+    <title>Kubernetes Total: De Cero a Héroe del Cloud Native</title>
+
+<meta name="description" content="Descripción del Curso Bienvenido al curso Kubernetes Total, el programa definitivo que te convertirá en un experto en orquestación de contenedores y el ecosistema Cloud Native. Este no es solo un curso; es una inmersión profunda en la tecnología que impulsa la nube moderna.
+Partiendo de los fundamentos de Docker, construiremos un conocimiento sólido de la arquitectura de Kubernetes. Avanzaremos a través de la gestión de aplicaciones, redes y almacenamiento, enfocándonos en soluciones open source robustas y listas para producción. Te sumergirás en el mundo de la seguridad, aprendiendo a blindar tus clústeres con herramientas como Kyverno, Falco y cert-manager.
+">
+  
+
+
+<link rel="canonical" href="https://vsr.lat/resources/kubernetes/">
+
+
+<link rel="alternate" hreflang="en" href="https://vsr.lat/resources/kubernetes/">
+
+
+
+<link rel="alternate" hreflang="x-default" href="https://vsr.lat/resources/kubernetes/">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Kubernetes Total: De Cero a Héroe del Cloud Native">
+<meta property="og:description" content="Descripción del Curso
+Bienvenido al curso Kubernetes Total, el programa definitivo que te convertirá en un experto en orquestación de contenedores y el ecosistema Cloud Native. Este no es solo un curso; es una inmersión profunda en la tecnología que impulsa la nube moderna.
+Partiendo de los fundamentos de Docker, construiremos un conocimiento sólido de la arquitectura de Kubernetes. Avanzaremos a través de la gestión de aplicaciones, redes y almacenamiento, enfocándonos en soluciones open source robustas y listas para producción. Te sumergirás en el mundo de la seguridad, aprendiendo a blindar tus clústeres con herramientas como Kyverno, Falco y cert-manager.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vsr.lat/resources/kubernetes/">
+    
+      
+        <meta property="og:image" content="https://vsr.lat/images/logo.svg">
+    
+    
+      
+        
+      
+        <meta property="og:image" content="https://vsr.lat/images/site-feature-image_hu_4da550a2335ee8d8.png">
+    
+  <meta property="article:section" content="resources">
+  
+    <meta property="article:published_time" content="2025-06-09T14:15:00-04:00">
+  
+  
+    <meta property="article:modified_time" content="2025-06-12T10:42:44-04:00">
+  
+  <meta property="og:site_name" content="Victor S. Recio">
+
+
+
+
+
+
+
+
+
+
+
+    
+      
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="https://vsr.lat/images/logo.svg">
+    <meta name="twitter:title" content="Kubernetes Total: De Cero a Héroe del Cloud Native">
+<meta name="twitter:description" content="Descripción del Curso
+Bienvenido al curso Kubernetes Total, el programa definitivo que te convertirá en un experto en orquestación de contenedores y el ecosistema Cloud Native. Este no es solo un curso; es una inmersión profunda en la tecnología que impulsa la nube moderna.
+Partiendo de los fundamentos de Docker, construiremos un conocimiento sólido de la arquitectura de Kubernetes. Avanzaremos a través de la gestión de aplicaciones, redes y almacenamiento, enfocándonos en soluciones open source robustas y listas para producción. Te sumergirás en el mundo de la seguridad, aprendiendo a blindar tus clústeres con herramientas como Kyverno, Falco y cert-manager.">
+
+
+
+
+
+
+  
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Kubernetes Total: De Cero a Héroe del Cloud Native",
+  "datePublished": "2025-06-09T14:15:00-04:00",
+  "dateModified": "2025-06-12T10:42:44-04:00",
+  "mainEntityOfPage": "https://vsr.lat/",
+  "publisher": {
+    "@type": "Organization",
+    
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://vsr.lat/images/logo.svg"
+    },
+    "name": "Victor S. Recio"
+  },
+  "wordcount" :  100 ,
+  "description": "Descripción del Curso Bienvenido al curso Kubernetes Total, el programa definitivo que te convertirá en un experto en orquestación de contenedores y el ecosistema Cloud Native. Este no es solo un curso; es una inmersión profunda en la tecnología que impulsa la nube moderna.\nPartiendo de los fundamentos de Docker, construiremos un conocimiento sólido de la arquitectura de Kubernetes. Avanzaremos a través de la gestión de aplicaciones, redes y almacenamiento, enfocándonos en soluciones open source robustas y listas para producción. Te sumergirás en el mundo de la seguridad, aprendiendo a blindar tus clústeres con herramientas como Kyverno, Falco y cert-manager.\n",
+  "keywords":  null 
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<link rel="icon" type="image/svg+xml" href="https://vsr.lat/favicon.svg">
+<link rel="icon" type="image/png" href="https://vsr.lat/favicon.png">
+
+</head>
+
+<body class="kubernetes single d-flex flex-column min-vh-100"><header class="main-header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="/">
+        
+        <img src="/images/logo.svg" alt="logo" width="30" height="24"
+          class="d-inline-block align-text-top">
+        
+        Victor S. Recio
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="menu-main navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/writing">Writing</a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/resources">Resources</a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="https://patreon.com/vsroot">Patreon</a>
+          </li>
+          
+          </ul>
+
+        
+        
+
+        
+        
+
+      </div>
+    </div>
+  </nav>
+</header><div id="content">
+        <nav class="header-breadcrumb my-2" aria-label="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb my-0">
+            
+            
+                
+                
+                    
+                
+                    
+                
+            
+                    <li class="breadcrumb-item"> <a href="/">Home</a> </li>
+                
+            
+                    <li class="breadcrumb-item"> <a href="/resources/">Resources</a> </li>
+                
+            
+                <li class="breadcrumb-item active" aria-current="page">  Kubernetes Total: De Cero a Héroe del Cloud Native</li>
+            
+        </ol>
+    </div>
+</nav>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <article>
+                
+                <figure class="mb-4"><img class="img-fluid rounded" src="/images/kubernetes.png" alt="Imagen del curso Kubernetes Total: De Cero a Héroe del Cloud Native"></figure>
+                
+                
+                <div class="card border">
+                    <div class="card-header border-bottom">
+                        <h3 class="mb-0">Kubernetes Total: De Cero a Héroe del Cloud Native</h3>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="descripción-del-curso">Descripción del Curso</h2>
+<p>Bienvenido al curso <strong>Kubernetes Total</strong>, el programa definitivo que te convertirá en un experto en orquestación de contenedores y el ecosistema Cloud Native. Este no es solo un curso; es una inmersión profunda en la tecnología que impulsa la nube moderna.</p>
+<p>Partiendo de los fundamentos de Docker, construiremos un conocimiento sólido de la arquitectura de Kubernetes. Avanzaremos a través de la gestión de aplicaciones, redes y almacenamiento, enfocándonos en <strong>soluciones open source robustas y listas para producción</strong>. Te sumergirás en el mundo de la seguridad, aprendiendo a blindar tus clústeres con herramientas como <strong>Kyverno, Falco y cert-manager</strong>.</p>
+<hr>
+
+                    </div>
+                </div>
+            </article>
+
+            <div class="tab-content pt-4" id="course-pills-tabContent">
+                <div class="tab-pane fade active show" id="course-pills-2" role="tabpanel" aria-labelledby="course-pills-tab-2">
+                    <h4 class="mb-3">Temario del Curso</h4>
+                    <div class="accordion accordion-icon accordion-bg-light" id="accordionTemario">
+
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-0">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-0" aria-expanded="false" aria-controls="collapse-0">
+                                    🔹 Módulo 1: Fundamentos de Contenedores y Orquestación
+                                </button>
+                            </h6>
+                            <div id="collapse-0" class="accordion-collapse collapse" aria-labelledby="heading-0" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>El problema: ¿Por qué necesitamos contenedores?</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Introducción a Docker: Imágenes, Contenedores y Dockerfiles</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Docker Networking y Almacenamiento Básico</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>El siguiente nivel: ¿Por qué necesitamos un orquestador?</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Historia y filosofía de Kubernetes (K8s)</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-1">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+                                    🔹 Módulo 2: Arquitectura y Componentes de Kubernetes
+                                </button>
+                            </h6>
+                            <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="heading-1" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Visión general: El Control Plane y los Nodos Worker</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Componentes del Control Plane: API Server, etcd, Scheduler, Controller Manager</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Componentes del Nodo: Kubelet, Kube-Proxy, Container Runtime (CRI)</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>El flujo de una petición: de `kubectl` a un Pod corriendo</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-2">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                                    🔹 Módulo 3: Primeros Pasos Prácticos con Kubernetes
+                                </button>
+                            </h6>
+                            <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Instalando `kubectl`: tu navaja suiza para K8s</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Creando un clúster local con `kind`</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>El modelo declarativo: Introducción a los manifiestos YAML</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Comandos esenciales: `get`, `describe`, `apply`, `delete`, `logs`, `exec`</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Namespaces para aislamiento lógico</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-3">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                                    🔹 Módulo 4: Gestión de Cargas de Trabajo (Workloads)
+                                </button>
+                            </h6>
+                            <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Pods: La unidad atómica de K8s</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>ReplicaSets: Asegurando el número de réplicas</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Deployments: Despliegues y actualizaciones sin caídas (Rolling Updates)</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Estrategias de despliegue: Recreate, Blue/Green, Canary</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>StatefulSets: Para aplicaciones con estado (bases de datos, colas)</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>DaemonSets: Desplegando agentes en cada nodo</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Jobs y CronJobs: Para tareas batch y programadas</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-4">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+                                    🔹 Módulo 5: Configuración y Secretos
+                                </button>
+                            </h6>
+                            <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>ConfigMaps: Separando la configuración del código</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Secrets: Manejo de información sensible</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Entendiendo la (in)seguridad de los Secrets nativos</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Inyectando ConfigMaps y Secrets en Pods (variables de entorno y volúmenes)</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-5">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                                    🔹 Módulo 6: Redes (Networking) en Kubernetes
+                                </button>
+                            </h6>
+                            <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Modelo de red de K8s: IP-por-Pod</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Services: Abstracción para comunicación entre Pods (ClusterIP, NodePort)</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>LoadBalancers: Exponiendo servicios al exterior</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Ingress y los Ingress Controllers (NGINX, Traefik)</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Network Policies: Firewall para Pods</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Introducción a CNI (Container Network Interface): Calico y Flannel</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>DNS y Service Discovery dentro del clúster</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-6">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
+                                    🔹 Módulo 7: Almacenamiento Persistente con Open Source
+                                </button>
+                            </h6>
+                            <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>El problema del almacenamiento efímero</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>PersistentVolumes (PVs) y PersistentVolumeClaims (PVCs)</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>StorageClasses y provisionamiento dinámico</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Drivers CSI (Container Storage Interface)</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Solución Open Source 1: **Longhorn** para almacenamiento distribuido simple</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Solución Open Source 2: **Ceph con Rook** para almacenamiento de nivel producción</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Backup y Restore de volúmenes persistentes</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-7">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">
+                                    🔹 Módulo 8: Permisos y Control de Acceso con RBAC
+                                </button>
+                            </h6>
+                            <div id="collapse-7" class="accordion-collapse collapse" aria-labelledby="heading-7" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Principios de autenticación y autorización en K8s</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Usuarios vs. ServiceAccounts</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Roles y ClusterRoles: Definiendo permisos</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>RoleBindings y ClusterRoleBindings: Asignando permisos</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Caso práctico: Crear un usuario de solo lectura para un namespace</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Caso práctico: Configurar un ServiceAccount con permisos limitados</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-8">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-8" aria-expanded="false" aria-controls="collapse-8">
+                                    🔹 Módulo 9: Seguridad de Clúster y Workloads
+                                </button>
+                            </h6>
+                            <div id="collapse-8" class="accordion-collapse collapse" aria-labelledby="heading-8" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Las 4C de la seguridad Cloud Native: Cloud, Cluster, Container, Code</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Pod Security Standards (PSS) y Pod Security Admission (PSA)</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Security Contexts para Pods y Contenedores</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Análisis estático de manifiestos YAML con `kube-linter`</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-9">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-9" aria-expanded="false" aria-controls="collapse-9">
+                                    🔹 Módulo 10: Seguridad Avanzada con Herramientas Open Source
+                                </button>
+                            </h6>
+                            <div id="collapse-9" class="accordion-collapse collapse" aria-labelledby="heading-9" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Policy Enforcement con **Kyverno**: Mutating y Validating Webhooks</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Runtime Security con **Falco**: Detección de comportamiento anómalo</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Análisis de vulnerabilidades de imágenes con **Trivy**</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Gestión de certificados TLS con **cert-manager**</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Gestión de secretos segura con **HashiCorp Vault** y el inyector de Secrets</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-10">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-10" aria-expanded="false" aria-controls="collapse-10">
+                                    🔹 Módulo 11: Observabilidad y Monitoreo
+                                </button>
+                            </h6>
+                            <div id="collapse-10" class="accordion-collapse collapse" aria-labelledby="heading-10" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Métricas con **Prometheus**: Arquitectura y PromQL</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Visualización con **Grafana**: Creando dashboards para K8s</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Logging centralizado con el stack **Loki, Promtail y Grafana** (PLG)</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Trazabilidad distribuida con **Jaeger** y OpenTelemetry</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Alerting con Alertmanager</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-11">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-11" aria-expanded="false" aria-controls="collapse-11">
+                                    🔹 Módulo 12: Gestión Avanzada y GitOps
+                                </button>
+                            </h6>
+                            <div id="collapse-11" class="accordion-collapse collapse" aria-labelledby="heading-11" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Resource Requests y Limits: Gestión de recursos</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Probes: Liveness, Readiness y Startup</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Horizontal Pod Autoscaler (HPA)</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Cluster Autoscaler</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Filosofía GitOps: Git como única fuente de la verdad</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>CI/CD con **ArgoCD**: Despliegue continuo declarativo</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Backup y migración de clústeres con **Velero**</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-12">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-12" aria-expanded="false" aria-controls="collapse-12">
+                                    🔹 Módulo 13: Extendiendo Kubernetes (Nivel Experto)
+                                </button>
+                            </h6>
+                            <div id="collapse-12" class="accordion-collapse collapse" aria-labelledby="heading-12" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Custom Resource Definitions (CRDs): Definiendo tus propios recursos</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>El patrón Operator: Automatización de aplicaciones complejas</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Webhook Admission Controllers: Interceptando peticiones a la API</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Escribiendo plugins para `kubectl`</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-13">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-13" aria-expanded="false" aria-controls="collapse-13">
+                                    🔹 Módulo 14: Desarrollo de Operadores con Golang
+                                </button>
+                            </h6>
+                            <div id="collapse-13" class="accordion-collapse collapse" aria-labelledby="heading-13" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Introducción a **Go** para desarrolladores de Kubernetes</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>El ecosistema: **Kubebuilder** vs. Operator SDK</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Scaffolding de un nuevo proyecto con Kubebuilder</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Definiendo la API (CRD) con structs de Go</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Implementando el Controller y el **Reconcile Loop**</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Caso práctico: Crear un operador simple desde cero</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Testing, build y despliegue del operador en el clúster</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3">
+                            <h6 class="accordion-header font-base" id="heading-14">
+                                <button class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-14" aria-expanded="false" aria-controls="collapse-14">
+                                    🔹 Módulo 15: Proyecto Final - Orquestación de Extremo a Extremo
+                                </button>
+                            </h6>
+                            <div id="collapse-14" class="accordion-collapse collapse" aria-labelledby="heading-14" data-bs-parent="#accordionTemario">
+                                <div class="accordion-body mt-3">
+									<ul class="list-unstyled">
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Diseño de la arquitectura de una aplicación multi-servicio</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Despliegue de la aplicación usando GitOps con ArgoCD</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Implementación de almacenamiento persistente con Longhorn/Rook</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Aseguramiento del clúster con Kyverno y Falco</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Creación de un operador básico para gestionar un componente de la aplicación</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Configuración de monitoreo y alertas con Prometheus y Grafana</span>
+										</li>
+										<hr>
+										
+										<li class="d-flex align-items-center mb-2">
+											<i class="fas fa-video text-primary me-2"></i>
+											<span>Defensa del proyecto final</span>
+										</li>
+										<hr>
+										
+									</ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                    </div>
+            </div>
+            </div>
+
+        <div class="col-lg-4">
+            <div class="card card-body shadow p-4 mb-4">
+                <h4 class="mb-3">Este curso incluye</h4>
+                <ul class="list-group list-group-borderless">
+                    
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-user-tie text-primary"></i>Instructor</span>
+                        <span>Victor S. Recio</span>
+                    </li>
+                    
+                    
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-video text-primary"></i>Lectures</span>
+                        <span>15 Módulos (&#43;100 Tópicos)</span>
+                    </li>
+                    
+                    
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-clock text-primary"></i>Duración</span>
+                        <span>80&#43; horas</span>
+                    </li>
+                    
+                    
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-flask text-primary"></i>Labs</span>
+                        <span>Sí, intensivos</span>
+                    </li>
+                    
+                    
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-signal text-primary"></i>Nivel</span>
+                        <span>Básico a Experto</span>
+                    </li>
+                    
+                    
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-globe text-primary"></i>Idioma</span>
+                        <span>Español</span>
+                    </li>
+                    
+                    
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-question-circle text-primary"></i>Quiz</span>
+                        <span>Sí, por módulo</span>
+                    </li>
+                    
+                    
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="h6 fw-light mb-0"><i class="fas fa-fw fa-medal text-primary"></i>Certificado</span>
+                        <span>Sí, de Experto en Kubernetes</span>
+                    </li>
+                    
+                </ul>
+                <div class="text-center mt-4">
+                    <a href="/contact" class="btn btn-lg btn-primary px-5">
+                        <i class="fas fa-sign-in-alt me-2"></i>Inscribirse Ahora
+                    </a>
+                    <p class="text-muted mt-2 mb-0">¡Asegura tu cupo, son limitados!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+    </div>
+    <footer class="py-3 mt-auto bg-light">
+  <div class="container py-1 my-1">
+    <div class="d-flex flex-wrap justify-content-between align-items-center">
+      <p class="col-md mb-0 text-muted">Open-source <a class="text-muted text-decoration-none" href="https://github.com/filipecarneiro/hugo-bootstrap-theme/blob/main/LICENSE">MIT</a> Licensed.</p>
+      <ul class="nav col-md-auto justify-content-end">
+        <li class="nav-item"><a href="/code-of-conduct/" class="nav-link px-2 text-muted" title='Code of Conduct' aria-label='Code of Conduct'>Code of Conduct</a></li>
+        <li class="nav-item"><a href="/privacy-policy/" class="nav-link px-2 text-muted" title='Privacy Policy' aria-label='Privacy Policy'>Privacy Policy</a></li>
+        </ul>
+    </div>
+  </div>
+</footer>
+    
+
+
+
+
+<script src="/js/bootstrap/bootstrap.bundle.min.min.fde1bce9cb450c8f28624f696a2e289585ba452e38625ed326071c43be323d194b7f426b132c66f8a5686a3b57013f66a42148f04b208da3ed7d26710b23a763.js" integrity="sha512-/eG86ctFDI8oYk9pai4olYW6RS44Yl7TJgccQ74yPRlLf0JrEyxm&#43;KVoajtXAT9mpCFI8EsgjaPtfSZxCyOnYw==" crossorigin="anonymous" defer></script>
+  
+    <script src="/js/main.min.e8d88c82c0438b527f1aca4115652ba1e2877bf805b75593b23ac0e3fe2b3fe95a467d1feef275355132ba061da6404b0d24d55afabc209b294b1db043be014d.js" integrity="sha512-6NiMgsBDi1J/GspBFWUroeKHe/gFt1WTsjrA4/4rP&#43;laRn0f7vJ1NVEyugYdpkBLDSTVWvq8IJspSx2wQ74BTQ==" crossorigin="anonymous" defer></script>
+  
+  
+
+
+
+</body>
+</html>

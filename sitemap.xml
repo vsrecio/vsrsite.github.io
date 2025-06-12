@@ -2,43 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://vsr.lat/page/</loc>
-    <lastmod>2025-05-31T23:53:37-04:00</lastmod>
+    <loc>https://vsr.lat/resources/kubernetes/</loc>
+    <lastmod>2025-06-12T10:42:44-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://vsr.lat/</loc>
-    <lastmod>2025-06-03T13:34:53-04:00</lastmod>
+    <lastmod>2025-06-12T10:42:44-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://vsr.lat/page/speaking/video1/</loc>
-    <lastmod>2025-05-29T21:17:42-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://vsr.lat/page/speaking/video2/</loc>
-    <lastmod>2025-05-29T21:18:32-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://vsr.lat/page/speaking/video3/</loc>
-    <lastmod>2025-05-29T21:19:43-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://vsr.lat/page/speaking/video4/</loc>
-    <lastmod>2025-05-29T21:20:15-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://vsr.lat/page/speaking/video5/</loc>
-    <lastmod>2025-05-29T21:21:10-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://vsr.lat/page/speaking/video6/</loc>
-    <lastmod>2025-05-29T21:23:23-04:00</lastmod>
+    <loc>https://vsr.lat/resources/cloud-architect/</loc>
+    <lastmod>2025-06-12T10:24:24-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -131,8 +106,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://vsr.lat/contact/</loc>
-    <lastmod>2025-05-31T23:50:11-04:00</lastmod>
+    <loc>https://vsr.lat/resources/devops/</loc>
+    <lastmod>2025-06-03T23:19:54-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
