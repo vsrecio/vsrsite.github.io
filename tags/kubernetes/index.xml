@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on Victor S. Recio</title>
-    <link>https://vsr.lat/writing/</link>
-    <description>Recent content in Blog on Victor S. Recio</description>
+    <title>Kubernetes on Victor S. Recio</title>
+    <link>https://vsr.lat/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on Victor S. Recio</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Open-source &lt;a class=&#34;text-muted text-decoration-none&#34; href=&#34;https://github.com/filipecarneiro/hugo-bootstrap-theme/blob/main/LICENSE&#34;&gt;MIT&lt;/a&gt; Licensed.</copyright>
-    <atom:link href="https://vsr.lat/writing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Jun 2025 13:32:13 -0400</lastBuildDate>
+    <atom:link href="https://vsr.lat/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Demystify Helm: Creating Charts</title>
       <link>https://vsr.lat/writing/helm-3/</link>
