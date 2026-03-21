@@ -19,7 +19,6 @@
 
             <div class="tab-content pt-4" id="course-pills-tabContent">
                 <div class="tab-pane fade active show" id="course-pills-2" role="tabpanel" aria-labelledby="course-pills-tab-2">
-                    <h4 class="mb-3">Temario del Curso</h4>
                     <div class="accordion accordion-icon accordion-bg-light" id="accordionTemario">
 
                         {{ range $index, $module := .Params.modules }}
@@ -29,6 +28,7 @@
                                     🔹 Módulo {{ add $index 1 }}: {{ $module.title }}
                                 </button>
                             </h6>
+
                             <div id="collapse-{{ $index }}" class="accordion-collapse collapse" aria-labelledby="heading-{{ $index }}" data-bs-parent="#accordionTemario">
                                 <div class="accordion-body mt-3">
 									<ul class="list-unstyled">
@@ -104,8 +104,8 @@
                     {{ end }}
                 </ul>
                 <div class="text-center mt-4">
-                    <a href="/contact" class="btn btn-lg btn-primary px-5">
-                        <i class="fas fa-sign-in-alt me-2"></i>Inscribirse Ahora
+                    <a href="mailto:starlyn.recio@gmail.com" class="btn btn-primary btn-lg px-5">
+                        <i class="fas fa-envelope me-2"></i>Enviar un Correo
                     </a>
                     <p class="text-muted mt-2 mb-0">¡Asegura tu cupo, son limitados!</p>
                 </div>

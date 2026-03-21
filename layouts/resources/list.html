@@ -1,5 +1,43 @@
 
 {{ define "main" }}
+<div class="container">
+    <div class="container py-4">
+        <h1 class="display-5 fw-bold">Workshops y Talleres Especializados</h1>
+        <p class="lead text-muted">Conduce a tu equipo hacia la excelencia con talleres prácticos en arquitectura de software moderna, C4 para visualización de sistemas, Cloud Native en Azure, DevOps y estrategia de resiliencia. Estos talleres están diseñados para potenciar automatización, contenedores, microservicios y buenas prácticas de SRE y seguridad a escala empresarial.</p>
+        <h4>💼 Modalidad y Logística para Talleres Presenciales</h4>
+        <p>Ofrezco talleres presenciales con una tarifa única según la ubicación, que cubre mis gastos de viaje y alojamiento, sin cobros por participante. Aunque lo ideal es entre 10 y 20 asistentes, no hay un límite estricto.</p>
+        <b>Requisitos del Cliente:</b>
+        <ul>
+            <li>Sala equipada con proyector o pantalla grande con conexión HDMI</li>
+            <li>Pizarras blancas o rotafolios, y rotuladores para actividades prácticas</li>
+            <li>No es necesaria computadora propia por participante</li>
+            <li>Horarios flexibles, ajustados a tus necesidades</li>
+        </ul>
+        <p>No realizo talleres completamente remotos, pero puedo ofrecer una modalidad híbrida, con un grupo presencial local (para máxima interacción) y participantes remotos vía Zoom, Teams o Meet.</p>
+    </div>
+
+    <div class="row">
+        {{ range .Pages }}
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                {{ with .Params.image }}
+                <a href="{{ $.Permalink }}">
+                    <img src="{{ . | relURL }}" class="card-img-top" alt="Portada del curso {{ $.Title }}">
+                </a>
+                {{ end }}
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold">{{ .Title }}</h5>
+                    <p class="card-text text-muted small flex-grow-1">{{ .Summary }}</p>
+                    <a href="{{ .Permalink }}" class="btn btn-primary mt-auto">
+                        Ver Curso Completo<i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+</div>
 {{ with .Site.Data.recursos.ebooks }}
 <div class="container py-5">
     <div class="row text-center mb-5">
@@ -9,7 +47,7 @@
         </div>
     </div>
 
-    <div class="row">
+    {{/*  <div class="row">
         {{ range . }}
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 shadow-sm border-0">
@@ -27,12 +65,12 @@
             </div>
         </div>
         {{ end }}
-    </div>
+    </div>  */}}
 </div>
 {{ end }}
 
 {{ with .Site.Data.recursos.slides }}
-<div class="container py-5 bg-light rounded-3">
+<div class="container py-5 rounded-3">
     <div class="row text-center mb-5">
         <div class="col-lg-8 mx-auto">
             <h2 class="display-6 fw-bold">Slides de Conferencias</h2>
@@ -40,7 +78,7 @@
         </div>
     </div>
 
-    <div class="row">
+    {{/*  <div class="row">
         {{ range . }}
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 shadow-sm border-0">
@@ -58,7 +96,7 @@
             </div>
         </div>
         {{ end }}
-    </div>
+    </div>  */}}
 </div>
 {{ end }}
 

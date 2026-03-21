@@ -1,106 +1,67 @@
-{{/*  {{ define "main" }}
-
-<section class="section bd-masthead">
-  <div class="container-xxl">
-    <div class="col-md-8 mx-auto text-center my-5">
-      <img class="d-block mx-auto mb-3" src="{{ `images/logo.svg` | relURL }}" width="150" height="150" alt="Bootstrap">
-      <h1 class="display-4 fw-semibold mb-3">{{ .Site.Title }}</h1>
-      <p class="lead mb-4">{{ .Site.Params.Description }}</p>
-      <a class="btn btn-bd-primary btn-lg px-4 mb-2" href="#" role="button">Get Started</a>
-
-    </div>
-  </div>
-</section>
-
-<section class="section container my-3">
-  {{ partial "features" . }}
-</section>/
-
-<section class="section container my-3">
-  <h3 class="text-secondary text-center my-5">Artículos Técnicos!</h3>
-  {{ partial "latest-posts" . }}
-</section>
-
-<section class="section container my-3">
-  <h3 class="text-secondary text-center my-5">Conferencias! </h3>
-  <div class="row g-4">
-    {{ range first 6 (where .Site.RegularPages "Section" "page") }}
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="ratio ratio-16x9">
-          <iframe 
-            src="https://www.youtube.com/embed/{{ .Params.videoID }}" 
-            title="{{ .Title }}" 
-            allowfullscreen>
-          </iframe>
-        </div>
-        <p class="text-center mt-2">{{ .Title }}</p>
-      </div>
-    {{ end }}
-  </div>
-</section>
-
-{{ end }}  */}}
-
 {{ define "main" }}
 
-<section class="section bd-masthead">
-  <div class="container-xxl">
-    <div class="col-md-8 mx-auto text-center my-5">
-      <img class="d-block mx-auto mb-3" src="{{ `images/logo.svg` | relURL }}" width="150" height="150" alt="Bootstrap">
-      <h1 class="display-4 fw-semibold mb-3">{{ .Site.Title }}</h1>
-      <p class="lead mb-4">{{ .Site.Params.Description }}</p>
-      {{/*  <a class="btn btn-bd-primary btn-lg px-4 mb-2" href="#" role="button">Get Started</a>  */}}
-      {{/* <p class="text-muted mb-0">Open-source MIT Licensed.</p>  */}}
+<section class="section bg-body-tertiary py-5 text-center">
+  <div class="container">
+    <div class="col-lg-8 mx-auto">
+      <img class="d-block mx-auto mb-4" src="{{ `images/logo.svg` | relURL }}" width="150" height="150" alt="Logo de Victor S. Recio">
+      <h1 class="display-4 fw-bold mb-3">{{ .Site.Title }}</h1>
+      <p class="lead text-muted mb-4">{{ .Site.Params.Description }}</p>
+      
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <a class="btn btn-primary btn-lg px-4 gap-3" href="/resources/" role="button">Ver Cursos</a>
+        <a class="btn btn-outline-secondary btn-lg px-4" href="https://www.linkedin.com/in/vsrecio/" role="button">Contactar</a>
+      </div>
+
     </div>
   </div>
 </section>
 
-<section class="section container my-3">
+<section class="section container my-5 py-5">
+  <div class="row text-center mb-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="display-6 fw-bold">Áreas de Expertise</h2>
+        <p class="lead text-muted">Mi enfoque se centra en estas disciplinas clave para crear software de alta calidad.</p>
+      </div>
+    </div>
   {{ partial "features" . }}
-</section>/
-
-<section class="section container my-3">
-  <h3 class="text-secondary text-center my-5">Artículos Técnicos!</h3>
-  {{ partial "latest-posts" . }}
 </section>
 
-{{/* <section class="section container my-3">
-  <h3 class="text-secondary text-center my-5">Featured Pages</h3>
-  {{ partial "featured-pages" . }}
-</section>  */}}
-
+<section class="section container my-5 py-5 rounded-3">
+  <div class="row text-center mb-5">
+    <div class="col-lg-8 mx-auto">
+      <h2 class="display-6 fw-bold">Desde el Blog</h2>
+      <p class="lead text-muted">Comparto análisis, guías y tutoriales sobre tecnología y arquitectura.</p>
+    </div>
+  </div>
+  {{ partial "latest-posts" . }}
+  <div class="text-center mt-5">
+    <a href="/writing/" class="btn btn-outline-primary">Ver todos los artículos</a>
+  </div>
+</section>
 
 {{ with .Site.Data.conferencias }}
-<section class="conferencias-section bg-light py-5">
-  <div class="container">
-    
-    <div class="row text-center mb-5">
-      <div class="col-lg-8 mx-auto">
-        <h2 class="display-6 fw-bold">Conferencias y Charlas Técnicas</h2>
-        <p class="text-muted">Compartiendo conocimiento con la comunidad sobre tecnología y desarrollo.</p>
-      </div>
+<section class="section container my-5 py-5">
+  <div class="row text-center mb-5">
+    <div class="col-lg-8 mx-auto">
+      <h2 class="display-6 fw-bold">Conferencias y Charlas</h2>
+      <p class="lead text-muted">Algunas de mis presentaciones en eventos y comunidades sobre tecnología.</p>
     </div>
-
-    <div class="row">
-      {{ range . }}
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100 shadow-sm border-0">
-          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
-            <img src="{{ .thumbnail }}" class="card-img-top" alt="Thumbnail de la charla {{ .title }}">
-          </a>
-          {{/*  <div class="card-body d-flex flex-column">
-            <h5 class="card-title fw-bold">{{ .title }}</h5>
-            <p class="card-text text-muted small flex-grow-1">{{ .event }} - {{ .date }}</p>
-            <a href="{{ .url }}" class="btn btn-danger mt-auto" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-youtube me-2"></i>Ver en YouTube
-            </a>
-          </div>  */}}
-        </div>
-      </div>
-      {{ end }}
-    </div>
-
   </div>
+
+  <div class="row">
+    {{ range first 6 . }}
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 shadow-sm border-0">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+          <img src="{{ .thumbnail }}" class="card-img-top" alt="Thumbnail de la charla {{ .title }}">
+        </a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
 </section>
 {{ end }}
+
+
 {{ end }}

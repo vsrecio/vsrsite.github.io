@@ -1,0 +1,9 @@
+- title: "Kubernetes Total: De Cero a Héroe"
+  description: "Aprende a orquestar, asegurar y gestionar aplicaciones a escala con Kubernetes, desde los fundamentos hasta el desarrollo de operadores."
+  thumbnail: "/images/cursos/curso-kubernetes-thumb.jpg"
+  url: "/cursos/kubernetes-total/" # URL a la página de detalle del curso
+
+- title: "Arquitectura de Nube Multi-Cloud"
+  description: "Domina los principios para diseñar soluciones resilientes, seguras y costo-eficientes en AWS, Azure y GCP."
+  thumbnail: "/images/cursos/curso-arquitectura-cloud-thumb.jpg"
+  url: "/cursos/arquitectura-cloud/"

@@ -50,3 +50,6 @@ sectionPagesMenu = "false"
   [[module.mounts]]
     source = "static"
     target = "static"
+
+# Reemplaza la sección [params.social] con esto
+

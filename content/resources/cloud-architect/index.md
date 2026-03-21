@@ -6,6 +6,8 @@ date: 2025-06-09T12:12:20-04:00
 draft: false
 image: "/images/architect_banner.png"
 
+Summary: Bienvenido al curso definitivo de **Arquitectura de Nube Multi-Cloud**. En esta formación intensiva y práctica, dominarás los principios, patrones y herramientas para diseñar, implementar y gestionar soluciones robustas en entornos de **AWS, Azure y GCP**. 
+ 
 # --- Parámetros para la barra lateral ---
 instructor: "Victor S. Recio"
 lectures: "16 Módulos"
@@ -25,6 +27,8 @@ modules:
   - "Modelos de despliegue: Pública, Privada, Híbrida, Multinube"
   - "Ventajas técnicas vs. ventajas de negocio"
   - "Shared Responsibility Model (AWS, Azure, GCP)"
+  - "Slides"
+  - "PDF"
 - title: "Virtualización y Contenedores"
   topics:
   - "Fundamentos de virtualización (Hypervisores, VMs)"
@@ -32,6 +36,8 @@ modules:
   - "Introducción a Docker y OCI"
   - "Ejecución de contenedores en la nube"
   - "Container Runtimes (Docker, containerd, CRI-O)"
+  - "Slides"
+  - "PDF"
 - title: "Redes en la Nube (Networking)"
   topics:
   - "Arquitectura básica de red (OSI, TCP/IP)"
@@ -39,6 +45,8 @@ modules:
   - "Servicios de red en AWS (VPC, Subnets, IGW, NAT, SG, NACLs)"
   - "Servicios de red en Azure (VNet, Subnets, NSG, UDR, Azure Firewall)"
   - "Topologías: Hub-and-Spoke, Full Mesh, Hybrid Cloud, Multi-Cloud"
+  - "Slides"
+  - "PDF"
 - title: "Identidad y Control de Acceso"
   topics:
   - "Azure Active Directory y AWS IAM"
@@ -46,6 +54,8 @@ modules:
   - "RBAC vs ABAC"
   - "Autenticación, autorización, MFA"
   - "Identidades administradas (MSI, STS, Workload Identity)"
+  - "Slides"
+  - "PDF"
 - title: "Almacenamiento y Bases de Datos"
   topics:
   - "Tipos de almacenamiento: blob, file, disk, object"
@@ -53,6 +63,8 @@ modules:
   - "Backup y recuperación"
   - "Bases de datos relacionales y no relacionales"
   - "Arquitecturas de bases de datos distribuidas (Cosmos DB, DynamoDB)"
+  - "Slides"
+  - "PDF"
 - title: "Compute & Serverless"
   topics:
   - "Máquinas virtuales (EC2, Azure VM): sizing, regiones, zonas"
@@ -60,6 +72,8 @@ modules:
   - "Funciones serverless: AWS Lambda, Azure Functions"
   - "Containers as a Service: ECS, AKS, EKS, Cloud Run"
   - "Event-driven architecture"
+  - "Slides"
+  - "PDF"
 - title: "Orquestación y Kubernetes"
   topics:
   - "Arquitectura de Kubernetes"
@@ -68,6 +82,8 @@ modules:
   - "Escalado automático, salud y actualizaciones"
   - "Observabilidad y logging en clústeres"
   - "GitOps y ArgoCD"
+  - "Slides"
+  - "PDF"
 - title: "Automatización e Infraestructura como Código (IaC)"
   topics:
   - "Terraform vs Bicep vs ARM vs CloudFormation"
@@ -75,6 +91,8 @@ modules:
   - "CI/CD pipelines para infraestructura"
   - "Módulos reutilizables y GitOps para IaC"
   - "Estado remoto y gestión de secretos"
+  - "Slides"
+  - "PDF"
 - title: "Seguridad en la Nube"
   topics:
   - "Zero Trust Architecture"
@@ -83,6 +101,8 @@ modules:
   - "Monitoreo de cumplimiento (Azure Policy, SCPs)"
   - "Rotación de secretos (Key Vault, Secrets Manager)"
   - "Seguridad de contenedores y supply chain"
+  - "Slides"
+  - "PDF"
 - title: "Observabilidad y Gestión Operacional"
   topics:
   - "Logging, métricas, trazabilidad"
@@ -90,6 +110,8 @@ modules:
   - "Integración con incident response"
   - "Dashboards para SRE y KPIs"
   - "Alertas inteligentes y runbooks automatizados"
+  - "Slides"
+  - "PDF"
 - title: "Alta Disponibilidad y Resiliencia"
   topics:
   - "Zonas de disponibilidad y regiones"
@@ -97,12 +119,16 @@ modules:
   - "Load Balancers (L4/L7), Application Gateways"
   - "Patrón Circuit Breaker, Retry, Timeout"
   - "Chaos Engineering"
+  - "Slides"
+  - "PDF"
 - title: "Diseño de Arquitectura Multi-Cloud y Híbrida"
   topics:
   - "Principios de diseño híbrido (Azure Arc, Outposts)"
   - "Multi-cloud patterns: federación, redundancia, bursting"
   - "Retos de red, identidad y replicación de datos"
   - "Herramientas de gestión centralizada (Anthos, Azure Arc, Terraform Cloud)"
+  - "Slides"
+  - "PDF"
 - title: "Costeo y Gobernanza"
   topics:
   - "Azure Cost Management y AWS Budgets"
@@ -110,6 +136,8 @@ modules:
   - "Análisis de TCO y ROI de soluciones cloud"
   - "Azure Policy y AWS Config para cumplimiento"
   - "Resource Locks, Blueprints y Landing Zones"
+  - "Slides"
+  - "PDF"
 - title: "Patrones y Estilos Arquitectónicos"
   topics:
   - "12 Factor App"
@@ -117,6 +145,8 @@ modules:
   - "Event Sourcing y CQRS"
   - "Domain-Driven Design aplicado a la nube"
   - "Microservicios vs Monolitos Modernos vs Serverless"
+  - "Slides"
+  - "PDF"
 - title: "Casos de Uso Empresariales"
   topics:
   - "Arquitectura para SaaS multi-tenant"
@@ -124,6 +154,8 @@ modules:
   - "Aplicaciones móviles globales"
   - "Arquitectura de AI/ML en la nube"
   - "Arquitectura para cumplimiento (HIPAA, PCI-DSS, SOC 2)"
+  - "Slides"
+  - "PDF"
 - title: "Examen Final y Proyecto de Arquitectura"
   topics:
   - "Escenario real de negocio"
@@ -131,9 +163,10 @@ modules:
   - "Diagrama técnico y documento de decisión"
   - "Justificación de componentes y costos"
   - "Defensa ante arquitecto senior"
----
+  - "Slides"
+  - "PDF"
 
-## Descripción del Curso
+---
 
 Bienvenido al curso definitivo de **Arquitectura de Nube Multi-Cloud**. En esta formación intensiva y práctica, dominarás los principios, patrones y herramientas para diseñar, implementar y gestionar soluciones robustas en entornos de **AWS, Azure y GCP**.
 
