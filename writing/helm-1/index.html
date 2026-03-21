@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
 
 
@@ -10,7 +10,7 @@
 <meta http-equiv='Content-Security-Policy' content="script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'none'">
     
 
-<link rel="stylesheet" href="/css/style.e7322d74f420cb6e5266a995bea64e88d35be1ab6635be7789ade7d9d033c7e5a5443b41a598dca80787c01e8b397a1a665dda0879690c1c23792f178291469d.css" media="screen" integrity="sha512-5zItdPQgy25SZqmVvqZOiNNb4atmNb53ia3n2dAzx&#43;WlRDtBpZjcqAeHwB6LOXoaZl3aCHlpDBwjeS8XgpFGnQ==" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/style.css" media="screen">
 
     <title>Demystify Helm: Introduction</title>
 
@@ -19,14 +19,14 @@
   
 
 
-<link rel="canonical" href="https://vsr.lat/writing/helm-1/">
+<link rel="canonical" href="http://localhost:1313/writing/helm-1/">
 
 
-<link rel="alternate" hreflang="en" href="https://vsr.lat/writing/helm-1/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/writing/helm-1/">
 
 
 
-<link rel="alternate" hreflang="x-default" href="https://vsr.lat/writing/helm-1/">
+<link rel="alternate" hreflang="x-default" href="http://localhost:1313/writing/helm-1/">
 
 
 
@@ -43,23 +43,23 @@
 <meta property="og:description" content="
 If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it&rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://vsr.lat/writing/helm-1/">
+<meta property="og:url" content="http://localhost:1313/writing/helm-1/">
     
       
-        <meta property="og:image" content="https://vsr.lat/images/logo.svg">
+        <meta property="og:image" content="http://localhost:1313/images/logo.svg">
     
     
       
         
       
-        <meta property="og:image" content="https://vsr.lat/images/site-feature-image_hu_4da550a2335ee8d8.png">
+        <meta property="og:image" content="http://localhost:1313/images/site-feature-image_hu_e46422c5f4f06e8f.png">
     
   <meta property="article:section" content="writing">
   
     <meta property="article:published_time" content="2023-05-22T14:24:59-04:00">
   
   
-    <meta property="article:modified_time" content="2025-06-03T13:32:07-04:00">
+    <meta property="article:modified_time" content="2025-06-12T11:26:26-04:00">
   
   <meta property="og:site_name" content="Victor S. Recio">
 
@@ -76,7 +76,7 @@ If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and d
     
       
       <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:image" content="https://vsr.lat/images/logo.svg">
+      <meta name="twitter:image" content="http://localhost:1313/images/logo.svg">
     <meta name="twitter:title" content="Demystify Helm: Introduction">
 <meta name="twitter:description" content="
 If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it&rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play.">
@@ -98,14 +98,14 @@ If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and d
   "@type": "Article",
   "headline": "Demystify Helm: Introduction",
   "datePublished": "2023-05-22T14:24:59-04:00",
-  "dateModified": "2025-06-03T13:32:07-04:00",
-  "mainEntityOfPage": "https://vsr.lat/",
+  "dateModified": "2025-06-12T11:26:26-04:00",
+  "mainEntityOfPage": "http://localhost:1313/",
   "publisher": {
     "@type": "Organization",
     
     "logo": {
       "@type": "ImageObject",
-      "url": "https://vsr.lat/images/logo.svg"
+      "url": "http://localhost:1313/images/logo.svg"
     },
     "name": "Victor S. Recio"
   },
@@ -127,8 +127,8 @@ If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and d
 
 
     
-<link rel="icon" type="image/svg+xml" href="https://vsr.lat/favicon.svg">
-<link rel="icon" type="image/png" href="https://vsr.lat/favicon.png">
+<link rel="icon" type="image/svg+xml" href="http://localhost:1313/favicon.svg">
+<link rel="icon" type="image/png" href="http://localhost:1313/favicon.png">
 
 </head>
 
@@ -174,11 +174,6 @@ If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and d
           
           </ul>
 
-        
-        
-
-        
-        
 
       </div>
     </div>
@@ -229,7 +224,7 @@ If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and d
 <p>The charts are convenient because they allow you to deploy, version, share, and publish applications in a standard format. They encapsulate and build an artifact of your application, making the complexity of deploying sophisticated applications into Kubernetes easier, and enabling more straightforward application management, updates, and configuration.</p>
 <h2 id="what-is-helm-chart-1">What is Helm Chart?</h2>
 <p>A Helm chart is essentially a packaged application for Kubernetes and has a specific directory structure. Here&rsquo;s the basic structure of a Helm chart:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vsrchart/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vsrchart/
 </span></span><span style="display:flex;"><span>  Chart.yaml          <span style="color:#75715e"># A YAML file containing information about the chart</span>
 </span></span><span style="display:flex;"><span>  LICENSE             <span style="color:#75715e"># OPTIONAL: A plain text file containing the license for the chart</span>
 </span></span><span style="display:flex;"><span>  README.md           <span style="color:#75715e"># OPTIONAL: A human-readable README file</span>
@@ -249,7 +244,7 @@ If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and d
 </ul>
 This structure makes Helm charts organized and easier to manage, even when they start to get complex.
 <p>The <code>templates/</code> directory within a Helm Chart is where the Kubernetes manifest files are stored. The files in this directory are templated using the Go templating language. Here&rsquo;s a basic example of what you might find inside the <code>templates/</code> directory:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>|-- templates
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>|-- templates
 </span></span><span style="display:flex;"><span>|   |-- NOTES.txt
 </span></span><span style="display:flex;"><span>|   |-- _helpers.tpl
 </span></span><span style="display:flex;"><span>|   |-- deployment.yaml
@@ -291,13 +286,10 @@ This structure makes Helm charts organized and easier to manage, even when they 
 
 
 
-<script src="/js/bootstrap/bootstrap.bundle.min.min.fde1bce9cb450c8f28624f696a2e289585ba452e38625ed326071c43be323d194b7f426b132c66f8a5686a3b57013f66a42148f04b208da3ed7d26710b23a763.js" integrity="sha512-/eG86ctFDI8oYk9pai4olYW6RS44Yl7TJgccQ74yPRlLf0JrEyxm&#43;KVoajtXAT9mpCFI8EsgjaPtfSZxCyOnYw==" crossorigin="anonymous" defer></script>
+<script src="/js/bootstrap/bootstrap.bundle.min.js" defer></script>
   
-    <script src="/js/main.min.e8d88c82c0438b527f1aca4115652ba1e2877bf805b75593b23ac0e3fe2b3fe95a467d1feef275355132ba061da6404b0d24d55afabc209b294b1db043be014d.js" integrity="sha512-6NiMgsBDi1J/GspBFWUroeKHe/gFt1WTsjrA4/4rP&#43;laRn0f7vJ1NVEyugYdpkBLDSTVWvq8IJspSx2wQ74BTQ==" crossorigin="anonymous" defer></script>
+    <script src="/js/main.js" defer></script>
   
-  
-
-
 
 </body>
 </html>
