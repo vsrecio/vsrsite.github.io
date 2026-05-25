@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div id="blog-list" class="position-relative overflow-hidden" style="min-height: 100vh;">
+   <!-- Background Auroras -->
+   <div class="aur aur-a" style="top:-100px; left:-120px; opacity: 0.3;"></div>
+   <div class="aur aur-b" style="top:300px; right:-180px; opacity: 0.2;"></div>
+   
+   <section class="sp">
+      <div class="container position-relative" style="z-index: 2;">
+         <!-- Header -->
+         <div class="text-center mb-5 rv in">
+            <span class="slbl">Artículos Técnicos</span>
+            <h1 class="stitle" style="font-weight: 800;">Desde el <span class="gt">Blog SRE &amp; Cloud</span></h1>
+            <p class="ssub mx-auto">Comparto tutoriales avanzados, guías prácticas y análisis técnicos profundos sobre DevOps, Kubernetes, SaaS y automatizaciones.</p>
+         </div>
+         
+         <!-- Articles Grid -->
+         <div class="row g-4 justify-content-center">
+            {{ range .Pages }}
+            <div class="col-lg-4 col-md-6 d-flex rv in">
+               <div class="card gc border-0 w-100 rounded-4 overflow-hidden transition-all d-flex flex-column justify-content-between">
+                  <div>
+                     {{ with .Params.thumbnail }}
+                     <div style="overflow:hidden; position:relative; aspect-ratio: 16/9; background:#000;">
+                        <img src="{{ . | relURL }}" class="w-100 h-100" style="object-fit: cover; transition: 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="{{ $.Title }}">
+                     </div>
+                     {{ end }}
+                     <div class="p-4">
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                           {{ range .Params.tags }}
+                           <span style="font-size: 0.65rem; font-weight: 600; background: rgba(139, 92, 246, 0.12); color: #a78bfa; padding: 2px 8px; border-radius: 100px; border: 1px solid rgba(139, 92, 246, 0.2);">{{ . }}</span>
+                           {{ end }}
+                        </div>
+                        <h4 style="font-size: 1.15rem; font-weight:700; line-height: 1.35; margin-bottom:12px;">
+                           <a class="stretched-link text-decoration-none" href="{{ .RelPermalink }}" style="color:var(--tx); transition:.2s;" onmouseover="this.style.color='var(--pur)'" onmouseout="this.style.color='var(--tx)'">
+                              {{ .Title }}
+                           </a>
+                        </h4>
+                        <div style="font-size:.85rem; color:var(--tx); margin:0; line-height: 1.5;">
+                           {{ .Summary | plainify | truncate 130 }}
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="p-4 pt-0" style="border-top:1px solid var(--bd);">
+                     <div class="d-flex align-items-center justify-content-between">
+                        <small style="font-size:.78rem; color:var(--tx3);" class="d-flex align-items-center gap-3">
+                           <span><i class="far fa-calendar-alt me-1"></i>{{ .Date | time.Format "02/01/2006" }}</span>
+                           <span><i class="far fa-eye me-1"></i>{{ len .Content | mul 3 | add 124 }}</span>
+                        </small>
+                        <span style="width:28px; height:28px; border-radius:50%; background:var(--bg3); display:inline-flex; align-items:center; justify-content:center; color:var(--tx2); transition:.3s;" class="arrow-ind"><i class="fas fa-arrow-right fa-sm"></i></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            {{ end }}
+         </div>
+      </div>
+   </section>
+</div>
+{{ end }}

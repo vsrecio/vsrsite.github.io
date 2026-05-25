@@ -1,0 +1,8 @@
+{{ $css := resources.Get "css/style.css" }}
+
+{{ if eq hugo.Environment "production" -}}
+  {{ $secureCSS := $css | resources.Minify | resources.Fingerprint "sha512" -}}
+  <link rel="stylesheet" href="{{ $secureCSS.RelPermalink }}" media="screen" integrity="{{ $secureCSS.Data.Integrity }}" crossorigin="anonymous">
+{{ else -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink | relURL }}" media="screen">
+{{ end -}}

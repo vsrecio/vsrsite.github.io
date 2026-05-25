@@ -1,35 +1,43 @@
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-2">
 
     {{ range first 3 (where .Site.RegularPages.ByDate.Reverse "Section" "writing" ) }}
-            {{/*  {{ range where .Site.RegularPages "Section" "writing" }}  */}}
-        <div class="col">
+        <div class="col d-flex">
 
-            <div class="card h-100">
+            <div class="card blog-card-flat border-0 w-100 rounded-5 overflow-hidden transition-all">
 
-            {{ with .Params.thumbnail }}
-          <img src="{{ . | relURL }}" class="card-img-top" alt="{{ $.Title }}">
-            {{ end }}
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a class="stretched-link text-primary text-decoration-none" href="{{ .RelPermalink }}">
+                {{ with .Params.thumbnail }}
+                <div class="blog-image-wrapper-flat overflow-hidden position-relative m-3 rounded-4">
+                    <img src="{{ . | relURL }}" class="card-img-top blog-image-flat img-fluid" alt="{{ $.Title }}">
+                </div>
+                {{ end }}
+                
+                <div class="card-body px-4 pb-4 pt-2 d-flex flex-column">
+                    <div class="blog-meta-flat mb-2 d-flex align-items-center">
+                        <span class="blog-tag-flat text-uppercase fw-extrabold font-monospace small">Artículo</span>
+                    </div>
+                    
+                    <h4 class="card-title fw-extrabold blog-card-title-flat mb-3">
+                        <a class="stretched-link text-dark-custom text-decoration-none" href="{{ .RelPermalink }}">
                             {{ .Title }}
                         </a>
                     </h4>
+                    
                     {{ with .Params.authors }}
-                        <p class="card-subtitle text-muted">
-                            by {{ index . 0 }}
+                        <p class="card-subtitle text-secondary-flat small mb-0 mt-auto fw-semibold">
+                            <i class="far fa-user me-2"></i>{{ index . 0 }}
                         </p>
                     {{ end }}
-                    {{/*  <p class="card-text mt-3">
-                        {{ with .Params.description }}
-                            {{ . }}
-                        {{ else }}
-                            {{ .Summary | truncate 300 }}
-                        {{ end }}
-                    </p>  */}}
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">{{ .Date | time.Format ":date_long" }}</small>
+                
+                <div class="card-footer bg-transparent border-0 px-4 pb-4 pt-0">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <small class="text-secondary-flat font-monospace small">
+                            <i class="far fa-calendar-alt me-2"></i>{{ .Date | time.Format ":date_long" }}
+                        </small>
+                        <span class="read-more-indicator-flat shadow-sm">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
                 </div>
             </div>
  

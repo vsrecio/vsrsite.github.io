@@ -1,0 +1,155 @@
+{{ define "main" }}
+<div id="blog-single" class="position-relative overflow-hidden" style="min-height: 100vh; padding-bottom: 60px;">
+   <!-- Background Auroras -->
+   <div class="aur aur-a" style="top:-100px; left:-120px; opacity: 0.25;"></div>
+   <div class="aur aur-b" style="bottom:100px; right:-180px; opacity: 0.15;"></div>
+   
+   <article class="sp position-relative" style="z-index: 2;">
+      <div class="container">
+         <div class="row justify-content-center">
+            <div class="col-lg-8">
+               
+               <!-- Volver a Artículos Button -->
+               <a href="/writing/" class="boc btn px-3 py-2 mb-4 d-inline-flex align-items-center gap-2" style="font-size: 0.85rem;">
+                  <i class="fa-solid fa-arrow-left"></i> Volver a Artículos
+               </a>
+               
+               <!-- Post Header -->
+               <header class="mb-4">
+                  <div class="d-flex flex-wrap gap-2 mb-3">
+                     {{ range .Params.tags }}
+                     <span style="font-size: 0.68rem; font-weight: 600; background: rgba(139, 92, 246, 0.12); color: #a78bfa; padding: 2px 8px; border-radius: 100px; border: 1px solid rgba(139, 92, 246, 0.2);">{{ . }}</span>
+                     {{ end }}
+                  </div>
+                  
+                  <h1 class="display-5 fw-bold mb-3" style="color: var(--tx); line-height: 1.15;">{{ .Title }}</h1>
+                  
+                  <div class="d-flex align-items-center gap-3 py-3 border-top border-bottom" style="border-color: var(--bd) !important;">
+                     <div class="db-avatar" style="width:40px; height:40px; font-size:0.9rem; border-radius:10px; background:var(--pur); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700;">
+                        {{ substr .Params.author 0 1 }}
+                     </div>
+                     <div>
+                        <div style="font-weight:600; font-size:0.9rem; color: var(--tx);">{{ .Params.author }}</div>
+                        <div style="font-size:0.75rem; color:var(--tx3);" class="d-flex align-items-center gap-2 flex-wrap">
+                           <span><i class="far fa-calendar me-1"></i> {{ .Date | time.Format ":date_long" }}</span>
+                           <span>·</span>
+                           <span><i class="far fa-clock me-1"></i> {{ .ReadingTime }} min de lectura</span>
+                           <span>·</span>
+                           <span><i class="far fa-eye me-1"></i> {{ len .Content | mul 3 | add 124 }} vistas</span>
+                        </div>
+                     </div>
+                  </div>
+               </header>
+               
+               <!-- Featured Image -->
+               {{ with .Params.image }}
+               <figure class="mb-5 rounded-4 overflow-hidden" style="border: 1px solid var(--bd);">
+                  <img class="img-fluid w-100" style="max-height: 480px; object-fit: cover;" src="{{ . | relURL }}" alt="Portada de {{ $.Title }}">
+               </figure>
+               {{ end }}
+               
+               <!-- Post Content -->
+               <section class="post-content" style="color: var(--tx); font-size: 1.05rem; line-height: 1.75;">
+                  {{ .Content }}
+               </section>
+               
+               <!-- Post Footer -->
+               <footer class="mt-5 pt-4 border-top" style="border-color: var(--bd) !important;">
+                  <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                     <div class="d-flex align-items-center gap-2">
+                        <span style="font-size: 0.85rem; color: var(--tx3);">Compartir en:</span>
+                        <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="boc btn p-2 d-inline-flex align-items-center justify-content-center" style="width: 32px; height: 32px; border-radius: 8px;" title="Compartir en Twitter/X">
+                           <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}" target="_blank" rel="noopener noreferrer" class="boc btn p-2 d-inline-flex align-items-center justify-content-center" style="width: 32px; height: 32px; border-radius: 8px;" title="Compartir en LinkedIn">
+                           <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                     </div>
+                     <a href="/writing/" class="boc btn px-3 py-2" style="font-size: 0.85rem;">
+                        <i class="fa-solid fa-chevron-left me-1"></i> Todos los Artículos
+                     </a>
+                  </div>
+               </footer>
+               
+            </div>
+         </div>
+      </div>
+   </article>
+</div>
+
+<!-- Custom Post Content Styling overrides -->
+<style>
+   .post-content h2, .post-content h3, .post-content h4 {
+      color: var(--tx);
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+   }
+   .post-content h2 { font-size: 1.6rem; }
+   .post-content h3 { font-size: 1.35rem; }
+   .post-content p {
+      margin-bottom: 1.5rem;
+      color: var(--tx);
+   }
+   .post-content strong {
+      color: var(--tx);
+   }
+   .post-content a {
+      color: var(--pur);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--pur);
+      transition: color 0.2s, border-color 0.2s;
+   }
+   .post-content a:hover {
+      color: #a78bfa;
+      border-bottom-style: solid;
+   }
+   .post-content ul, .post-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+   }
+   .post-content li {
+      margin-bottom: 0.5rem;
+   }
+   .post-content blockquote {
+      border-left: 4px solid var(--pur);
+      padding: 10px 20px;
+      margin: 1.5rem 0;
+      background: rgba(139, 92, 246, 0.05);
+      border-radius: 0 12px 12px 0;
+      font-style: italic;
+   }
+   .post-content blockquote p {
+      margin-bottom: 0;
+   }
+   .post-content pre {
+      background: var(--bg3) !important;
+      border: 1px solid var(--bd) !important;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+   }
+   .post-content code {
+      font-family: 'Space Grotesk', monospace;
+      font-size: 0.9rem;
+      color: var(--tx);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2px 6px;
+      border-radius: 4px;
+   }
+   .post-content pre code {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      color: inherit;
+   }
+   .post-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--bd);
+      margin: 1.5rem 0;
+   }
+</style>
+{{ end }}

@@ -1,67 +1,1102 @@
 {{ define "main" }}
+<div id="landing">
+   <!-- ======================== HERO & SRE DASHBOARD ======================== -->
+   <section id="hero">
+      <div class="aur aur-a" style="top:-80px;left:-120px"></div>
+      <div class="aur aur-b" style="top:180px;right:-180px"></div>
+      <div class="aur aur-a" style="bottom:-80px;left:45%;transform:translateX(-50%);opacity:.4"></div>
+      <div class="container position-relative" style="z-index:2">
+         <div class="text-center">
 
-<section class="section bg-body-tertiary py-5 text-center">
-  <div class="container">
-    <div class="col-lg-8 mx-auto">
-      <img class="d-block mx-auto mb-4" src="{{ `images/logo.svg` | relURL }}" width="150" height="150" alt="Logo de Victor S. Recio">
-      <h1 class="display-4 fw-bold mb-3">{{ .Site.Title }}</h1>
-      <p class="lead text-muted mb-4">{{ .Site.Params.Description }}</p>
+            <h1 class="h1 afu" style="animation-delay:.12s; font-weight: 800;">
+               Víctor S. Recio<br>
+               <span class="gt">Cloud Native Architect</span>
+            </h1>
+            <p class="mx-auto afu" style="max-width:620px;font-size:clamp(.95rem,1.8vw,1.2rem);color:var(--tx2);margin-bottom:36px;animation-delay:.2s">
+               Diseño arquitecturas de alta disponibilidad en AWS y Azure, despliego Kubernetes robustos en producción y entreno equipos de ingeniería de élite para optimizar su infraestructura al máximo.
+            </p>
+            <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap afu" style="animation-delay:.28s">
+               <a href="/cursos/" class="boc btn px-4 py-3 fs-6">
+                  <i class="fa-solid fa-briefcase me-2" style="color:var(--pur)"></i>Workshops
+               </a>
+               <a href="/cursos/#cursos" class="boc btn px-4 py-3 fs-6">
+                  <i class="fa-solid fa-graduation-cap me-2" style="color:var(--pur)"></i>Cursos
+               </a>
+            </div>
+            <div class="mt-5 afu" style="animation-delay:.4s">
+               <p style="font-size:.71rem;color:var(--tx3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px">Expertise en tecnologías líderes de la industria</p>
+               <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
+                   <span class="tlog">TOGAF &bull; BIAN</span>
+                   <span class="tlog">Sparx EA</span>
+                   <span class="tlog">Archi (Archimate)</span>
+                   <span class="tlog">AWS</span>
+                   <span class="tlog">Azure</span>
+                   <span class="tlog">GCP</span>
+                   <span class="tlog">Kubernetes</span>
+                   <span class="tlog">OpenShift</span>
+                   <span class="tlog">Rancher</span>
+                   <span class="tlog">Fedora CoreOS</span>
+                   <span class="tlog">Terraform (IaC)</span>
+                   <span class="tlog">Ansible</span>
+                   <span class="tlog">Golang</span>
+                   <span class="tlog">Linux</span>
+                   <span class="tlog">Docker</span>
+                   <span class="tlog">Falco</span>
+                   <span class="tlog">OPA (Policy)</span>
+                   <span class="tlog">Rook Ceph</span>
+                   <span class="tlog">ArgoCD</span>
+                   <span class="tlog">Prometheus</span>
+               </div>
+            </div>
+         </div>
+         
+         <!-- C4 Enterprise Architecture Studio Mockup -->
+         <div class="row justify-content-center mt-5">
+            <div class="col-lg-11 adi">
+               <div class="dwrap">
+                  <div class="dtbar">
+                     <span class="dd" style="background:#ff5f57"></span>
+                     <span class="dd" style="background:#ffbd2e"></span>
+                     <span class="dd" style="background:#28c840"></span>
+                     <span class="ms-auto me-auto" style="font-size:.76rem;color:var(--tx3)">Enterprise Architecture Studio – arch.recio.com/c4</span>
+                  </div>
+                  <div class="dgrid">
+                     <!-- Studio Sidebar Workspace -->
+                     <div class="dside">
+                        <div style="font-size:.60rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);padding:0 10px 10px;font-weight:700">Studio Workspace</div>
+                        <button class="dsi on" id="hero-btn-c4context" onclick="switchHeroArchTab('c4context')"><i class="fa-solid fa-sitemap"></i> C4 Context</button>
+                        <button class="dsi" id="hero-btn-c4container" onclick="switchHeroArchTab('c4container')"><i class="fa-solid fa-cubes"></i> C4 Containers</button>
+                        <button class="dsi" id="hero-btn-c4dsl" onclick="switchHeroArchTab('c4dsl')"><i class="fa-solid fa-code"></i> Arch as Code</button>
+                        <button class="dsi" id="hero-btn-c4gov" onclick="switchHeroArchTab('c4gov')"><i class="fa-solid fa-award"></i> Governance</button>
+                     </div>
+                     
+                     <!-- Studio Main Interactive Canvas -->
+                     <div class="p-3 w-100 position-relative" style="min-height: 290px; display:flex; flex-direction:column; justify-content:space-between;">
+                        
+                        <!-- 1. C4 CONTEXT PANE -->
+                        <div id="hero-pane-c4context" class="hero-arch-pane" style="display:block;">
+                           <svg viewBox="0 0 700 240" width="100%" height="100%" style="overflow:visible;">
+                             <defs>
+                               <linearGradient id="grad-user" x1="0%" y1="0%" x2="100%" y2="100%">
+                                 <stop offset="0%" stop-color="#8b5cf6" />
+                                 <stop offset="100%" stop-color="#6366f1" />
+                               </linearGradient>
+                               <linearGradient id="grad-core" x1="0%" y1="0%" x2="100%" y2="100%">
+                                 <stop offset="0%" stop-color="#10b981" />
+                                 <stop offset="100%" stop-color="#047857" />
+                               </linearGradient>
+                               <filter id="glow-pur" x="-20%" y="-20%" width="140%" height="140%">
+                                 <feGaussianBlur stdDeviation="6" result="blur" />
+                                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                               </filter>
+                             </defs>
+
+                             <!-- User Node -->
+                             <g transform="translate(20, 85)" class="svg-node" style="cursor:pointer;" onclick="showHeroArchTooltip('user')">
+                               <rect width="115" height="65" rx="8" fill="url(#grad-user)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" filter="url(#glow-pur)"/>
+                               <text x="57" y="28" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle" font-family="'Space Grotesk', sans-serif">Cliente Corp</text>
+                               <text x="57" y="44" fill="rgba(255,255,255,0.75)" font-size="8" text-anchor="middle" font-family="sans-serif">Cuentas y Pagos</text>
+                             </g>
+
+                             <!-- Flow line User -> API Gateway -->
+                             <path d="M135,117 L195,117" stroke="#8b5cf6" stroke-width="2" fill="none" stroke-dasharray="6,4" class="svg-flow"/>
+                             <polygon points="197,117 190,113 190,121" fill="#8b5cf6" />
+
+                             <!-- API Gateway Node -->
+                             <g transform="translate(205, 85)" class="svg-node" style="cursor:pointer;" onclick="showHeroArchTooltip('gateway')">
+                               <rect width="125" height="65" rx="8" fill="var(--bg3)" stroke="#3b82f6" stroke-width="1.5"/>
+                               <rect width="125" height="65" rx="8" fill="rgba(59,130,246,0.06)"/>
+                               <text x="62" y="26" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle" font-family="'Space Grotesk', sans-serif">API Gateway</text>
+                               <text x="62" y="40" fill="#60a5fa" font-size="8" font-weight="600" text-anchor="middle" font-family="monospace">FastAPI / Proxy</text>
+                               <text x="62" y="52" fill="var(--tx3)" font-size="7" text-anchor="middle" font-family="sans-serif">Rate Limiting &amp; JWT</text>
+                             </g>
+
+                             <!-- Flow line Gateway -> Core Banking -->
+                             <path d="M330,117 L390,117" stroke="#34d399" stroke-width="2" fill="none" stroke-dasharray="6,4" class="svg-flow-green"/>
+                             <polygon points="392,117 385,113 385,121" fill="#34d399" />
+
+                             <!-- Core Banking Node -->
+                             <g transform="translate(400, 85)" class="svg-node" style="cursor:pointer;" onclick="showHeroArchTooltip('core')">
+                               <rect width="125" height="65" rx="8" fill="url(#grad-core)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                               <text x="62" y="26" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle" font-family="'Space Grotesk', sans-serif">Core Banking</text>
+                               <text x="62" y="40" fill="rgba(255,255,255,0.85)" font-size="8" text-anchor="middle" font-family="sans-serif">Microservicios K8s</text>
+                               <text x="62" y="52" fill="rgba(255,255,255,0.65)" font-size="7" text-anchor="middle" font-family="monospace">Go / Django / Kafka</text>
+                             </g>
+
+                             <!-- Connectors from Core Banking to Database & External API -->
+                             <path d="M462,85 L462,45 L545,45" stroke="#fbbf24" stroke-width="1.2" fill="none" stroke-dasharray="4,3"/>
+                             <polygon points="547,45 540,41 540,49" fill="#fbbf24" />
+
+                             <path d="M462,150 L462,190 L545,190" stroke="#60a5fa" stroke-width="1.2" fill="none" stroke-dasharray="4,3"/>
+                             <polygon points="547,190 540,186 540,194" fill="#60a5fa" />
+
+                             <!-- External Payment API Node -->
+                             <g transform="translate(555, 15)" class="svg-node" style="cursor:pointer;" onclick="showHeroArchTooltip('stripe')">
+                               <rect width="115" height="55" rx="6" fill="var(--bg3)" stroke="#fbbf24" stroke-width="1.2"/>
+                               <text x="57" y="24" fill="#fff" font-size="9" font-weight="700" text-anchor="middle" font-family="'Space Grotesk', sans-serif">Stripe / Pagos</text>
+                               <text x="57" y="36" fill="var(--tx3)" font-size="7" text-anchor="middle" font-family="sans-serif">Pasarela Externa</text>
+                               <text x="57" y="46" fill="#fbbf24" font-size="7" font-weight="600" text-anchor="middle" font-family="monospace">REST API / HTTPS</text>
+                             </g>
+
+                             <!-- Database Storage Node -->
+                             <g transform="translate(555, 160)" class="svg-node" style="cursor:pointer;" onclick="showHeroArchTooltip('db')">
+                               <rect width="115" height="55" rx="6" fill="var(--bg3)" stroke="#60a5fa" stroke-width="1.2"/>
+                               <text x="57" y="24" fill="#fff" font-size="9" font-weight="700" text-anchor="middle" font-family="'Space Grotesk', sans-serif">PostgreSQL</text>
+                               <text x="57" y="36" fill="var(--tx3)" font-size="7" text-anchor="middle" font-family="sans-serif">Clúster HA Transac.</text>
+                               <text x="57" y="46" fill="#60a5fa" font-size="7" font-weight="600" text-anchor="middle" font-family="monospace">Multi-AZ / ACID</text>
+                             </g>
+                           </svg>
+                        </div>
+                        
+                        <!-- 2. C4 CONTAINER PANE -->
+                        <div id="hero-pane-c4container" class="hero-arch-pane" style="display:none;">
+                           <svg viewBox="0 0 700 240" width="100%" height="100%" style="overflow:visible;">
+                             <!-- Ingress Gateway -->
+                             <g transform="translate(15, 85)" class="svg-node" style="cursor:pointer;" onclick="showHeroArchTooltip('ingress')">
+                               <rect width="110" height="65" rx="6" fill="var(--bg3)" stroke="#60a5fa" stroke-width="1.5"/>
+                               <text x="55" y="26" fill="#fff" font-size="10" font-weight="700" text-anchor="middle" font-family="'Space Grotesk', sans-serif">Istio Ingress</text>
+                               <text x="55" y="40" fill="#60a5fa" font-size="7.5" font-weight="600" text-anchor="middle" font-family="monospace">Service Mesh</text>
+                               <text x="55" y="52" fill="var(--tx3)" font-size="7" text-anchor="middle">mTLS / Canary Routing</text>
+                             </g>
+
+                             <path d="M125,117 L165,117" stroke="#60a5fa" stroke-width="1.2" fill="none" stroke-dasharray="3,3"/>
+                             <polygon points="167,117 160,113 160,121" fill="#60a5fa"/>
+
+                             <!-- Auth Service -->
+                             <g transform="translate(175, 15)" class="svg-node" style="cursor:pointer;" onclick="showHeroArchTooltip('auth')">
+                               <rect width="120" height="60" rx="6" fill="var(--bg3)" stroke="#8b5cf6" stroke-width="1.2"/>
+                               <text x="60" y="22" fill="#fff" font-size="9.5" font-weight="700" text-anchor="middle" font-family="'Space Grotesk', sans-serif">Auth Service</text>
+                               <text x="60" y="35" fill="#a78bfa" font-size="7.5" font-weight="600" text-anchor="middle" font-family="monospace">Go Container</text>
+                               <text x="60" y="46" fill="var(--tx3)" font-size="7" text-anchor="middle">OIDC / JWT Validation</text>
+                             </g>
+
+                             <!-- Transaction Service -->
+                             <g transform="translate(175, 160)" class="svg-node" style="cursor:pointer;" onclick="showHeroArchTooltip('tx_engine')">
+                               <rect width="120" height="60" rx="6" fill="var(--bg3)" stroke="#34d399" stroke-width="1.2"/>
+                               <text x="60" y="22" fill="#fff" font-size="9.5" font-weight="700" text-anchor="middle" font-family="'Space Grotesk', sans-serif">Tx Engine</text>
+                               <text x="60" y="35" fill="#34d399" font-size="7.5" font-weight="600" text-anchor="middle" font-family="monospace">Django / FastAPI</text>
+                               <text x="60" y="46" fill="var(--tx3)" font-size="7" text-anchor="middle">Patrón CQRS / ACID</text>
+                             </g>
+
+                             <!-- Connectors from Ingress to services -->
+                             <path d="M70,85 L70,45 L170,45" stroke="#60a5fa" stroke-width="1.2" fill="none" stroke-dasharray="3,3"/>
+                             <polygon points="172,45 165,42 165,48" fill="#60a5fa"/>
+
+                             <path d="M70,150 L70,190 L170,190" stroke="#60a5fa" stroke-width="1.2" fill="none" stroke-dasharray="3,3"/>
+                             <polygon points="172,190 165,187 165,193" fill="#60a5fa"/>
+
+                             <!-- Flow from Tx Engine to Kafka -->
+                             <path d="M295,190 L345,190" stroke="#34d399" stroke-width="1.5" fill="none" stroke-dasharray="5,3" class="svg-flow-green"/>
+                             <polygon points="347,190 340,186 340,194" fill="#34d399"/>
+
+                             <!-- Apache Kafka -->
+                             <g transform="translate(355, 160)" class="svg-node" style="cursor:pointer;" onclick="showHeroArchTooltip('kafka')">
+                               <rect width="115" height="60" rx="6" fill="var(--bg3)" stroke="#fbbf24" stroke-width="1.2"/>
+                               <text x="57" y="22" fill="#fff" font-size="9.5" font-weight="700" text-anchor="middle" font-family="'Space Grotesk', sans-serif">Apache Kafka</text>
+                               <text x="57" y="35" fill="#fbbf24" font-size="7.5" font-weight="600" text-anchor="middle" font-family="monospace">Event Stream</text>
+                               <text x="57" y="46" fill="var(--tx3)" font-size="7" text-anchor="middle">Async Broker / Events</text>
+                             </g>
+
+                             <!-- Flow Kafka -> n8n automation -->
+                             <path d="M470,190 L520,190" stroke="#fbbf24" stroke-width="1.5" fill="none" stroke-dasharray="5,3" class="svg-flow"/>
+                             <polygon points="522,190 515,186 515,194" fill="#fbbf24"/>
+
+                             <!-- n8n Automation Engine -->
+                             <g transform="translate(530, 160)" class="svg-node" style="cursor:pointer;" onclick="showHeroArchTooltip('n8n')">
+                               <rect width="120" height="60" rx="6" fill="var(--bg3)" stroke="#a78bfa" stroke-width="1.2"/>
+                               <text x="60" y="22" fill="#fff" font-size="9.5" font-weight="700" text-anchor="middle" font-family="'Space Grotesk', sans-serif">n8n Automation</text>
+                               <text x="60" y="35" fill="#a78bfa" font-size="7.5" font-weight="600" text-anchor="middle" font-family="monospace">Integration Node</text>
+                               <text x="60" y="46" fill="var(--tx3)" font-size="7" text-anchor="middle">Webhooks / WhatsApp</text>
+                             </g>
+
+                             <!-- Flow Auth/Tx to Database -->
+                             <path d="M295,45 L490,45 L490,82" stroke="#8b5cf6" stroke-width="1.2" fill="none" stroke-dasharray="3,3"/>
+                             <polygon points="490,85 486,78 494,78" fill="#8b5cf6"/>
+
+                             <path d="M412,160 L412,120 M490,160 L490,120" stroke="#fbbf24" stroke-width="1.2" fill="none" stroke-dasharray="3,3"/>
+
+                             <!-- PostgreSQL database cluster -->
+                             <g transform="translate(385, 85)" class="svg-node" style="cursor:pointer;" onclick="showHeroArchTooltip('db_container')">
+                               <rect width="135" height="30" rx="4" fill="var(--bg3)" stroke="#60a5fa" stroke-width="1.2"/>
+                               <text x="67" y="19" fill="#fff" font-size="8.5" font-weight="700" text-anchor="middle" font-family="'Space Grotesk', sans-serif">Postgres Clúster (HA)</text>
+                             </g>
+                           </svg>
+                        </div>
+                        
+                        <!-- 3. ARCHITECTURE AS CODE (DSL) PANE -->
+                        <div id="hero-pane-c4dsl" class="hero-arch-pane" style="display:none; height:100%;">
+                           <div class="row g-2 h-100" style="min-height: 180px;">
+                             <!-- Left Side: Interactive Code Editor -->
+                             <div class="col-sm-6">
+                                <div style="background:#050510; border:1px solid var(--bd2); border-radius:8px; padding:10px; height:100%; font-family:monospace; font-size:.65rem; color:#a78bfa; overflow-y:auto; line-height:1.35; text-align:left;">
+                                   <div style="color:var(--tx3); font-weight:600; margin-bottom:6px; display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:4px;">
+                                     <span><i class="fa-solid fa-code me-1" style="color:var(--pur);"></i> structurizr.dsl</span>
+                                     <span style="color:#34d399;"><i class="fa-solid fa-circle fa-2xs animate-pulse"></i> Editable</span>
+                                   </div>
+                                   <span style="color:#ff79c6;">workspace</span> <span style="color:#f1fa8c;">"BancoCore"</span> {<br>
+                                   &nbsp;&nbsp;<span style="color:#ff79c6;">model</span> {<br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;user = <span style="color:#8be9fd;">person</span> <span style="color:#f1fa8c;">"Cliente"</span> <span style="color:#6272a4;">"Acceso web/móvil"</span><br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;api = <span style="color:#8be9fd;">softwareSystem</span> <span style="color:#f1fa8c;">"API Gateway"</span> {<br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;technology <span style="color:#f1fa8c;">"FastAPI / Proxy"</span><br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;core = <span style="color:#8be9fd;">softwareSystem</span> <span style="color:#f1fa8c;">"Core Banking"</span> {<br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;technology <span style="color:#f1fa8c;">"K8s Microservices"</span><br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#6272a4;">// Relaciones declarativas</span><br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;user -> api <span style="color:#f1fa8c;">"HTTPS"</span><br>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;api -> core <span style="color:#f1fa8c;">"gRPC / mTLS"</span><br>
+                                   &nbsp;&nbsp;}<br>
+                                   }
+                                </div>
+                             </div>
+                             <!-- Right Side: SVG Auto-rendered Visual Preview -->
+                             <div class="col-sm-6 d-flex align-items-center justify-content-center">
+                                <div style="background:var(--bg3); border:1px solid var(--bd); border-radius:8px; padding:10px; height:100%; width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative;">
+                                   <span style="font-size: .55rem; color: var(--tx3); text-transform: uppercase; font-weight:700; position:absolute; top:6px; left:6px;"><i class="fa-solid fa-eye me-1"></i>Live Preview</span>
+                                   <svg viewBox="0 0 300 130" width="100%" height="80%" style="overflow:visible;">
+                                     <!-- Node User -->
+                                     <rect x="15" y="45" width="55" height="35" rx="4" fill="#8b5cf6" opacity="0.8"/>
+                                     <text x="42" y="66" fill="#fff" font-size="7" font-weight="700" text-anchor="middle" font-family="sans-serif">Cliente</text>
+                                     
+                                     <!-- Connector -->
+                                     <path d="M70,62 L105,62" stroke="#8b5cf6" stroke-width="1" fill="none" stroke-dasharray="3,2"/>
+                                     <polygon points="107,62 102,60 102,64" fill="#8b5cf6"/>
+
+                                     <!-- Node API Gateway -->
+                                     <rect x="110" y="45" width="65" height="35" rx="4" fill="#3b82f6" opacity="0.8"/>
+                                     <text x="142" y="62" fill="#fff" font-size="6.5" font-weight="700" text-anchor="middle" font-family="sans-serif">API Gateway</text>
+                                     <text x="142" y="70" fill="rgba(255,255,255,0.7)" font-size="4.5" text-anchor="middle" font-family="monospace">FastAPI</text>
+
+                                     <!-- Connector -->
+                                     <path d="M175,62 L210,62" stroke="#34d399" stroke-width="1" fill="none" stroke-dasharray="3,2"/>
+                                     <polygon points="212,62 207,60 207,64" fill="#34d399"/>
+
+                                     <!-- Node Core Banking -->
+                                     <rect x="215" y="45" width="55" height="35" rx="4" fill="#10b981" opacity="0.8"/>
+                                     <text x="242" y="66" fill="#fff" font-size="6.5" font-weight="700" text-anchor="middle" font-family="sans-serif">Core K8s</text>
+                                   </svg>
+                                   <span style="font-size: .52rem; color: #34d399; margin-top:2px;"><i class="fa-solid fa-rotate me-1 animate-spin"></i>Sincronizado desde DSL</span>
+                                </div>
+                             </div>
+                           </div>
+                        </div>
+                        
+                        <!-- 4. GOVERNANCE PANE -->
+                        <div id="hero-pane-c4gov" class="hero-arch-pane" style="display:none; text-align:left;">
+                           <div class="row g-2">
+                             <div class="col-6 col-sm-3">
+                                <div class="stpill text-center" style="background:var(--bg3); border:1px solid var(--bd); border-radius:8px; padding:10px;">
+                                   <div style="font-size:1.05rem;font-weight:700; color:var(--pur);">TOGAF</div>
+                                   <div style="font-size:.6rem;color:var(--tx3)">ADM Framework</div>
+                                   <div style="font-size:.58rem;color:#34d399;font-weight:600;"><i class="fa-solid fa-circle-check me-1"></i>Fase G OK</div>
+                                </div>
+                             </div>
+                             <div class="col-6 col-sm-3">
+                                <div class="stpill text-center" style="background:var(--bg3); border:1px solid var(--bd); border-radius:8px; padding:10px;">
+                                   <div style="font-size:1.05rem;font-weight:700; color:#34d399;">BIAN</div>
+                                   <div style="font-size:.6rem;color:var(--tx3)">Service Domain</div>
+                                   <div style="font-size:.58rem;color:#34d399;font-weight:600;"><i class="fa-solid fa-check me-1"></i>Aliniado</div>
+                                </div>
+                             </div>
+                             <div class="col-6 col-sm-3">
+                                <div class="stpill text-center" style="background:var(--bg3); border:1px solid var(--bd); border-radius:8px; padding:10px;">
+                                   <div style="font-size:1.05rem;font-weight:700; color:#60a5fa;">ATAM</div>
+                                   <div style="font-size:.6rem;color:var(--tx3)">Risk Mitigation</div>
+                                   <div style="font-size:.58rem;color:#60a5fa;font-weight:600;"><i class="fa-solid fa-shield me-1"></i>100% Mitig.</div>
+                                </div>
+                             </div>
+                             <div class="col-6 col-sm-3">
+                                <div class="stpill text-center" style="background:var(--bg3); border:1px solid var(--bd); border-radius:8px; padding:10px;">
+                                   <div style="font-size:1.05rem;font-weight:700; color:#fbbf24;">C4 Model</div>
+                                   <div style="font-size:.6rem;color:var(--tx3)">Governance Maps</div>
+                                   <div style="font-size:.58rem;color:#34d399;font-weight:600;"><i class="fa-solid fa-eye me-1"></i>Visualizado</div>
+                                </div>
+                             </div>
+                           </div>
+
+                           <div style="background:var(--bg3); border:1px solid var(--bd); border-radius:8px; padding:10px; margin-top:8px;">
+                             <div style="font-size:.68rem; color:var(--tx3); font-weight:600; margin-bottom:4px;"><i class="fa-solid fa-gavel me-1" style="color:#fbbf24;"></i>Políticas de Gobernanza Activas (Architecture as Code)</div>
+                             <div style="display:flex; flex-direction:column; gap:2px; font-size:.62rem; color:var(--tx2); line-height: 1.35;">
+                               <div><i class="fa-solid fa-circle-check text-success me-2" style="font-size:.6rem;"></i><strong>SEC-01:</strong> Tránsito obligado por Ingress Gateway con validación mTLS estricta.</div>
+                               <div><i class="fa-solid fa-circle-check text-success me-2" style="font-size:.6rem;"></i><strong>DAT-03:</strong> Cifrado de datos en reposo (AES-256) en Postgres y AWS S3.</div>
+                               <div><i class="fa-solid fa-circle-check text-success me-2" style="font-size:.6rem;"></i><strong>RES-05:</strong> Despliegue Multi-AZ activo en Kubernetes con tolerancia a fallos.</div>
+                             </div>
+                           </div>
+                        </div>
+                        
+                        <!-- TOOLTIP EXPLANATION BOX -->
+                        <div id="hero-arch-tooltip" style="margin-top: 8px; background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.15); border-radius: 8px; padding: 8px 12px; font-size: 0.70rem; line-height: 1.4; min-height: 44px; transition: .3s; display: flex; align-items: center; gap: 8px; text-align: left;">
+                          <i class="fa-solid fa-circle-info" style="color:var(--pur); font-size:1rem; flex-shrink:0;"></i>
+                          <span id="hero-arch-tooltip-text" style="color: var(--tx2);">Haz clic en cualquier nodo de la arquitectura para inspeccionar sus especificaciones técnicas y patrones de gobernanza.</span>
+                        </div>
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+          </div>
+       </div>
+    </section>
+   <!-- ======================== THE PROBLEM (DevOps/SRE) ======================== -->
+   <section class="sp position-relative">
+      <div class="aur aur-b" style="top:50%;right:-200px;transform:translateY(-50%)"></div>
+      <div class="container position-relative" style="z-index:1">
+         <div class="text-center mb-5 rv">
+            <span class="slbl">El Diagnóstico</span>
+            <h2 class="stitle">La infraestructura tradicional <span class="gt">está rota</span></h2>
+            <p class="ssub mx-auto">Escalar sin automatización es una trampa que ralentiza a tus desarrolladores e infla tu factura cloud.</p>
+         </div>
+         <div class="row g-4">
+            <div class="col-md-4 rv">
+               <div class="gc p-4 h-100">
+                  <div style="width:52px;height:52px;border-radius:14px;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.2);display:flex;align-items:center;justify-content:center;margin-bottom:18px"><i class="fa-regular fa-clock fa-lg" style="color:#f87171"></i></div>
+                  <h3 class="fw-semibold fs-5 mb-2">Downtime y Caídas Inesperadas</h3>
+                  <p style="font-size:.875rem;color:var(--tx2)">Cada minuto de inactividad cuesta reputación y facturación. Diseñar arquitecturas tolerantes a fallos (Multi-AZ, Failover) es crucial para la viabilidad del negocio.</p>
+               </div>
+            </div>
+            <div class="col-md-4 rv" style="transition-delay:.1s">
+               <div class="gc p-4 h-100">
+                  <div style="width:52px;height:52px;border-radius:14px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.2);display:flex;align-items:center;justify-content:center;margin-bottom:18px"><i class="fa-solid fa-dollar-sign fa-lg" style="color:#fbbf24"></i></div>
+                  <h3 class="fw-semibold fs-5 mb-2">Costes Cloud Descontrolados</h3>
+                  <p style="font-size:.875rem;color:var(--tx2)">Hacer "lift and shift" a la nube sin optimizar orquestación gasta una fortuna. El autoescalado y la correcta asignación de límites reducen gastos de forma contundente.</p>
+               </div>
+            </div>
+            <div class="col-md-4 rv" style="transition-delay:.2s">
+               <div class="gc p-4 h-100">
+                  <div style="width:52px;height:52px;border-radius:14px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.2);display:flex;align-items:center;justify-content:center;margin-bottom:18px"><i class="fa-solid fa-plug fa-lg" style="color:#a78bfa"></i></div>
+                  <h3 class="fw-semibold fs-5 mb-2">Despliegues Manuales y Lentos</h3>
+                  <p style="font-size:.875rem;color:var(--tx2)">Tu equipo pasa horas configurando clústeres manualmente o depurando scripts obsoletos. Implementar Infraestructura como Código (IaC) e GitOps desbloquea releases diarias.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+
+   <!-- ======================== ARCHITECTURAL GOVERNANCE & AAC ======================== -->
+   <section id="architecture" class="sp position-relative">
+      <div class="aur aur-a" style="bottom:-100px; left:50%; transform:translateX(-50%); opacity:.2;"></div>
+      <div class="container position-relative" style="z-index:2">
+         <div class="text-center mb-5 rv">
+            <span class="slbl">Architectural Governance</span>
+            <h2 class="stitle">Enterprise Architecture &amp; <span class="gt">Architecture as Code</span></h2>
+            <p class="ssub mx-auto">Frameworks, metodologías y modelado visual para alinear la tecnología con la junta directiva y habilitar equipos técnicos de alto impacto.</p>
+         </div>
+         
+         <!-- Custom Tabs Switch -->
+         <div class="d-flex justify-content-center mb-5 rv">
+            <div class="tab-switch" style="background:var(--bg3); display:flex; padding:4px; border-radius:10px; border:1px solid var(--bd);">
+               <button class="tab-sw-btn on px-4 py-2" id="btn-arch-frameworks" onclick="switchArchTab('frameworks')" style="border-radius:8px;">Frameworks &amp; Governance</button>
+               <button class="tab-sw-btn px-4 py-2" id="btn-arch-modeling" onclick="switchArchTab('modeling')" style="border-radius:8px;">Visual Modeling</button>
+               <button class="tab-sw-btn px-4 py-2" id="btn-arch-aac" onclick="switchArchTab('aac')" style="border-radius:8px;">Architecture as Code (AaC)</button>
+            </div>
+         </div>
+         
+         <!-- Tab Content Panels -->
+         <!-- 1. Frameworks & Governance -->
+         <div class="arch-pane row g-3" id="pane-arch-frameworks">
+            <!-- TOGAF -->
+            <div class="col-md-6 col-lg-4 rv">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-gem" style="color:var(--pur);"></i> TOGAF
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0"><strong>The Open Group Architecture Framework</strong>: El estándar de oro para la Arquitectura Empresarial. Esencial para gestionar el método de desarrollo de arquitectura (ADM), gobernanza y alineación estratégica en grandes corporaciones.</p>
+               </div>
+            </div>
+            <!-- BIAN -->
+            <div class="col-md-6 col-lg-4 rv" style="transition-delay:.05s">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-piggy-bank" style="color:#34d399;"></i> BIAN
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0"><strong>Banking Industry Architecture Network</strong>: Crítico para el sector financiero. Define la arquitectura de servicios bancarios estándar, promoviendo la interoperabilidad y el diseño de microservicios bancarios limpios.</p>
+               </div>
+            </div>
+            <!-- Modelo C4 -->
+            <div class="col-md-6 col-lg-4 rv" style="transition-delay:.1s">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-cubes-stacked" style="color:#60a5fa;"></i> Modelo C4
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0">El estándar moderno y minimalista para documentar software. Jerarquía en cuatro niveles: Contexto, Contenedores, Componentes y Código. Puente ideal entre desarrollo y arquitectura.</p>
+               </div>
+            </div>
+            <!-- Zachman Framework -->
+            <div class="col-md-6 col-lg-4 rv" style="transition-delay:.15s">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-table" style="color:#fbbf24;"></i> Zachman Framework
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0">Ontología formal que organiza las perspectivas del diseño empresarial con preguntas clave (Qué, Cómo, Dónde, Quién, Cuándo, Por qué) cruzadas con roles corporativos.</p>
+               </div>
+            </div>
+            <!-- Domain-Driven Design (DDD) -->
+            <div class="col-md-6 col-lg-4 rv" style="transition-delay:.2s">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-arrows-to-dot" style="color:#a78bfa;"></i> Domain-Driven Design (DDD)
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0">Modelado complejo centrado en el negocio. Conceptos como Bounded Contexts, Aggregates y Ubiquitous Language son vitales para diseñar microservicios desacoplados con éxito.</p>
+               </div>
+            </div>
+            <!-- ATAM -->
+            <div class="col-md-6 col-lg-4 rv" style="transition-delay:.25s">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-chart-pie" style="color:#f87171;"></i> ATAM Method
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0"><strong>Architecture Tradeoff Analysis Method</strong>: Evaluación rigurosa de decisiones basadas en atributos de calidad (seguridad, escalabilidad, resiliencia) para mitigar riesgos antes del desarrollo.</p>
+               </div>
+            </div>
+         </div>
+         
+         <!-- 2. Visual Modeling -->
+         <div class="arch-pane row g-3" id="pane-arch-modeling" style="display:none;">
+            <!-- Sparx Systems Enterprise Architect -->
+            <div class="col-md-6 col-lg-3 rv">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-layer-group" style="color:var(--pur);"></i> Sparx EA
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0"><strong>Enterprise Architect</strong>: Plataforma potente para modelado UML, SysML, procesos de negocio (BPMN) y soporte nativo para frameworks corporativos como TOGAF y BIAN.</p>
+               </div>
+            </div>
+            <!-- Archimate -->
+            <div class="col-md-6 col-lg-3 rv" style="transition-delay:.05s">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-sitemap" style="color:#34d399;"></i> Archimate (Archi)
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0">Lenguaje estándar visual de The Open Group. Mapea de forma clara cómo la infraestructura tecnológica (nube/contenedores) soporta las aplicaciones y procesos de negocio.</p>
+               </div>
+            </div>
+            <!-- Visual Paradigm -->
+            <div class="col-md-6 col-lg-3 rv" style="transition-delay:.1s">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-circle-nodes" style="color:#60a5fa;"></i> Visual Paradigm
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0">Suite avanzada para diagramas de arquitectura, bases de datos y procesos de negocio, con capacidades de ingeniería inversa y generación de código.</p>
+               </div>
+            </div>
+            <!-- Camunda / Signavio -->
+            <div class="col-md-6 col-lg-3 rv" style="transition-delay:.15s">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-gears" style="color:#fbbf24;"></i> Camunda / Signavio
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0">Modelado y orquestación avanzada de procesos automatizados de negocio (BPMN), fundamentales en arquitecturas orientadas a servicios (SOA).</p>
+               </div>
+            </div>
+         </div>
+         
+         <!-- 3. Architecture as Code (AaC) -->
+         <div class="arch-pane row g-3" id="pane-arch-aac" style="display:none;">
+            <!-- PlantUML -->
+            <div class="col-md-6 col-lg-4 rv">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-code" style="color:var(--pur);"></i> PlantUML
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0">Definición clásica de diagramas basados en texto. Permite crear diagramas UML, esquemas de red y flujos secuenciales complejos mediante código declarativo simple.</p>
+               </div>
+            </div>
+            <!-- Mermaid.js -->
+            <div class="col-md-6 col-lg-4 rv" style="transition-delay:.05s">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-diagram-project" style="color:#34d399;"></i> Mermaid.js
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0">Renderizado de diagramas de texto de forma nativa en markdown. Opción ágil y preferida por equipos de desarrollo modernos por su integración directa en repositorios Git.</p>
+               </div>
+            </div>
+            <!-- Structurizr -->
+            <div class="col-md-6 col-lg-4 rv" style="transition-delay:.1s">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-sliders" style="color:#60a5fa;"></i> Structurizr
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0"><strong>C4 as Code</strong>: Implementación de diagramación C4 mediante código (Java, .NET, Python o DSL). Genera múltiples vistas consistentes y actualizadas de manera automática.</p>
+               </div>
+            </div>
+            <!-- Diagrams Python -->
+            <div class="col-md-6 col-lg-6 rv" style="transition-delay:.15s">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-brands fa-python" style="color:#fbbf24;"></i> Diagrams (Python)
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0">Framework moderno para dibujar infraestructuras en la nube mediante código Python puro. Soporta nodos nativos de Kubernetes, AWS, Azure y Google Cloud con una estética minimalista.</p>
+               </div>
+            </div>
+            <!-- D2 -->
+            <div class="col-md-6 col-lg-6 rv" style="transition-delay:.2s">
+               <div class="gc p-4 h-100">
+                  <div style="font-size:1.15rem; font-weight:700; color:var(--tx); margin-bottom:8px;" class="d-flex align-items-center gap-2">
+                     <i class="fa-solid fa-shapes" style="color:#f87171;"></i> D2 (Declarative Diagramming)
+                  </div>
+                  <p style="font-size:.85rem; color:var(--tx2); line-height:1.6;" class="mb-0">Lenguaje moderno y declarativo que compila texto en diagramas vectoriales (SVG). Posee un motor inteligente de auto-layout y diseño impecable idóneo para presentaciones ejecutivas.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- ======================== CONFERENCIAS & CHARLAS ======================== -->
+   {{ with .Site.Data.conferencias }}
+   <section id="conferencias" class="sp">
+      <div class="container">
+         <div class="text-center mb-5 rv">
+            <span class="slbl">Conferencias</span>
+            <h2 class="stitle">Charlas y <span class="gt">presentaciones técnicas</span></h2>
+            <p class="ssub mx-auto">Divulgando sobre infraestructura cloud, seguridad de contenedores y orquestación resiliente en comunidades globales.</p>
+         </div>
+         <div class="row g-4 justify-content-center">
+            {{ range first 6 . }}
+            <div class="col-lg-4 col-md-6 d-flex rv">
+               <div class="card h-100 gc border-0 overflow-hidden w-100 rounded-4 transition-all">
+                  <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" style="display:block; position:relative; overflow:hidden; aspect-ratio: 16/9; background:#000;">
+                     <img src="{{ .thumbnail }}" class="w-100 h-100" style="object-fit: cover; transition: .4s; filter: opacity(0.85);" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='none'" onmouseout="this.style.transform='scale(1)'; this.style.filter='opacity(0.85)'" alt="Charla Víctor S. Recio">
+                     <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.6), transparent); pointer-events:none;"></div>
+                     <!-- Play Icon Overlay -->
+                     <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:48px; height:48px; border-radius:50%; background:var(--grad); display:flex; align-items:center; justify-content:center; color:#fff; box-shadow: 0 4px 15px rgba(139,92,246,0.4);"><i class="fa-solid fa-play"></i></div>
+                  </a>
+                  <div class="p-3 d-flex flex-column justify-content-between" style="background:var(--sf); flex:1;">
+                     <div style="font-size:.73rem; font-weight:600; color:var(--pur); text-transform:uppercase; letter-spacing:.08em; margin-bottom:6px;"><i class="fa-solid fa-video me-1"></i>Charla en vivo</div>
+                     <h4 style="font-size: .95rem; font-weight:700; color:var(--tx); margin:0;">Orquestación y DevOps SRE</h4>
+                  </div>
+               </div>
+            </div>
+            {{ end }}
+         </div>
+      </div>
+   </section>
+   {{ end }}
+
+   <!-- ======================== BLOG / ARTÍCULOS ======================== -->
+   <section id="blog" class="sp">
+      <div class="container">
+         <div class="text-center mb-5 rv">
+            <span class="slbl">Artículos técnicos</span>
+            <h2 class="stitle">Desde el <span class="gt">Blog SRE</span></h2>
+            <p class="ssub mx-auto">Comparto tutoriales avanzados, guías prácticas y análisis técnicos profundos sobre DevOps y Kubernetes.</p>
+         </div>
+         <div class="row g-4 justify-content-center">
+            {{ range first 3 (where .Site.RegularPages.ByDate.Reverse "Section" "writing" ) }}
+            <div class="col-lg-4 col-md-6 d-flex rv">
+               <div class="card gc border-0 w-100 rounded-4 overflow-hidden transition-all d-flex flex-column justify-content-between">
+                  <div>
+                     {{ with .Params.thumbnail }}
+                     <div style="overflow:hidden; position:relative; aspect-ratio: 16/9; background:#000;">
+                        <img src="{{ . | relURL }}" class="w-100 h-100" style="object-fit: cover;" alt="{{ $.Title }}">
+                     </div>
+                     {{ end }}
+                     <div class="p-4">
+                        <div style="font-size:.73rem; font-weight:600; color:var(--pur); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px;">
+                           <span style="background: rgba(139, 92, 246, 0.12); padding: 3px 10px; border-radius: 100px; border: 1px solid rgba(139, 92, 246, 0.2)">Artículo</span>
+                        </div>
+                        <h4 style="font-size: 1.15rem; font-weight:700; line-height: 1.35; margin-bottom:12px;">
+                           <a class="stretched-link text-decoration-none" href="{{ .RelPermalink }}" style="color:var(--tx); transition:.2s;" onmouseover="this.style.color='var(--pur)'" onmouseout="this.style.color='var(--tx)'">
+                              {{ .Title }}
+                           </a>
+                        </h4>
+                        <div style="font-size:.85rem; color:var(--tx); margin:0;">
+                           {{ .Summary | plainify | truncate 130 }}
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <div class="p-4 pt-0" style="border-top:1px solid var(--bd);">
+                     <div class="d-flex align-items-center justify-content-between">
+                        <small style="font-size:.78rem; color:var(--tx3);" class="d-flex align-items-center gap-3">
+                           <span><i class="far fa-calendar-alt me-1"></i>{{ .Date | time.Format "02/01/2006" }}</span>
+                           <span><i class="far fa-eye me-1"></i>{{ len .Content | mul 3 | add 124 }}</span>
+                        </small>
+                        <span style="width:28px; height:28px; border-radius:50%; background:var(--bg3); display:inline-flex; align-items:center; justify-content:center; color:var(--tx2); transition:.3s;" class="arrow-ind"><i class="fas fa-arrow-right fa-sm"></i></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            {{ end }}
+         </div>
+         <div class="text-center mt-5">
+            <a href="/writing/" class="btn bgrd px-4 py-3">Ver Todos los Artículos <i class="fa-solid fa-arrow-right ms-2 fa-sm"></i></a>
+         </div>
+      </div>
+   </section>
+
+   <!-- ======================== FINAL CALL TO ACTION ======================== -->
+   <section id="cta" class="sp position-relative">
+                  <div class="container position-relative" style="z-index:2">
+         <div class="text-center rv">
+            <span class="hbadge mb-4 d-inline-flex"><span class="bdot"></span>Alta Disponibilidad y Automatización</span>
+            <h2 style="font-size:clamp(2rem,5vw,3.8rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:18px">¿Listo para llevar tu infraestructura<br><span class="gt">al siguiente nivel?</span></h2>
+            <p style="font-size:1.05rem;color:var(--tx2);max-width:550px;margin:0 auto 36px">Hablemos de tus clústeres de Kubernetes, tus pipelines CI/CD y cómo estructurar una arquitectura cloud robusta y rentable.</p>
+            <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap">
+               <a href="mailto:vsrecio@nixversity.com" class="bgrd btn px-4 py-3 fs-6">Hablemos de tu Proyecto <i class="fa-solid fa-envelope ms-2"></i></a>
+               <a href="https://www.linkedin.com/in/vsrecio/" target="_blank" rel="noopener noreferrer" class="boc btn px-4 py-3 fs-6"><i class="fa-brands fa-linkedin-in me-2"></i>Conectar en LinkedIn</a>
+            </div>
+         </div>
+      </div>
+   </section>
+</div>
+
+<!-- ======================== LOGIN / REGISTER OFFCANVAS (MOCK) ======================== -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="lofc" style="background:var(--sf); border-left:1px solid var(--bd); color:var(--tx);">
+   <div class="offcanvas-header" style="border-bottom: 1px solid var(--bd);">
+      <div class="d-flex align-items-center gap-2">
+         <img src="{{ "images/logo-white.png" | relURL }}" alt="Logo" width="30" height="30" class="logo-dark-theme">
+         <img src="{{ "images/logo-original.png" | relURL }}" alt="Logo" width="30" height="30" class="logo-light-theme" style="display:none;">
+         <h5 class="offcanvas-title mb-0" style="font-weight:700;">ArchStudio Portal</h5>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" style="filter:invert(1)"></button>
+   </div>
+   <div class="offcanvas-body p-4">
+      <div class="tab-switch" style="background:var(--bg3); display:flex; padding:4px; border-radius:10px; border:1px solid var(--bd); margin-bottom:24px;">
+         <button class="tab-sw-btn on" id="tabLogin" onclick="swTab('login')" style="flex:1; background:transparent; border:none; color:var(--tx3); font-weight:600; font-size:.85rem; padding:8px 0; border-radius:8px; transition:.2s;">Acceder</button>
+         <button class="tab-sw-btn" id="tabSignup" onclick="swTab('signup')" style="flex:1; background:transparent; border:none; color:var(--tx3); font-weight:600; font-size:.85rem; padding:8px 0; border-radius:8px; transition:.2s;">Registrarse</button>
+      </div>
       
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-        <a class="btn btn-primary btn-lg px-4 gap-3" href="/resources/" role="button">Ver Cursos</a>
-        <a class="btn btn-outline-secondary btn-lg px-4" href="https://www.linkedin.com/in/vsrecio/" role="button">Contactar</a>
+      <!-- Login Form Mock -->
+      <div id="fLogin">
+         <div id="loginErr" class="err-msg" style="display:none; background:rgba(239,68,68,.12); border:1px solid rgba(239,68,68,.25); color:#f87171; font-size:.8rem; padding:10px; border-radius:8px; margin-bottom:16px;"><i class="fa-solid fa-circle-exclamation me-1"></i><span id="loginErrMsg">Datos incorrectos.</span></div>
+         <label class="olbl" style="display:block; font-size:.78rem; font-weight:600; color:var(--tx3); text-transform:uppercase; letter-spacing:.05em; margin-bottom:6px;"><i class="fa-regular fa-envelope me-1"></i>Email corporativo</label>
+         <input class="oinp" type="email" id="loginEmail" placeholder="tu@empresa.com" style="width:100%; background:var(--bg3); border:1px solid var(--bd2); color:var(--tx); border-radius:8px; padding:10px 14px; font-size:.9rem; margin-bottom:16px; transition:.3s; outline:none;">
+         
+         <label class="olbl" style="display:block; font-size:.78rem; font-weight:600; color:var(--tx3); text-transform:uppercase; letter-spacing:.05em; margin-bottom:6px;"><i class="fa-solid fa-lock me-1"></i>Contraseña</label>
+         <input class="oinp" type="password" id="loginPass" placeholder="********" style="width:100%; background:var(--bg3); border:1px solid var(--bd2); color:var(--tx); border-radius:8px; padding:10px 14px; font-size:.9rem; margin-bottom:20px; transition:.3s; outline:none;">
+         
+         <button class="bgrd btn w-100 py-3 fw-semibold fs-6" id="loginBtn" onclick="doLogin()">Entrar al ArchStudio <i class="fa-solid fa-arrow-right ms-1 fa-sm"></i></button>
+         
+         <div class="odiv" style="text-align:center; font-size:.78rem; color:var(--tx3); margin:20px 0; position:relative;">o continúa con</div>
+         <button class="oauth" onclick="quickLogin('google')" style="width:100%; background:var(--bg3); border:1px solid var(--bd2); color:var(--tx); border-radius:10px; padding:10px; font-size:.85rem; font-weight:600; display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:8px; transition:.2s;"><i class="fa-brands fa-google me-2" style="color:#ef4444"></i>Google</button>
+         <button class="oauth" onclick="quickLogin('github')" style="width:100%; background:var(--bg3); border:1px solid var(--bd2); color:var(--tx); border-radius:10px; padding:10px; font-size:.85rem; font-weight:600; display:flex; align-items:center; justify-content:center; gap:8px; transition:.2s;"><i class="fa-brands fa-github me-2"></i>GitHub</button>
       </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section container my-5 py-5">
-  <div class="row text-center mb-5">
-      <div class="col-lg-8 mx-auto">
-        <h2 class="display-6 fw-bold">Áreas de Expertise</h2>
-        <p class="lead text-muted">Mi enfoque se centra en estas disciplinas clave para crear software de alta calidad.</p>
+      
+      <!-- Signup Form Mock -->
+      <div id="fSignup" style="display:none;">
+         <div id="signupErr" class="err-msg" style="display:none; background:rgba(239,68,68,.12); border:1px solid rgba(239,68,68,.25); color:#f87171; font-size:.8rem; padding:10px; border-radius:8px; margin-bottom:16px;"><i class="fa-solid fa-circle-exclamation me-1"></i><span id="signupErrMsg">Rellena todos los campos.</span></div>
+         <label class="olbl" style="display:block; font-size:.78rem; font-weight:600; color:var(--tx3); text-transform:uppercase; letter-spacing:.05em; margin-bottom:6px;"><i class="fa-regular fa-user me-1"></i>Nombre completo</label>
+         <input class="oinp" type="text" id="signupName" placeholder="Jane Smith" style="width:100%; background:var(--bg3); border:1px solid var(--bd2); color:var(--tx); border-radius:8px; padding:10px 14px; font-size:.9rem; margin-bottom:16px; transition:.3s; outline:none;">
+         
+         <label class="olbl" style="display:block; font-size:.78rem; font-weight:600; color:var(--tx3); text-transform:uppercase; letter-spacing:.05em; margin-bottom:6px;"><i class="fa-regular fa-envelope me-1"></i>Email de trabajo</label>
+         <input class="oinp" type="email" id="signupEmail" placeholder="tu@empresa.com" style="width:100%; background:var(--bg3); border:1px solid var(--bd2); color:var(--tx); border-radius:8px; padding:10px 14px; font-size:.9rem; margin-bottom:16px; transition:.3s; outline:none;">
+         
+         <label class="olbl" style="display:block; font-size:.78rem; font-weight:600; color:var(--tx3); text-transform:uppercase; letter-spacing:.05em; margin-bottom:6px;"><i class="fa-solid fa-lock me-1"></i>Contraseña</label>
+         <input class="oinp" type="password" id="signupPass" placeholder="Mínimo 8 caracteres" style="width:100%; background:var(--bg3); border:1px solid var(--bd2); color:var(--tx); border-radius:8px; padding:10px 14px; font-size:.9rem; margin-bottom:20px; transition:.3s; outline:none;">
+         
+         <button class="bgrd btn w-100 py-3 fw-semibold fs-6" id="signupBtn" onclick="doSignup()">Crear Cuenta ArchStudio <i class="fa-solid fa-arrow-right ms-1 fa-sm"></i></button>
       </div>
-    </div>
-  {{ partial "features" . }}
-</section>
+   </div>
+</div>
 
-<section class="section container my-5 py-5 rounded-3">
-  <div class="row text-center mb-5">
-    <div class="col-lg-8 mx-auto">
-      <h2 class="display-6 fw-bold">Desde el Blog</h2>
-      <p class="lead text-muted">Comparto análisis, guías y tutoriales sobre tecnología y arquitectura.</p>
-    </div>
-  </div>
-  {{ partial "latest-posts" . }}
-  <div class="text-center mt-5">
-    <a href="/writing/" class="btn btn-outline-primary">Ver todos los artículos</a>
-  </div>
-</section>
-
-{{ with .Site.Data.conferencias }}
-<section class="section container my-5 py-5">
-  <div class="row text-center mb-5">
-    <div class="col-lg-8 mx-auto">
-      <h2 class="display-6 fw-bold">Conferencias y Charlas</h2>
-      <p class="lead text-muted">Algunas de mis presentaciones en eventos y comunidades sobre tecnología.</p>
-    </div>
-  </div>
-
-  <div class="row">
-    {{ range first 6 . }}
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card h-100 shadow-sm border-0">
-        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
-          <img src="{{ .thumbnail }}" class="card-img-top" alt="Thumbnail de la charla {{ .title }}">
-        </a>
+<!-- ======================== DEVOPS SRE DASHBOARD (FULLPAGE PANEL) ======================== -->
+<div id="dashboard" style="display:none; background:var(--bg); min-height:100vh; color:var(--tx);">
+   <!-- Dashboard Top Navbar -->
+   <div style="height: 60px; border-bottom: 1px solid var(--bd); background: var(--bg2); display: flex; align-items: center; padding: 0 20px;">
+      <button class="boc px-2 py-1 me-3 d-lg-none" id="dbMobTog" onclick="toggleDbSidebar()" style="border-radius: 8px;"><i class="fa-solid fa-bars"></i></button>
+      <a href="#" class="d-flex align-items-center gap-2 me-auto" style="font-size:1.1rem; font-weight:700; color:var(--tx)">
+         <img src="{{ "images/logo-white.png" | relURL }}" alt="Logo" width="28" height="28" class="logo-dark-theme">
+         <img src="{{ "images/logo-original.png" | relURL }}" alt="Logo" width="28" height="28" class="logo-light-theme" style="display:none;">
+         <span>ArchStudio Panel</span>
+      </a>
+      
+      <!-- Topbar Action Panel -->
+      <div class="d-flex align-items-center gap-3">
+         <span style="font-size: .8rem; color: var(--tx3); background: rgba(52,211,153,.1); color: #34d399; font-weight: 600; padding: 4px 10px; border-radius: 100px;"><i class="fa-solid fa-check-circle me-1"></i>Sistemas Normales</span>
+         <div class="dropdown" id="profileWrap">
+            <button class="d-flex align-items-center gap-2" onclick="toggleProfile(event)" style="background:transparent; border:none; color:var(--tx); font-family:'Space Grotesk',sans-serif;">
+               <div class="db-avatar" id="userAvatar" style="width:34px;height:34px;border-radius:10px;background:var(--pur);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.85rem;">VS</div>
+               <div class="d-none d-sm-block text-start" style="line-height:1.2;">
+                  <div style="font-weight:600;font-size:.8rem;" id="userName">Víctor Recio</div>
+                  <div style="font-size:.68rem;color:var(--tx3);" id="userPlan">Enterprise Architect</div>
+               </div>
+               <i class="fa-solid fa-chevron-down fa-xs" id="profileChevron" style="transition:.3s;"></i>
+            </button>
+            <div class="dropdown-menu" id="profileDropdown" style="display:none; position:absolute; right:0; top:42px; width:220px; background:var(--sf); border:1px solid var(--bd2); border-radius:12px; padding:10px; box-shadow:0 10px 30px rgba(0,0,0,0.3); z-index:1000;">
+               <div style="padding:10px; border-bottom:1px solid var(--bd); margin-bottom:8px;">
+                  <div style="font-weight:600;font-size:.85rem;" id="pdName">Víctor Recio</div>
+                  <div style="font-size:.75rem;color:var(--tx3);" id="pdEmail">admin@recio.com</div>
+               </div>
+               <button onclick="doLogout()" class="dropdown-item w-100 text-start py-2" style="background:transparent; border:none; font-size:.8rem; color:#f87171; font-weight:600; display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-sign-out-alt"></i> Cerrar Sesión</button>
+            </div>
+         </div>
       </div>
-    </div>
-    {{ end }}
-  </div>
+   </div>
+   
+   <div class="d-flex" style="min-height: calc(100vh - 60px);">
+      <!-- Sidebar Panel -->
+      <div class="db-sidebar" id="dbSidebar" style="width: 240px; background: var(--bg2); border-right: 1px solid var(--bd); padding: 20px 10px; flex-shrink:0;">
+         <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);padding:0 10px 12px;font-weight:700">Cluster Ops</div>
+         <button class="dsi db-nl active" onclick="dbNav('overview', this)" style="display:flex; align-items:center; gap:10px; padding:10px; width:100%; border:none; background:transparent; font-size:.85rem; color:var(--tx2); border-radius:8px; margin-bottom:4px; text-align:left; transition:.2s;"><i class="fa-solid fa-chart-line" style="width:16px;"></i> Visión General</button>
+         <button class="dsi db-nl" onclick="dbNav('clusters', this)" style="display:flex; align-items:center; gap:10px; padding:10px; width:100%; border:none; background:transparent; font-size:.85rem; color:var(--tx2); border-radius:8px; margin-bottom:4px; text-align:left; transition:.2s;"><i class="fa-solid fa-cubes" style="width:16px;"></i> Modelado C4</button>
+         <button class="dsi db-nl" onclick="dbNav('pipelines', this)" style="display:flex; align-items:center; gap:10px; padding:10px; width:100%; border:none; background:transparent; font-size:.85rem; color:var(--tx2); border-radius:8px; margin-bottom:4px; text-align:left; transition:.2s;"><i class="fa-solid fa-code-branch" style="width:16px;"></i> Pipelines AaC</button>
+         <button class="dsi db-nl" onclick="dbNav('chat', this)" style="display:flex; align-items:center; gap:10px; padding:10px; width:100%; border:none; background:transparent; font-size:.85rem; color:var(--tx2); border-radius:8px; margin-bottom:4px; text-align:left; transition:.2s;"><i class="fa-regular fa-comment-dots" style="width:16px;"></i> Arch Copilot</button>
+         <button class="dsi db-nl" onclick="dbNav('settings', this)" style="display:flex; align-items:center; gap:10px; padding:10px; width:100%; border:none; background:transparent; font-size:.85rem; color:var(--tx2); border-radius:8px; text-align:left; transition:.2s;"><i class="fa-solid fa-gears" style="width:16px;"></i> Ajustes</button>
+      </div>
+      
+      <!-- Main Content Container -->
+      <div style="flex:1; padding: 24px; overflow-y:auto; background:var(--bg);">
+         <!-- 1. OVERVIEW SECTION -->
+         <div class="db-section active" id="sec-overview">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+               <div>
+                  <h3 style="font-size: 1.4rem; font-weight:700; margin:0;" class="gt">Consola de Gobernanza de Arquitectura</h3>
+                  <p style="font-size: .85rem; color: var(--tx3); margin:0;">Métricas críticas de gobernanza, patrones BIAN y alineación C4.</p>
+               </div>
+            </div>
+            
+            <div class="row g-3 mb-4">
+               <div class="col-6 col-xl-3">
+                  <div class="stpill" style="background:var(--sf); border:1px solid var(--bd); border-radius:14px; padding:20px;">
+                     <div style="font-size:.67rem;color:var(--tx3); text-transform:uppercase; font-weight:600; margin-bottom:4px;">SLA de Arquitectura</div>
+                     <div style="font-size:1.8rem;font-weight:700; color:#34d399;">99.999%</div>
+                     <div style="font-size:.7rem;color:#34d399;font-weight:600;"><i class="fa-solid fa-caret-up me-1"></i>SLA Cumplido</div>
+                  </div>
+               </div>
+               <div class="col-6 col-xl-3">
+                  <div class="stpill" style="background:var(--sf); border:1px solid var(--bd); border-radius:14px; padding:20px;">
+                     <div style="font-size:.67rem;color:var(--tx3); text-transform:uppercase; font-weight:600; margin-bottom:4px;">Servicios BIAN</div>
+                     <div style="font-size:1.8rem;font-weight:700; color:var(--tx);">48 Nodos</div>
+                     <div style="font-size:.7rem;color:#34d399;font-weight:600;"><i class="fa-solid fa-caret-up me-1"></i>Saludables</div>
+                  </div>
+               </div>
+               <div class="col-6 col-xl-3">
+                  <div class="stpill" style="background:var(--sf); border:1px solid var(--bd); border-radius:14px; padding:20px;">
+                     <div style="font-size:.67rem;color:var(--tx3); text-transform:uppercase; font-weight:600; margin-bottom:4px;">Mitigaciones ATAM</div>
+                     <div style="font-size:1.8rem;font-weight:700; color:#60a5fa;">12.4 ms</div>
+                     <div style="font-size:.7rem;color:#60a5fa;font-weight:600;"><i class="fa-solid fa-caret-down me-1"></i>-0.3 ms hoy</div>
+                  </div>
+               </div>
+               <div class="col-6 col-xl-3">
+                  <div class="stpill" style="background:var(--sf); border:1px solid var(--bd); border-radius:14px; padding:20px;">
+                     <div style="font-size:.67rem;color:var(--tx3); text-transform:uppercase; font-weight:600; margin-bottom:4px;">Arquitecturas Activas</div>
+                     <div style="font-size:1.8rem;font-weight:700; color:#fbbf24;">31%</div>
+                     <div style="font-size:.7rem;color:#fbbf24;font-weight:600;"><i class="fa-solid fa-tag me-1"></i>C4 Model Aligned</div>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="row g-3">
+               <div class="col-lg-8">
+                  <div style="background:var(--sf);border:1px solid var(--bd);border-radius:18px;padding:24px">
+                     <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div style="font-weight:600"><i class="fa-solid fa-chart-area me-2" style="color:var(--pur)"></i>Métricas de Carga en API Gateway (Peticiones/seg)</div>
+                        <div style="font-size:.75rem;color:var(--tx3)">Tiempo Real</div>
+                     </div>
+                     <canvas id="ovChart" height="100"></canvas>
+                  </div>
+               </div>
+               
+               <div class="col-lg-4">
+                  <div style="background:var(--sf);border:1px solid var(--bd);border-radius:18px;padding:20px;height:100%">
+                     <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div style="font-weight:600;font-size:.9rem">Logs de Cambios de Arquitectura</div>
+                        <div class="d-flex align-items-center gap-2"><span style="width:7px;height:7px;border-radius:50%;background:#34d399;animation:bpls 1.5s infinite"></span><span style="font-size:.72rem;color:#34d399;font-weight:600">Auditoría en Tiempo Real</span></div>
+                     </div>
+                     <div id="liveActivity" style="display:flex;flex-direction:column;gap:8px">
+                        <!-- Filled by JS -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+         <!-- 2. CLUSTERS SECTION -->
+         <div class="db-section" id="sec-clusters">
+            <div class="mb-4">
+               <h3 style="font-size: 1.4rem; font-weight:700; margin:0;">Sistemas Core & Modelado C4</h3>
+               <p style="font-size: .85rem; color: var(--tx3); margin:0;">Visualización de sistemas core, alineación C4 y gobernanza empresarial.</p>
+            </div>
+            
+            <div class="row g-3">
+               <div class="col-md-6 col-lg-4">
+                  <div class="gc p-4" style="background: var(--sf); border: 1px solid var(--bd); border-radius: 16px;">
+                     <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div style="font-weight: 700; font-size: 1rem;"><i class="fa-brands fa-aws me-2 text-warning"></i> EKS-Prod-Core (C4 Context)</div>
+                        <span class="bst son">Online</span>
+                     </div>
+                     <div style="font-size: .82rem; color: var(--tx2); margin-bottom: 12px;">AWS US-East-1. Sistema transaccional core bancario.</div>
+                     <div style="font-size: .78rem; color: var(--tx3); margin-bottom: 6px;">Servicios BIAN: <strong>18</strong> / <strong>18</strong> Mapeados</div>
+                     <div style="font-size: .78rem; color: var(--tx3); margin-bottom: 6px;">TOGAF Compliance: <strong>98%</strong></div>
+                     <div style="font-size: .78rem; color: var(--tx3); margin-bottom: 16px;">ATAM Risk Mitigation: <strong>100%</strong></div>
+                     <div style="height: 4px; background: var(--bg3); border-radius: 100px; overflow: hidden; margin-bottom: 16px;"><div style="width: 42%; height: 100%; background: var(--grad);"></div></div>
+                     <button class="boc btn w-100 py-2" style="font-size: .82rem;" onclick="terminalCommand('show c4-context-banking')">Inspeccionar C4 Context</button>
+                  </div>
+               </div>
+               
+               <div class="col-md-6 col-lg-4">
+                  <div class="gc p-4" style="background: var(--sf); border: 1px solid var(--bd); border-radius: 16px;">
+                     <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div style="font-weight: 700; font-size: 1rem;"><i class="fa-brands fa-microsoft me-2 text-primary"></i> AKS-Stg-Gateway (C4 Container)</div>
+                        <span class="bst son">Online</span>
+                     </div>
+                     <div style="font-size: .82rem; color: var(--tx2); margin-bottom: 12px;">Azure West-Europe. Pasarela de entrada y Rate Limiting.</div>
+                     <div style="font-size: .78rem; color: var(--tx3); margin-bottom: 6px;">Servicios BIAN: <strong>8</strong> / <strong>8</strong> Mapeados</div>
+                     <div style="font-size: .78rem; color: var(--tx3); margin-bottom: 6px;">TOGAF Compliance: <strong>95%</strong></div>
+                     <div style="font-size: .78rem; color: var(--tx3); margin-bottom: 16px;">ATAM Risk Mitigation: <strong>92%</strong></div>
+                     <div style="height: 4px; background: var(--bg3); border-radius: 100px; overflow: hidden; margin-bottom: 16px;"><div style="width: 18%; height: 100%; background: var(--grad);"></div></div>
+                     <button class="boc btn w-100 py-2" style="font-size: .82rem;" onclick="terminalCommand('show c4-containers-gateway')">Inspeccionar C4 Containers</button>
+                  </div>
+               </div>
+               
+               <div class="col-md-6 col-lg-4">
+                  <div class="gc p-4" style="background: var(--sf); border: 1px solid var(--bd); border-radius: 16px;">
+                     <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div style="font-weight: 700; font-size: 1rem;"><i class="fa-solid fa-server me-2 text-info"></i> Sandbox-Local (C4 Deployment)</div>
+                        <span class="bst son">Online</span>
+                     </div>
+                     <div style="font-size: .82rem; color: var(--tx2); margin-bottom: 12px;">Entorno local de pruebas de Architecture as Code (AaC).</div>
+                     <div style="font-size: .78rem; color: var(--tx3); margin-bottom: 6px;">Servicios BIAN: <strong>4</strong> / <strong>4</strong> Mapeados</div>
+                     <div style="font-size: .78rem; color: var(--tx3); margin-bottom: 6px;">TOGAF Compliance: <strong>88%</strong></div>
+                     <div style="font-size: .78rem; color: var(--tx3); margin-bottom: 16px;">ATAM Risk Mitigation: <strong>95%</strong></div>
+                     <div style="height: 4px; background: var(--bg3); border-radius: 100px; overflow: hidden; margin-bottom: 16px;"><div style="width: 54%; height: 100%; background: var(--grad);"></div></div>
+                     <button class="boc btn w-100 py-2" style="font-size: .82rem;" onclick="terminalCommand('show c4-deployment-local')">Inspeccionar C4 Deployment</button>
+                  </div>
+               </div>
+            </div>
+            
+            <!-- Terminal Output Mockup -->
+            <div class="row mt-4">
+               <div class="col-12">
+                  <div style="background: #05050f; border: 1px solid var(--bd2); border-radius: 14px; padding: 20px; font-family: monospace; font-size: .82rem; color: #34d399; min-height: 200px;">
+                     <div class="d-flex align-items-center justify-content-between mb-2 pb-2" style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                        <span style="color: var(--tx3);"><i class="fa-solid fa-terminal me-2"></i>ArchStudio Interactive Console</span>
+                        <button class="boc btn py-1 px-2" style="font-size: .7rem; border-radius: 6px;" onclick="clearTerminal()">Clear</button>
+                     </div>
+                     <div id="terminalBody">
+                        <div>$ selecciona una acción de inspección de arquitectura arriba...</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+         <!-- 3. PIPELINES SECTION -->
+         <div class="db-section" id="sec-pipelines">
+            <div class="mb-4">
+               <h3 style="font-size: 1.4rem; font-weight:700; margin:0;">Pipelines de Architecture as Code (AaC)</h3>
+               <p style="font-size: .85rem; color: var(--tx3); margin:0;">Compilación declarativa de especificaciones técnicas y modelos C4.</p>
+            </div>
+            
+            <div style="background:var(--sf);border:1px solid var(--bd);border-radius:18px;overflow:hidden">
+               <table class="db-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                  <thead>
+                     <tr style="border-bottom: 1px solid var(--bd); background: var(--bg2); color: var(--tx3); font-size: .75rem; text-transform: uppercase; letter-spacing: .05em;">
+                        <th style="padding: 16px;">Pipeline / Repositorio</th>
+                        <th style="padding: 16px;">Desencadenante</th>
+                        <th style="padding: 16px;">Tiempo Ejecución</th>
+                        <th style="padding: 16px;">Estado</th>
+                        <th style="padding: 16px;">Logs</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr style="border-bottom: 1px solid var(--bd); font-size: .88rem;">
+                        <td style="padding: 16px;">
+                           <div style="font-weight:600; color:var(--tx);">Core Banking C4 Model Compile</div>
+                           <div style="font-size:.75rem;color:var(--tx3);">structurizr-core-banking-model</div>
+                        </td>
+                        <td style="padding: 16px;">DSL Push to main by <code>vsrecio</code></td>
+                        <td style="padding: 16px; font-weight:600; color:#34d399;">2m 45s</td>
+                        <td style="padding: 16px;"><span class="bst son">Success</span></td>
+                        <td style="padding: 16px;"><button class="boc btn px-2 py-1" style="font-size:.72rem;border-radius:8px;"><i class="fa-solid fa-eye me-1"></i>Ver</button></td>
+                     </tr>
+                     <tr style="border-bottom: 1px solid var(--bd); font-size: .88rem;">
+                        <td style="padding: 16px;">
+                           <div style="font-weight:600; color:var(--tx);">API Gateway Containers Compile</div>
+                           <div style="font-size:.75rem;color:var(--tx3);">structurizr-api-gateway-containers</div>
+                        </td>
+                        <td style="padding: 16px;">ArgoCD Automated Sync</td>
+                        <td style="padding: 16px; font-weight:600; color:#a78bfa;">1m 12s</td>
+                        <td style="padding: 16px;"><span class="bst sbz">Synced</span></td>
+                        <td style="padding: 16px;"><button class="boc btn px-2 py-1" style="font-size:.72rem;border-radius:8px;"><i class="fa-solid fa-eye me-1"></i>Ver</button></td>
+                     </tr>
+                     <tr style="border-bottom: 1px solid var(--bd); font-size: .88rem;">
+                        <td style="padding: 16px;">
+                           <div style="font-weight:600; color:var(--tx);">n8n Automations Physical Deploy</div>
+                           <div style="font-size:.75rem;color:var(--tx3);">structurizr-n8n-automations</div>
+                        </td>
+                        <td style="padding: 16px;">Release Tag <code>v2.4.1</code></td>
+                        <td style="padding: 16px; font-weight:600; color:#60a5fa;">4m 58s</td>
+                        <td style="padding: 16px;"><span class="bst son">Success</span></td>
+                        <td style="padding: 16px;"><button class="boc btn px-2 py-1" style="font-size:.72rem;border-radius:8px;"><i class="fa-solid fa-eye me-1"></i>Ver</button></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         
+         <!-- 4. CHAT (SRE COPILOT) SECTION -->
+         <div class="db-section" id="sec-chat">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+               <div>
+                  <h3 style="font-size: 1.4rem; font-weight:700; margin:0;">Architecture Copilot (Chatbot Inteligente)</h3>
+                  <p style="font-size: .85rem; color: var(--tx3); margin:0;">Pregúntame sobre patrones de diseño, TOGAF, BIAN, C4 Model o la experiencia de Víctor.</p>
+               </div>
+               <button class="boc btn px-3 py-2" style="font-size:.82rem" onclick="clearChat()"><i class="fa-solid fa-rotate-right me-1"></i>Reiniciar Conversación</button>
+            </div>
+            
+            <div class="row g-3">
+               <div class="col-lg-8">
+                  <div class="chat-wrap" style="background: var(--sf); border: 1px solid var(--bd); border-radius: 18px; display: flex; flex-direction: column; height: 500px; overflow: hidden;">
+                     <div class="chat-header" style="padding: 14px 20px; border-bottom: 1px solid var(--bd); background: var(--bg2); display: flex; align-items: center; gap: 12px;">
+                        <div class="chat-ai-avatar" style="width:36px; height:36px; border-radius:50%; background:var(--grad); display:flex; align-items:center; justify-content:center; color:#fff;"><i class="fa-solid fa-robot"></i></div>
+                        <div>
+                           <div style="font-weight:600;font-size:.9rem">Arch Copilot</div>
+                           <div class="chat-status" style="font-size:.73rem; color:#34d399; font-weight: 600;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#34d399; margin-right:4px; animation:bpls 2s infinite"></span>Online — Asistente de Víctor</div>
+                        </div>
+                     </div>
+                     <div class="chat-body" id="chatBody" style="flex:1; padding:20px; overflow-y:auto; display:flex; flex-direction:column; gap:16px; background:var(--bg3);">
+                        <div class="d-flex flex-column gap-1">
+                           <div class="msg msg-ai" style="padding:10px 14px; border-radius:12px; font-size:.85rem; line-height:1.5; background:rgba(139,92,246,0.14); border:1px solid rgba(139,92,246,0.2); color:var(--tx2); align-self: flex-start; max-width:85%;">
+                              ¡Hola! Soy el Architecture Copilot de Víctor. Puedo responder todas tus dudas sobre diseño de software, marcos de gobernanza (TOGAF, BIAN), C4 Model, automatizaciones o cómo contactarlo. ¿En qué te puedo ayudar hoy?
+                           </div>
+                           <div class="msg-time" style="align-self:flex-start; padding-left:4px; font-size:.68rem; color:var(--tx3);">Arch Copilot · Justo ahora</div>
+                        </div>
+                     </div>
+                     <div class="chat-input-wrap" style="padding:15px; border-top:1px solid var(--bd); background:var(--bg2); display:flex; gap:10px; align-items:center;">
+                        <textarea class="chat-inp" id="chatInp" placeholder="Escribe tu pregunta sobre Víctor (e.g. ¿Cuáles son tus tarifas?, ¿Qué experiencia tienes?)..." rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat()}" style="flex:1; background:var(--bg3); border:1px solid var(--bd2); color:var(--tx); border-radius:10px; padding:10px 14px; font-size:.875rem; resize:none; outline:none; font-family:'Space Grotesk',sans-serif; min-height:42px;"></textarea>
+                        <button class="chat-send" id="chatSendBtn" onclick="sendChat()" style="width:42px; height:42px; border-radius:10px; background:var(--grad); border:none; color:#fff; display:flex; align-items:center; justify-content:center; transition:.2s; cursor:pointer;"><i class="fa-solid fa-paper-plane fa-sm"></i></button>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="col-lg-4">
+                  <div style="background:var(--sf);border:1px solid var(--bd);border-radius:18px;padding:20px;margin-bottom:14px">
+                     <div style="font-weight:600;font-size:.85rem;margin-bottom:14px;color:var(--tx3);text-transform:uppercase;letter-spacing:.06em"><i class="fa-solid fa-bolt me-1" style="color:var(--pur)"></i>Preguntas Sugeridas</div>
+                     <div style="display:flex;flex-direction:column;gap:8px">
+                        <button class="boc btn py-2 text-start px-3" style="font-size:.82rem;border-radius:10px" onclick="quickMsg('Dime sobre la experiencia de Víctor con Kubernetes')"><i class="fa-solid fa-cubes me-2" style="color:#60a5fa"></i>Experiencia en Kubernetes</button>
+                        <button class="boc btn py-2 text-start px-3" style="font-size:.82rem;border-radius:10px" onclick="quickMsg('¿Qué certificaciones técnicas tiene Víctor?')"><i class="fa-solid fa-certificate me-2" style="color:#fbbf24"></i>Certificaciones de Víctor</button>
+                        <button class="boc btn py-2 text-start px-3" style="font-size:.82rem;border-radius:10px" onclick="quickMsg('¿Cuál es su metodología de trabajo?')"><i class="fa-solid fa-gears me-2" style="color:#34d399"></i>Metodología de Trabajo</button>
+                        <button class="boc btn py-2 text-start px-3" style="font-size:.82rem;border-radius:10px" onclick="quickMsg('Dime sobre su curso de Kubernetes Total')"><i class="fa-solid fa-graduation-cap me-2" style="color:#a78bfa"></i>Curso Kubernetes Total</button>
+                        <button class="boc btn py-2 text-start px-3" style="font-size:.82rem;border-radius:10px" onclick="quickMsg('¿Cómo puedo ponerme en contacto con él?')"><i class="fa-solid fa-envelope me-2" style="color:#f87171"></i>Cómo Contactar</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+         <!-- 5. SETTINGS SECTION -->
+         <div class="db-section" id="sec-settings">
+            <div class="mb-4">
+               <h3 style="font-size: 1.4rem; font-weight:700; margin:0;">Ajustes del Architecture Studio</h3>
+               <p style="font-size: .85rem; color: var(--tx3); margin:0;">Ajustes visuales y de simulación de tu panel de diseño arquitectónico.</p>
+            </div>
+            
+            <div class="row g-3">
+               <div class="col-lg-6">
+                  <div style="background:var(--sf);border:1px solid var(--bd);border-radius:18px;padding:24px;height:100%;">
+                     <div style="font-weight:600;font-size:1rem;margin-bottom:20px"><i class="fa-regular fa-user me-2" style="color:var(--pur)"></i>Perfil Enterprise Architect</div>
+                     <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="db-avatar" style="width:56px;height:56px;font-size:1.2rem;border-radius:16px; background:var(--pur); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700;">U</div>
+                        <div>
+                           <div style="font-weight:600;font-size:1rem">Architecture Guest Administrator</div>
+                           <div style="font-size:.82rem;color:var(--tx3)">invitado@recio.com</div>
+                           <div style="margin-top:4px"><span class="bst son" style="font-size:.68rem">Consola Simulada</span></div>
+                        </div>
+                     </div>
+                     <p style="font-size:.82rem; color:var(--tx3); line-height:1.5;">Este panel simula un entorno interactivo de gobernanza y modelado de arquitecturas C4. Puedes navegar por las pestañas para auditar sistemas, ver pipelines de AaC o interactuar con el chatbot.</p>
+                  </div>
+               </div>
+               
+               <div class="col-lg-6">
+                  <div style="background:var(--sf);border:1px solid var(--bd);border-radius:18px;padding:24px; height:100%;">
+                     <div style="font-weight:600;font-size:1rem;margin-bottom:20px"><i class="fa-solid fa-sliders me-2" style="color:var(--pur)"></i>Preferencias de Interfaz</div>
+                     
+                     <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid var(--bd);">
+                        <div>
+                           <div style="font-size:.875rem; font-weight:600;">Modo Claro / Oscuro</div>
+                           <div style="font-size:.75rem; color:var(--tx3);">Alterna el esquema de colores de la interfaz</div>
+                        </div>
+                        <button class="boc btn py-1 px-3" onclick="toggleTheme()" style="font-size:.8rem; border-radius:8px;">Cambiar</button>
+                     </div>
+                     
+                     <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid var(--bd);">
+                        <div>
+                           <div style="font-size:.875rem; font-weight:600;">Simulación de Kubernetes logs</div>
+                           <div style="font-size:.75rem; color:var(--tx3);">Añadir nuevos logs a la terminal cada 5s</div>
+                        </div>
+                        <span class="bst son">Activo</span>
+                     </div>
+                     
+                     <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0;">
+                        <div>
+                           <div style="font-size:.875rem; font-weight:600;">Chart.js Animación Fluida</div>
+                           <div style="font-size:.75rem; color:var(--tx3);">Suavizar transiciones en gráficos en tiempo real</div>
+                        </div>
+                        <span class="bst son">Activo</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
 
-</section>
-{{ end }}
 
+
+<script>
+function switchHeroArchTab(tab) {
+   document.getElementById('hero-btn-c4context').classList.remove('on');
+   document.getElementById('hero-btn-c4container').classList.remove('on');
+   document.getElementById('hero-btn-c4dsl').classList.remove('on');
+   document.getElementById('hero-btn-c4gov').classList.remove('on');
+   
+   document.getElementById('hero-btn-' + tab).classList.add('on');
+   
+   document.getElementById('hero-pane-c4context').style.display = 'none';
+   document.getElementById('hero-pane-c4container').style.display = 'none';
+   document.getElementById('hero-pane-c4dsl').style.display = 'none';
+   document.getElementById('hero-pane-c4gov').style.display = 'none';
+   
+   document.getElementById('hero-pane-' + tab).style.display = 'block';
+}
+
+const heroArchTooltips = {
+  user: '<strong>Cliente Corporativo:</strong> Representa al usuario final del sistema. Interactúa con el API Gateway mediante HTTPS/TLS 1.3 para realizar operaciones bancarias o de suscripciones.',
+  gateway: '<strong>API Gateway (FastAPI):</strong> Puerta de enlace segura. Gestiona el enrutamiento de peticiones, aplica políticas de Rate Limiting dinámico y valida firmas de tokens JWT antes de autorizar el paso al core.',
+  core: '<strong>Core Banking (Kubernetes):</strong> Ecosistema de microservicios robusto y desacoplado, orquestado en EKS. Procesa de manera transaccional e interna las peticiones críticas del negocio.',
+  stripe: '<strong>Stripe / Pasarelas Externas:</strong> Integración segura con terceras partes para procesar pagos y suscripciones de clientes en tiempo real, conectándose mediante API REST protegidas.',
+  db: '<strong>Clúster PostgreSQL:</strong> Almacenamiento transaccional ACID de alta disponibilidad con replicación síncrona en múltiples zonas de disponibilidad (Multi-AZ) para evitar pérdida de datos.',
+  ingress: '<strong>Istio Ingress Gateway:</strong> Punto de entrada del Service Mesh. Implementa gobernanza de red mediante mTLS estricto para asegurar la comunicación interna entre microservicios.',
+  auth: '<strong>Auth Service (Go):</strong> Contenedor ultra-rápido en Go encargado del ciclo de vida de los tokens. Soporta flujos de autenticación OAuth2 / OIDC integrados con proveedores externos.',
+  tx_engine: '<strong>Motor de Transacciones:</strong> Componente core implementado en Django/FastAPI bajo patrón CQRS. Garantiza transacciones transaccionales ACID y coherencia eventual en base de datos.',
+  kafka: '<strong>Apache Kafka Event Stream:</strong> Cola de mensajería tolerante a fallos para comunicación asíncrona entre microservicios, previniendo cuellos de botella e inactividad en picos de carga.',
+  n8n: '<strong>n8n Automation Engine:</strong> Orquestador de flujos de trabajo avanzados que automatiza integraciones (WhatsApp Business, notificaciones, sincronizaciones CRM) basándose en eventos de Kafka.',
+  db_container: '<strong>PostgreSQL Cluster:</strong> Capa de almacenamiento escalable y segura, estructurada con políticas de replicación y copias de seguridad continuas y cifradas en AWS S3.'
+};
+
+function showHeroArchTooltip(node) {
+  const tooltipText = document.getElementById('hero-arch-tooltip-text');
+  const tooltipBox = document.getElementById('hero-arch-tooltip');
+  if (tooltipText && heroArchTooltips[node]) {
+    tooltipBox.style.background = 'rgba(59,130,246,0.12)';
+    tooltipBox.style.borderColor = 'rgba(59,130,246,0.3)';
+    tooltipText.innerHTML = heroArchTooltips[node];
+    tooltipBox.style.transform = 'scale(1.02)';
+    setTimeout(() => {
+      tooltipBox.style.transform = 'scale(1)';
+    }, 150);
+  }
+}
+</script>
+
+<script>
+function switchArchTab(tab) {
+   document.getElementById('btn-arch-frameworks').classList.remove('on');
+   document.getElementById('btn-arch-modeling').classList.remove('on');
+   document.getElementById('btn-arch-aac').classList.remove('on');
+   
+   document.getElementById('btn-arch-' + tab).classList.add('on');
+   
+   document.getElementById('pane-arch-frameworks').style.display = 'none';
+   document.getElementById('pane-arch-modeling').style.display = 'none';
+   document.getElementById('pane-arch-aac').style.display = 'none';
+   
+   document.getElementById('pane-arch-' + tab).style.display = 'flex';
+}
+</script>
 
 {{ end }}

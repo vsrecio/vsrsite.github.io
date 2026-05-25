@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="{{ .Language.LanguageCode | default site.Language.LanguageCode }}" id="htmlRoot">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    {{ block "head/seo" . }}{{ partial "head/seo.html" . }}{{ end }}
+    {{ block "head/favicons" . }}{{ partial "head/favicons.html" . }}{{ end }}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Assets de la Plantilla NexusAI -->
+    <link rel="stylesheet" href="{{ `css/bootstrap.min.css` | relURL }}">
+    <link rel="stylesheet" href="{{ `css/aos.css` | relURL }}">
+    <link rel="stylesheet" href="{{ `css/swiper-bundle.min.css` | relURL }}">
+    <link rel="stylesheet" href="{{ `css/all.min.css` | relURL }}">
+    <link rel="stylesheet" href="{{ `css/magnific-popup.css` | relURL }}">
+    <link rel="stylesheet" href="{{ `css/style.css` | relURL }}">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    {{- partial "header/header.html" . -}}
+    
+    <div id="content" class="flex-grow-1">
+        {{- block "main" . }}{{- end }}
+    </div>
+    {{- partial "footer/footer.html" . -}}
+
+    <!-- Scripts de la Plantilla NexusAI -->
+    <script src="{{ `js/jquery-3.7.1.min.js` | relURL }}"></script>
+    <script src="{{ `js/bootstrap.bundle.min.js` | relURL }}"></script>
+    <script src="{{ `js/aos.js` | relURL }}"></script>
+    <script src="{{ `js/chart.umd.min.js` | relURL }}"></script>
+    <script src="{{ `js/jquery.magnific-popup.min.js` | relURL }}"></script>
+    
+    <!-- Script Principal SRE Dashboard y Chatbot Local -->
+    <script src="{{ `js/sre-dashboard.js` | relURL }}"></script>
+    
+    <script>
+      // Inicializar AOS
+      AOS.init({
+        duration: 800,
+        once: true
+      });
+    </script>
+</body>
+</html>

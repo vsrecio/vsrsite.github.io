@@ -1,0 +1,65 @@
+<style>
+   .logo-dark-theme { display: inline-block; }
+   .logo-light-theme { display: none; }
+   .lm .logo-dark-theme { display: none !important; }
+   .lm .logo-light-theme { display: inline-block !important; }
+</style>
+
+<!-- NAVBAR -->
+<nav id="nbar">
+   <div class="container">
+      <div class="d-flex align-items-center justify-content-between w-100">
+         <!-- Brand / Logo -->
+         <a href="{{ .Site.Home.RelPermalink }}" class="d-flex align-items-center gap-2" style="font-size:1.2rem;font-weight:700;color:var(--tx)">
+            <img src="{{ "images/logo-white.png" | relURL }}" alt="Logo Víctor S. Recio" width="34" height="34" class="logo-dark-theme">
+            <img src="{{ "images/logo-original.png" | relURL }}" alt="Logo Víctor S. Recio" width="34" height="34" class="logo-light-theme" style="display:none;">
+            <span>{{ .Site.Title }}</span>
+         </a>
+         
+         <!-- Centered Links (Desktop) -->
+         <div class="d-none d-lg-flex align-items-center gap-1 mx-auto">
+            {{ range .Site.Menus.main -}}
+               <a href="{{ .URL | relLangURL }}" class="nav-link">{{ .Name }}</a>
+            {{ end -}}
+         </div>
+         
+         <!-- Action Buttons & Theme Toggler -->
+         <div class="d-flex align-items-center gap-2">
+            <!-- Toggle Theme Button -->
+            <button class="boc d-flex align-items-center justify-content-center" id="thbtn" style="width:38px;height:38px;padding:0;border-radius:12px" aria-label="Toggle theme">
+               <i class="fa-solid fa-sun" id="suni" style="display:none"></i>
+               <i class="fa-solid fa-moon" id="mooni"></i>
+            </button>
+            
+            <!-- Dashboard Simulados Buttons -->
+            <a href="https://patreon.com/vsroot" target="_blank" rel="noopener noreferrer" class="boc px-3 py-2 d-none d-sm-flex align-items-center gap-1" style="text-decoration: none;">
+               <i class="fa-brands fa-patreon fa-sm"></i> Patreon
+            </a>
+            <button class="bgrd btn px-3 py-2 d-none d-sm-flex align-items-center gap-1" data-bs-toggle="offcanvas" data-bs-target="#lofc" onclick="swTab('signup')">
+               Invítame un Café <i class="fa-solid fa-mug-hot fa-sm"></i>
+            </button>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="boc d-lg-none px-2 py-2" id="mbtog" style="border-radius:10px">
+               <i class="fa-solid fa-bars" id="barIcon"></i>
+               <i class="fa-solid fa-xmark" id="xIcon" style="display:none"></i>
+            </button>
+         </div>
+      </div>
+   </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mbmenu">
+   {{ range .Site.Menus.main -}}
+      <a href="{{ .URL | relLangURL }}" class="nav-link d-block py-3 border-bottom" style="border-color:var(--bd)!important">{{ .Name }}</a>
+   {{ end -}}
+   <div class="d-flex gap-2 mt-3">
+      <a href="https://patreon.com/vsroot" target="_blank" rel="noopener noreferrer" class="boc flex-fill py-2 btn text-center d-flex align-items-center justify-content-center gap-1" style="text-decoration: none;">
+         <i class="fa-brands fa-patreon fa-sm"></i> Patreon
+      </a>
+      <button class="bgrd flex-fill py-2 btn d-flex align-items-center justify-content-center gap-1" data-bs-toggle="offcanvas" data-bs-target="#lofc" onclick="swTab('signup')">
+         Invítame un Café <i class="fa-solid fa-mug-hot fa-sm"></i>
+      </button>
+   </div>
+</div>
