@@ -1,300 +1,72 @@
-<!doctype html>
-<html lang="en">
-<head>
-    
-
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-<meta http-equiv='Content-Security-Policy' content="script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'none'">
-    
-
-<link rel="stylesheet" href="/css/style.e7322d74f420cb6e5266a995bea64e88d35be1ab6635be7789ade7d9d033c7e5a5443b41a598dca80787c01e8b397a1a665dda0879690c1c23792f178291469d.css" media="screen" integrity="sha512-5zItdPQgy25SZqmVvqZOiNNb4atmNb53ia3n2dAzx&#43;WlRDtBpZjcqAeHwB6LOXoaZl3aCHlpDBwjeS8XgpFGnQ==" crossorigin="anonymous">
-
-    <title>Demystify Helm: Introduction</title>
-
-<meta name="description" content=" If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it&rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play.
-">
-  
-
-
-<link rel="canonical" href="https://vsr.lat/writing/helm-1/">
-
-
-<link rel="alternate" hreflang="en" href="https://vsr.lat/writing/helm-1/">
-
-
-
-<link rel="alternate" hreflang="x-default" href="https://vsr.lat/writing/helm-1/">
-
-
-
-
-
-
-
-
-
-
-
-
-<meta property="og:title" content="Demystify Helm: Introduction">
-<meta property="og:description" content="
-If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it&rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://vsr.lat/writing/helm-1/">
-    
-      
-        <meta property="og:image" content="https://vsr.lat/images/logo.svg">
-    
-    
-      
-        
-      
-        <meta property="og:image" content="https://vsr.lat/images/site-feature-image_hu_e46422c5f4f06e8f.png">
-    
-  <meta property="article:section" content="writing">
-  
-    <meta property="article:published_time" content="2023-05-22T14:24:59-04:00">
-  
-  
-    <meta property="article:modified_time" content="2025-06-12T11:26:26-04:00">
-  
-  <meta property="og:site_name" content="Victor S. Recio">
-
-
-
-
-
-
-
-
-
-
-
-    
-      
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:image" content="https://vsr.lat/images/logo.svg">
-    <meta name="twitter:title" content="Demystify Helm: Introduction">
-<meta name="twitter:description" content="
-If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it&rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play.">
-
-
-
-
-
-
-  
-
-
-
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Demystify Helm: Introduction",
-  "datePublished": "2023-05-22T14:24:59-04:00",
-  "dateModified": "2025-06-12T11:26:26-04:00",
-  "mainEntityOfPage": "https://vsr.lat/",
-  "publisher": {
-    "@type": "Organization",
-    
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://vsr.lat/images/logo.svg"
-    },
-    "name": "Victor S. Recio"
-  },
-  "wordcount" :  1157 ,
-  "description": " If you\u0026rsquo;ve worked with Kubernetes, you\u0026rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it\u0026rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play.\n",
-  "keywords":  null 
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-<link rel="icon" type="image/svg+xml" href="https://vsr.lat/favicon.svg">
-<link rel="icon" type="image/png" href="https://vsr.lat/favicon.png">
-
-</head>
-
-<body class="writing single d-flex flex-column min-vh-100"><header class="main-header">
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-
-      
-      <a class="navbar-brand" href="/">
-        
-        <img src="/images/logo.svg" alt="logo" width="30" height="24"
-          class="d-inline-block align-text-top">
-        
-        Victor S. Recio
-      </a>
-
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="menu-main navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">Home</a>
-          </li>
-          
-          
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="https://blog.vsr.lat">Writing</a>
-          </li>
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/resources">Resources</a>
-          </li>
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="https://patreon.com/vsroot">Patreon</a>
-          </li>
-          
-          </ul>
-
-        
-        
-        
-
-      </div>
-    </div>
-  </nav>
-</header><div id="content">
-        <nav class="header-breadcrumb my-2" aria-label="breadcrumb">
-    <div class="container">
-        <ol class="breadcrumb my-0">
-            
-            
-                
-                
-                    
-                
-                    
-                
-            
-                    <li class="breadcrumb-item"> <a href="/">Home</a> </li>
-                
-            
-                    <li class="breadcrumb-item"> <a href="/writing/">Blog</a> </li>
-                
-            
-                <li class="breadcrumb-item active" aria-current="page">  Demystify Helm: Introduction</li>
-            
-        </ol>
-    </div>
-</nav>
-
-
-<div class="container py-3">
-  <!-- # Introdution to Helm -->
-<p>If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it&rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play.</p>
-<p>Helm, often referred to as the package manager for Kubernetes <strong>(in Linux world is like APT, YUM&hellip;)</strong>, acts like a GPS, guiding you through the complexity of Kubernetes. With Helm, managing Kubernetes applications is simplified, allowing you to define, install, and upgrade even the most complex Kubernetes applications.</p>
-<p>In this article, we will demystify Helm and break it down into simple, understandable terms. Whether you&rsquo;re new to Kubernetes or a seasoned veteran looking for ways to optimize your workflows, this post aims to give you a greater understanding of how Helm can make navigating the vast ocean of Kubernetes easier.</p>
-<h2 id="what-is-helm-chart">What is Helm Chart?</h2>
-<p>A Helm Chart is a package of pre-configured Kubernetes resources. In other words, it is a collection of files that describe a related set of Kubernetes resources. These charts are used to deploy applications or services on a Kubernetes cluster.</p>
-<p>Helm Charts make extensive use of <strong><a href="https://vsr.lat/writing/go-templates/" target="_blank" rel="noopener">Go templates</a></strong> to define the Kubernetes resources they manage. Go templates are a powerful way to inject configuration into Kubernetes resources at deploy time.</p>
-<p><strong>YAML</strong>, which stands for <strong>&ldquo;YAML Ain&rsquo;t Markup Language&rdquo;</strong>, is another essential component in the world of Kubernetes and Helm. Kubernetes uses YAML as the format for its resource definitions. These definitions describe the desired state of your Kubernetes resources such as Deployments, Services, and PersistentVolumes among others.</p>
-<p>A single chart can describe something simple, like a standalone web server or something complex like a full-stack web application with backend services, databases, caches, etc.</p>
-<p>The <strong>chart</strong> is a bundle of information necessary to create an instance of a Kubernetes application. This includes the following:</p>
-<ul>
-<li>A description of the package <strong>(Chart.yaml)</strong></li>
-<li>One or more <strong>templates</strong>, which contain Kubernetes manifest files</li>
-<li>Default values for the templates <strong>(values.yaml)</strong></li>
-</ul>
-<p>The charts are convenient because they allow you to deploy, version, share, and publish applications in a standard format. They encapsulate and build an artifact of your application, making the complexity of deploying sophisticated applications into Kubernetes easier, and enabling more straightforward application management, updates, and configuration.</p>
-<h2 id="what-is-helm-chart-1">What is Helm Chart?</h2>
-<p>A Helm chart is essentially a packaged application for Kubernetes and has a specific directory structure. Here&rsquo;s the basic structure of a Helm chart:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vsrchart/
-</span></span><span style="display:flex;"><span>  Chart.yaml          <span style="color:#75715e"># A YAML file containing information about the chart</span>
-</span></span><span style="display:flex;"><span>  LICENSE             <span style="color:#75715e"># OPTIONAL: A plain text file containing the license for the chart</span>
-</span></span><span style="display:flex;"><span>  README.md           <span style="color:#75715e"># OPTIONAL: A human-readable README file</span>
-</span></span><span style="display:flex;"><span>  values.yaml         <span style="color:#75715e"># The default configuration values for this chart</span>
-</span></span><span style="display:flex;"><span>  values.schema.json  <span style="color:#75715e"># OPTIONAL: A JSON Schema for imposing a structure on the values.yaml file</span>
-</span></span><span style="display:flex;"><span>  charts/             <span style="color:#75715e"># A directory containing any charts upon which this chart depends.</span>
-</span></span><span style="display:flex;"><span>  crds/               <span style="color:#75715e"># OPTIONAL: Custom Resource Definitions</span>
-</span></span><span style="display:flex;"><span>  templates/          <span style="color:#75715e"># A directory of templates that, when combined with values, will generate valid Kubernetes manifest files.</span>
-</span></span><span style="display:flex;"><span>  templates/NOTES.txt <span style="color:#75715e"># OPTIONAL: A plain text file containing short usage notes</span>
-</span></span></code></pre></div><p><em>1. <strong>Chart.yaml:</strong></em> This is a mandatory file that contains the metadata of the chart like the version, description, and maintainer information.</p>
-<p><em>2. <strong>values.yaml</strong></em>: This file contains the default configuration values for the chart. Values from this file can be overridden during <code>helm install</code> or <code>helm upgrade</code>.</p>
-<p><em>3. <strong>templates:</strong></em> This directory holds all of the templated Kubernetes manifest files. The templates generate Kubernetes manifest files when combined with the <code>values.yaml</code> file. These files are written in the Go templating language.</p>
-<p><em>4. <strong>charts:</strong></em> If a chart has dependencies, those dependent charts are stored in this directory.</p>
-<p><em>5. <strong>crds:</strong></em> This directory is used to hold Custom Resource Definitions (CRDs). CRDs are Kubernetes extensions that are used to deploy certain applications.</p>
-<p><em>6. <strong>.helmignore:</strong></em> Like a <code>.gitignore</code> file, this file can be used to specify files or directories to be ignored when packaging a chart.</p>
-<p><em>7. <strong>LICENSE and README.md:</strong></em> The license of the chart and a README providing high-level information about the chart, respectively. These are optional but generally recommended.</p>
-</ul>
-This structure makes Helm charts organized and easier to manage, even when they start to get complex.
-<p>The <code>templates/</code> directory within a Helm Chart is where the Kubernetes manifest files are stored. The files in this directory are templated using the Go templating language. Here&rsquo;s a basic example of what you might find inside the <code>templates/</code> directory:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>|-- templates
-</span></span><span style="display:flex;"><span>|   |-- NOTES.txt
-</span></span><span style="display:flex;"><span>|   |-- _helpers.tpl
-</span></span><span style="display:flex;"><span>|   |-- deployment.yaml
-</span></span><span style="display:flex;"><span>|   |-- configmap.yaml
-</span></span><span style="display:flex;"><span>|   |-- ingress.yaml
-</span></span><span style="display:flex;"><span>|   |-- service.yaml
-</span></span><span style="display:flex;"><span>|   <span style="color:#e6db74">`</span>-- tests
-</span></span><span style="display:flex;"><span>|       <span style="color:#e6db74">`</span>-- test-connection.yaml
-</span></span></code></pre></div><p><em>1. <strong>NOTES.txt</strong></em>: This is a plain text file that contains usage notes for your chart. After helm install, these notes can be printed to the console.</p>
-<p><em>2. <strong>_helpers.tpl</strong></em>: This is a place to put template helpers that you can re-use throughout the chart. This helps avoid repetitive code and makes maintenance easier.</p>
-<p><em>3. <strong>deployment.yaml</strong></em>: This defines a Kubernetes Deployment. It specifies which Docker image to use for the Docker containers in the pods, the number of replicas, and various other necessary pieces of information.</p>
-<p><em>4. <strong>service.yaml</strong></em>: This defines a Kubernetes Service. It helps expose your application (as running in the pods created by the deployment) to the outside world or internally within the cluster.</p>
-<p><em>5. <strong>ingress.yaml</strong></em>: This defines a Kubernetes Ingress. Ingresses manage external access to the services in a cluster, typically through HTTP.</p>
-<p><em>6. <strong>hpa.yaml</strong></em>: This defines a Kubernetes Horizontal Pod Autoscaler. It automatically scales the number of pods in a deployment or replica set based on observed CPU utilization.</p>
-<p>Note that you can include other Kubernetes resources such as ConfigMaps, Secrets, Jobs, etc., depending on the needs of your application. The actual files will depend on the complexity and requirements of your specific application.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>In conclusion, we have taken our first steps into the world of Helm and Kubernetes, beginning our journey to truly harness the power of these groundbreaking tools. We&rsquo;ve explored what Helm is, why it&rsquo;s an essential tool in Kubernetes management, and have started to understand its components, such as Helm Charts and their structure.</p>
-<p>But this is just the beginning. As we&rsquo;ve seen, Helm Charts play a pivotal role in managing Kubernetes applications. They encapsulate all the Kubernetes resources and dependencies necessary for running an application in a Kubernetes cluster, effectively serving as a roadmap for application deployment.</p>
-<p>In this first part of our series, we&rsquo;ve laid the groundwork, providing you with the necessary understanding and context about Helm. As you&rsquo;ve seen, Helm truly is the GPS for navigating the complex world of Kubernetes, and its charts provide a reliable and reusable methodology for defining, installing, and upgrading even the most complex Kubernetes applications.</p>
-<p>Thank you for reading, and we hope you&rsquo;ll join us in our next exciting exploration of Helm. Until then, happy charting!</p>
-
-</div>
-
-
-    </div>
-    <footer class="py-3 mt-auto bg-light">
-  <div class="container py-1 my-1">
-    <div class="d-flex flex-wrap justify-content-between align-items-center">
-      <p class="col-md mb-0 text-muted">Open-source <a class="text-muted text-decoration-none" href="https://github.com/filipecarneiro/hugo-bootstrap-theme/blob/main/LICENSE">MIT</a> Licensed.</p>
-      <ul class="nav col-md-auto justify-content-end">
-        <li class="nav-item"><a href="/code-of-conduct/" class="nav-link px-2 text-muted" title='Code of Conduct' aria-label='Code of Conduct'>Code of Conduct</a></li>
-        <li class="nav-item"><a href="/privacy-policy/" class="nav-link px-2 text-muted" title='Privacy Policy' aria-label='Privacy Policy'>Privacy Policy</a></li>
-        </ul>
-    </div>
-  </div>
-</footer>
-    
-
-
-
-
-<script src="/js/bootstrap/bootstrap.bundle.min.min.7620f70f6a288d4f1a662439d8772846a2d2084a9466d8d25b3b246d986b3c96e31aae489aaa01a1961bd6f4ad9842e677b02848d0aae0a3fb74b76a522f9e80.js" integrity="sha512-diD3D2oojU8aZiQ52HcoRqLSCEqUZtjSWzskbZhrPJbjGq5ImqoBoZYb1vStmELmd7AoSNCq4KP7dLdqUi&#43;egA==" crossorigin="anonymous" defer></script>
-  
-    <script src="/js/main.min.e8d88c82c0438b527f1aca4115652ba1e2877bf805b75593b23ac0e3fe2b3fe95a467d1feef275355132ba061da6404b0d24d55afabc209b294b1db043be014d.js" integrity="sha512-6NiMgsBDi1J/GspBFWUroeKHe/gFt1WTsjrA4/4rP&#43;laRn0f7vJ1NVEyugYdpkBLDSTVWvq8IJspSx2wQ74BTQ==" crossorigin="anonymous" defer></script>
-  
-  
-
-
-
-</body>
-</html>
+<!doctype html><html lang=en id=htmlRoot><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Demystify Helm: Introduction</title><meta name=description content=" If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it&rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play.
+"><link rel=canonical href=https://vsr.lat/writing/helm-1/><link rel=alternate hreflang=en href=https://vsr.lat/writing/helm-1/><link rel=alternate hreflang=x-default href=https://vsr.lat/writing/helm-1/><meta property="og:title" content="Demystify Helm: Introduction"><meta property="og:description" content="
+If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it&rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play."><meta property="og:type" content="article"><meta property="og:url" content="https://vsr.lat/writing/helm-1/"><meta property="og:image" content="https://vsr.lat/images/logo.svg"><meta property="og:image" content="https://vsr.lat/images/site-feature-image_hu_e46422c5f4f06e8f.png"><meta property="article:section" content="writing"><meta property="article:published_time" content="2023-05-22T14:24:59-04:00"><meta property="article:modified_time" content="2026-05-24T22:46:19-04:00"><meta property="og:site_name" content="Victor S. Recio"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://vsr.lat/images/logo.svg"><meta name=twitter:title content="Demystify Helm: Introduction"><meta name=twitter:description content="
+If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it&rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play."><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","headline":"Demystify Helm: Introduction","datePublished":"2023-05-22T14:24:59-04:00","dateModified":"2026-05-24T22:46:19-04:00","mainEntityOfPage":"https://vsr.lat/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://vsr.lat/images/logo.svg"},"name":"Victor S. Recio"},"wordcount":1157,"description":" If you\u0026rsquo;ve worked with Kubernetes, you\u0026rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it\u0026rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play.\n","keywords":null}</script><link rel=icon type=image/svg+xml href=https://vsr.lat/favicon.svg><link rel=icon type=image/png href=https://vsr.lat/favicon.png><link rel=preconnect href=https://fonts.googleapis.com><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel=stylesheet><link rel=stylesheet href=/css/bootstrap.min.css><link rel=stylesheet href=/css/aos.css><link rel=stylesheet href=/css/swiper-bundle.min.css><link rel=stylesheet href=/css/all.min.css><link rel=stylesheet href=/css/magnific-popup.css><link rel=stylesheet href=/css/style.css></head><body class="d-flex flex-column min-vh-100"><style>.logo-dark-theme{display:inline-block}.logo-light-theme{display:none}.lm .logo-dark-theme{display:none!important}.lm .logo-light-theme{display:inline-block!important}</style><nav id=nbar><div class=container><div class="d-flex align-items-center justify-content-between w-100"><a href=/ class="d-flex align-items-center gap-2" style=font-size:1.2rem;font-weight:700;color:var(--tx)><img src=/images/logo-white.png alt="Logo Víctor S. Recio" width=34 height=34 class=logo-dark-theme>
+<img src=/images/logo-original.png alt="Logo Víctor S. Recio" width=34 height=34 class=logo-light-theme style=display:none>
+<span>Victor S. Recio</span></a><div class="d-none d-lg-flex align-items-center gap-1 mx-auto"><a href=/ class=nav-link>Inicio</a>
+<a href=/writing/ class=nav-link>Artículos</a>
+<a href=/cursos/ class=nav-link>Cursos</a>
+<a href=/resources/ class=nav-link>Recursos</a>
+<a href=/#conferencias class=nav-link>Conferencias</a></div><div class="d-flex align-items-center gap-2"><button class="boc d-flex align-items-center justify-content-center" id=thbtn style=width:38px;height:38px;padding:0;border-radius:12px aria-label="Toggle theme">
+<i class="fa-solid fa-sun" id=suni style=display:none></i>
+<i class="fa-solid fa-moon" id=mooni></i>
+</button>
+<a href=https://patreon.com/vsroot target=_blank rel="noopener noreferrer" class="boc px-3 py-2 d-none d-sm-flex align-items-center gap-1" style=text-decoration:none><i class="fa-brands fa-patreon fa-sm"></i> Patreon
+</a><button class="bgrd btn px-3 py-2 d-none d-sm-flex align-items-center gap-1" data-bs-toggle=offcanvas data-bs-target=#lofc onclick='swTab("signup")'>
+Invítame un Café <i class="fa-solid fa-mug-hot fa-sm"></i>
+</button>
+<button class="boc d-lg-none px-2 py-2" id=mbtog style=border-radius:10px>
+<i class="fa-solid fa-bars" id=barIcon></i>
+<i class="fa-solid fa-xmark" id=xIcon style=display:none></i></button></div></div></div></nav><div id=mbmenu><a href=/ class="nav-link d-block py-3 border-bottom" style=border-color:var(--bd)!important>Inicio</a>
+<a href=/writing/ class="nav-link d-block py-3 border-bottom" style=border-color:var(--bd)!important>Artículos</a>
+<a href=/cursos/ class="nav-link d-block py-3 border-bottom" style=border-color:var(--bd)!important>Cursos</a>
+<a href=/resources/ class="nav-link d-block py-3 border-bottom" style=border-color:var(--bd)!important>Recursos</a>
+<a href=/#conferencias class="nav-link d-block py-3 border-bottom" style=border-color:var(--bd)!important>Conferencias</a><div class="d-flex gap-2 mt-3"><a href=https://patreon.com/vsroot target=_blank rel="noopener noreferrer" class="boc flex-fill py-2 btn text-center d-flex align-items-center justify-content-center gap-1" style=text-decoration:none><i class="fa-brands fa-patreon fa-sm"></i> Patreon
+</a><button class="bgrd flex-fill py-2 btn d-flex align-items-center justify-content-center gap-1" data-bs-toggle=offcanvas data-bs-target=#lofc onclick='swTab("signup")'>
+Invítame un Café <i class="fa-solid fa-mug-hot fa-sm"></i></button></div></div><div id=content class=flex-grow-1><div id=blog-single class="position-relative overflow-hidden" style=min-height:100vh;padding-bottom:60px><div class="aur aur-a" style=top:-100px;left:-120px;opacity:.25></div><div class="aur aur-b" style=bottom:100px;right:-180px;opacity:.15></div><article class="sp position-relative" style=z-index:2><div class=container><div class="row justify-content-center"><div class=col-lg-8><a href=/writing/ class="boc btn px-3 py-2 mb-4 d-inline-flex align-items-center gap-2" style=font-size:.85rem><i class="fa-solid fa-arrow-left"></i> Volver a Artículos</a><header class=mb-4><div class="d-flex flex-wrap gap-2 mb-3"><span style="font-size:.68rem;font-weight:600;background:rgba(139,92,246,.12);color:#a78bfa;padding:2px 8px;border-radius:100px;border:1px solid rgba(139,92,246,.2)">Containers</span>
+<span style="font-size:.68rem;font-weight:600;background:rgba(139,92,246,.12);color:#a78bfa;padding:2px 8px;border-radius:100px;border:1px solid rgba(139,92,246,.2)">Golang Template</span>
+<span style="font-size:.68rem;font-weight:600;background:rgba(139,92,246,.12);color:#a78bfa;padding:2px 8px;border-radius:100px;border:1px solid rgba(139,92,246,.2)">Helm</span>
+<span style="font-size:.68rem;font-weight:600;background:rgba(139,92,246,.12);color:#a78bfa;padding:2px 8px;border-radius:100px;border:1px solid rgba(139,92,246,.2)">Kubernetes</span>
+<span style="font-size:.68rem;font-weight:600;background:rgba(139,92,246,.12);color:#a78bfa;padding:2px 8px;border-radius:100px;border:1px solid rgba(139,92,246,.2)">DevOps</span>
+<span style="font-size:.68rem;font-weight:600;background:rgba(139,92,246,.12);color:#a78bfa;padding:2px 8px;border-radius:100px;border:1px solid rgba(139,92,246,.2)">CI/CD</span>
+<span style="font-size:.68rem;font-weight:600;background:rgba(139,92,246,.12);color:#a78bfa;padding:2px 8px;border-radius:100px;border:1px solid rgba(139,92,246,.2)">Deployment</span></div><h1 class="display-5 fw-bold mb-3" style=color:var(--tx);line-height:1.15>Demystify Helm: Introduction</h1><div class="d-flex align-items-center gap-3 py-3 border-top border-bottom" style=border-color:var(--bd)!important><div class=db-avatar style=width:40px;height:40px;font-size:.9rem;border-radius:10px;background:var(--pur);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700>V</div><div><div style=font-weight:600;font-size:.9rem;color:var(--tx)>Victor S. Recio</div><div style=font-size:.75rem;color:var(--tx3) class="d-flex align-items-center gap-2 flex-wrap"><span><i class="far fa-calendar me-1"></i> May 22, 2023</span>
+<span>·</span>
+<span><i class="far fa-clock me-1"></i> 6 min de lectura</span>
+<span>·</span>
+<span><i class="far fa-eye me-1"></i> 31513 vistas</span></div></div></div></header><figure class="mb-5 rounded-4 overflow-hidden" style="border:1px solid var(--bd)"><img class="img-fluid w-100" style=max-height:480px;object-fit:cover src=/images/helm.png alt="Portada de Demystify Helm: Introduction"></figure><section class=post-content style=color:var(--tx);font-size:1.05rem;line-height:1.75><p>If you&rsquo;ve worked with Kubernetes, you&rsquo;ll know that managing it and deploying applications can be complex. With so many components to configure and manage, such as services, pods, and persistent volumes, it&rsquo;s easy to get lost in the sea of options available and If we add that we must also deploy these components to different environments, all this increases the degree of difficulty of managing Kubernetes. . This is where Helm comes into play.</p><p>Helm, often referred to as the package manager for Kubernetes <strong>(in Linux world is like APT, YUM&mldr;)</strong>, acts like a GPS, guiding you through the complexity of Kubernetes. With Helm, managing Kubernetes applications is simplified, allowing you to define, install, and upgrade even the most complex Kubernetes applications.</p><p>In this article, we will demystify Helm and break it down into simple, understandable terms. Whether you&rsquo;re new to Kubernetes or a seasoned veteran looking for ways to optimize your workflows, this post aims to give you a greater understanding of how Helm can make navigating the vast ocean of Kubernetes easier.</p><h2 id=what-is-helm-chart>What is Helm Chart?</h2><p>A Helm Chart is a package of pre-configured Kubernetes resources. In other words, it is a collection of files that describe a related set of Kubernetes resources. These charts are used to deploy applications or services on a Kubernetes cluster.</p><p>Helm Charts make extensive use of <strong><a href=https://vsr.lat/writing/go-templates/ target=_blank rel=noopener>Go templates</a></strong> to define the Kubernetes resources they manage. Go templates are a powerful way to inject configuration into Kubernetes resources at deploy time.</p><p><strong>YAML</strong>, which stands for <strong>&ldquo;YAML Ain&rsquo;t Markup Language&rdquo;</strong>, is another essential component in the world of Kubernetes and Helm. Kubernetes uses YAML as the format for its resource definitions. These definitions describe the desired state of your Kubernetes resources such as Deployments, Services, and PersistentVolumes among others.</p><p>A single chart can describe something simple, like a standalone web server or something complex like a full-stack web application with backend services, databases, caches, etc.</p><p>The <strong>chart</strong> is a bundle of information necessary to create an instance of a Kubernetes application. This includes the following:</p><ul><li>A description of the package <strong>(Chart.yaml)</strong></li><li>One or more <strong>templates</strong>, which contain Kubernetes manifest files</li><li>Default values for the templates <strong>(values.yaml)</strong></li></ul><p>The charts are convenient because they allow you to deploy, version, share, and publish applications in a standard format. They encapsulate and build an artifact of your application, making the complexity of deploying sophisticated applications into Kubernetes easier, and enabling more straightforward application management, updates, and configuration.</p><h2 id=what-is-helm-chart-1>What is Helm Chart?</h2><p>A Helm chart is essentially a packaged application for Kubernetes and has a specific directory structure. Here&rsquo;s the basic structure of a Helm chart:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>vsrchart/
+</span></span><span style=display:flex><span>  Chart.yaml          <span style=color:#75715e># A YAML file containing information about the chart</span>
+</span></span><span style=display:flex><span>  LICENSE             <span style=color:#75715e># OPTIONAL: A plain text file containing the license for the chart</span>
+</span></span><span style=display:flex><span>  README.md           <span style=color:#75715e># OPTIONAL: A human-readable README file</span>
+</span></span><span style=display:flex><span>  values.yaml         <span style=color:#75715e># The default configuration values for this chart</span>
+</span></span><span style=display:flex><span>  values.schema.json  <span style=color:#75715e># OPTIONAL: A JSON Schema for imposing a structure on the values.yaml file</span>
+</span></span><span style=display:flex><span>  charts/             <span style=color:#75715e># A directory containing any charts upon which this chart depends.</span>
+</span></span><span style=display:flex><span>  crds/               <span style=color:#75715e># OPTIONAL: Custom Resource Definitions</span>
+</span></span><span style=display:flex><span>  templates/          <span style=color:#75715e># A directory of templates that, when combined with values, will generate valid Kubernetes manifest files.</span>
+</span></span><span style=display:flex><span>  templates/NOTES.txt <span style=color:#75715e># OPTIONAL: A plain text file containing short usage notes</span>
+</span></span></code></pre></div><p><em>1. <strong>Chart.yaml:</strong></em> This is a mandatory file that contains the metadata of the chart like the version, description, and maintainer information.</p><p><em>2. <strong>values.yaml</strong></em>: This file contains the default configuration values for the chart. Values from this file can be overridden during <code>helm install</code> or <code>helm upgrade</code>.</p><p><em>3. <strong>templates:</strong></em> This directory holds all of the templated Kubernetes manifest files. The templates generate Kubernetes manifest files when combined with the <code>values.yaml</code> file. These files are written in the Go templating language.</p><p><em>4. <strong>charts:</strong></em> If a chart has dependencies, those dependent charts are stored in this directory.</p><p><em>5. <strong>crds:</strong></em> This directory is used to hold Custom Resource Definitions (CRDs). CRDs are Kubernetes extensions that are used to deploy certain applications.</p><p><em>6. <strong>.helmignore:</strong></em> Like a <code>.gitignore</code> file, this file can be used to specify files or directories to be ignored when packaging a chart.</p><p><em>7. <strong>LICENSE and README.md:</strong></em> The license of the chart and a README providing high-level information about the chart, respectively. These are optional but generally recommended.</p></ul>This structure makes Helm charts organized and easier to manage, even when they start to get complex.<p>The <code>templates/</code> directory within a Helm Chart is where the Kubernetes manifest files are stored. The files in this directory are templated using the Go templating language. Here&rsquo;s a basic example of what you might find inside the <code>templates/</code> directory:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>|-- templates
+</span></span><span style=display:flex><span>|   |-- NOTES.txt
+</span></span><span style=display:flex><span>|   |-- _helpers.tpl
+</span></span><span style=display:flex><span>|   |-- deployment.yaml
+</span></span><span style=display:flex><span>|   |-- configmap.yaml
+</span></span><span style=display:flex><span>|   |-- ingress.yaml
+</span></span><span style=display:flex><span>|   |-- service.yaml
+</span></span><span style=display:flex><span>|   <span style=color:#e6db74>`</span>-- tests
+</span></span><span style=display:flex><span>|       <span style=color:#e6db74>`</span>-- test-connection.yaml
+</span></span></code></pre></div><p><em>1. <strong>NOTES.txt</strong></em>: This is a plain text file that contains usage notes for your chart. After helm install, these notes can be printed to the console.</p><p><em>2. <strong>_helpers.tpl</strong></em>: This is a place to put template helpers that you can re-use throughout the chart. This helps avoid repetitive code and makes maintenance easier.</p><p><em>3. <strong>deployment.yaml</strong></em>: This defines a Kubernetes Deployment. It specifies which Docker image to use for the Docker containers in the pods, the number of replicas, and various other necessary pieces of information.</p><p><em>4. <strong>service.yaml</strong></em>: This defines a Kubernetes Service. It helps expose your application (as running in the pods created by the deployment) to the outside world or internally within the cluster.</p><p><em>5. <strong>ingress.yaml</strong></em>: This defines a Kubernetes Ingress. Ingresses manage external access to the services in a cluster, typically through HTTP.</p><p><em>6. <strong>hpa.yaml</strong></em>: This defines a Kubernetes Horizontal Pod Autoscaler. It automatically scales the number of pods in a deployment or replica set based on observed CPU utilization.</p><p>Note that you can include other Kubernetes resources such as ConfigMaps, Secrets, Jobs, etc., depending on the needs of your application. The actual files will depend on the complexity and requirements of your specific application.</p><h2 id=conclusion>Conclusion</h2><p>In conclusion, we have taken our first steps into the world of Helm and Kubernetes, beginning our journey to truly harness the power of these groundbreaking tools. We&rsquo;ve explored what Helm is, why it&rsquo;s an essential tool in Kubernetes management, and have started to understand its components, such as Helm Charts and their structure.</p><p>But this is just the beginning. As we&rsquo;ve seen, Helm Charts play a pivotal role in managing Kubernetes applications. They encapsulate all the Kubernetes resources and dependencies necessary for running an application in a Kubernetes cluster, effectively serving as a roadmap for application deployment.</p><p>In this first part of our series, we&rsquo;ve laid the groundwork, providing you with the necessary understanding and context about Helm. As you&rsquo;ve seen, Helm truly is the GPS for navigating the complex world of Kubernetes, and its charts provide a reliable and reusable methodology for defining, installing, and upgrading even the most complex Kubernetes applications.</p><p>Thank you for reading, and we hope you&rsquo;ll join us in our next exciting exploration of Helm. Until then, happy charting!</p></section><footer class="mt-5 pt-4 border-top" style=border-color:var(--bd)!important><div class="d-flex align-items-center justify-content-between flex-wrap gap-3"><div class="d-flex align-items-center gap-2"><span style=font-size:.85rem;color:var(--tx3)>Compartir en:</span>
+<a href="https://twitter.com/intent/tweet?text=Demystify%20Helm%3a%20Introduction&url=https%3a%2f%2fvsr.lat%2fwriting%2fhelm-1%2f" target=_blank rel="noopener noreferrer" class="boc btn p-2 d-inline-flex align-items-center justify-content-center" style=width:32px;height:32px;border-radius:8px title="Compartir en Twitter/X"><i class="fa-brands fa-x-twitter"></i>
+</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3a%2f%2fvsr.lat%2fwriting%2fhelm-1%2f" target=_blank rel="noopener noreferrer" class="boc btn p-2 d-inline-flex align-items-center justify-content-center" style=width:32px;height:32px;border-radius:8px title="Compartir en LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div><a href=/writing/ class="boc btn px-3 py-2" style=font-size:.85rem><i class="fa-solid fa-chevron-left me-1"></i> Todos los Artículos</a></div></footer></div></div></div></article></div><style>.post-content h2,.post-content h3,.post-content h4{color:var(--tx);font-weight:700;margin-top:2rem;margin-bottom:1rem}.post-content h2{font-size:1.6rem}.post-content h3{font-size:1.35rem}.post-content p{margin-bottom:1.5rem;color:var(--tx)}.post-content strong{color:var(--tx)}.post-content a{color:var(--pur);text-decoration:none;border-bottom:1px dashed var(--pur);transition:color .2s,border-color .2s}.post-content a:hover{color:#a78bfa;border-bottom-style:solid}.post-content ul,.post-content ol{margin-bottom:1.5rem;padding-left:1.5rem}.post-content li{margin-bottom:.5rem}.post-content blockquote{border-left:4px solid var(--pur);padding:10px 20px;margin:1.5rem 0;background:rgba(139,92,246,5%);border-radius:0 12px 12px 0;font-style:italic}.post-content blockquote p{margin-bottom:0}.post-content pre{background:var(--bg3)!important;border:1px solid var(--bd)!important;border-radius:12px;padding:16px;margin:1.5rem 0;overflow-x:auto}.post-content code{font-family:space grotesk,monospace;font-size:.9rem;color:var(--tx);background:rgba(255,255,255,6%);padding:2px 6px;border-radius:4px}.post-content pre code{background:0 0;padding:0;border-radius:0;color:inherit}.post-content img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--bd);margin:1.5rem 0}</style></div><footer id=foot style="border-top:1px solid var(--bd);padding:80px 0 40px;background:var(--bg)"><div class=container><div class="row g-5"><div class=col-lg-4><a class="d-flex align-items-center gap-2 mb-3" href=/ style=font-size:1.25rem;font-weight:700;color:var(--tx)><img src=/images/logo-white.png alt=Logo width=32 height=32 class=logo-dark-theme>
+<img src=/images/logo-original.png alt=Logo width=32 height=32 class=logo-light-theme style=display:none>
+<span>Víctor S. Recio</span></a><p style=font-size:.875rem;color:var(--tx2);line-height:1.65;max-width:320px;margin-bottom:24px>Diseño de sistemas de alta disponibilidad, gobernanza empresarial (TOGAF, BIAN) y compilación de arquitecturas como código (AaC) para equipos de ingeniería de élite.</p><div class="d-flex gap-2"><a href=https://github.com/vsrecio target=_blank rel="noopener noreferrer" class=sico style=width:36px;height:36px;border-radius:8px;background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--tx2);transition:.3s onmouseover='this.style.background="var(--sf)",this.style.color="var(--pur)"' onmouseout='this.style.background="var(--bg3)",this.style.color="var(--tx2)"'><i class="fa-brands fa-github"></i></a>
+<a href=https://www.linkedin.com/in/vsrecio/ target=_blank rel="noopener noreferrer" class=sico style=width:36px;height:36px;border-radius:8px;background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--tx2);transition:.3s onmouseover='this.style.background="var(--sf)",this.style.color="var(--pur)"' onmouseout='this.style.background="var(--bg3)",this.style.color="var(--tx2)"'><i class="fa-brands fa-linkedin-in"></i></a>
+<a href=https://www.docker.com/contributors/victor-s-recio/ target=_blank rel="noopener noreferrer" class=sico style=width:36px;height:36px;border-radius:8px;background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--tx2);transition:.3s onmouseover='this.style.background="var(--sf)",this.style.color="var(--pur)"' onmouseout='this.style.background="var(--bg3)",this.style.color="var(--tx2)"'><i class="fa-brands fa-docker"></i></a></div></div><div class="col-6 col-md-3 col-lg-2 fcol" style=display:flex;flex-direction:column;gap:10px><h5 style=font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin-bottom:15px>Especialidades</h5><a href=/#architecture style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>TOGAF & Gobernanza</a>
+<a href=/#architecture style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>Diseño BIAN (Finanzas)</a>
+<a href=/#architecture style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>Modelado C4 as Code</a>
+<a href=/#architecture style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>Sistemas Alta Disponibilidad</a></div><div class="col-6 col-md-3 col-lg-2 fcol" style=display:flex;flex-direction:column;gap:10px><h5 style=font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin-bottom:15px>Recursos</h5><a href=/writing/ style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>Artículos / Blog</a>
+<a href=/resources/ style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>Cursos y Talleres</a>
+<a href=/#hero style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>Arch Studio Portal</a>
+<a href=https://github.com/vsrecio target=_blank rel="noopener noreferrer" style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>Código Libre</a></div><div class="col-6 col-md-3 col-lg-2 fcol" style=display:flex;flex-direction:column;gap:10px><h5 style=font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin-bottom:15px>Credenciales</h5><a href="https://www.cncf.io/training/kubestronaut/?_sft_lf-country=do&p=victor-s-recio&_sf_s=victor+s+recio" target=_blank rel="noopener noreferrer" style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>CNCF Kubestronaut</a>
+<a href=https://www.docker.com/contributors/victor-s-recio/ target=_blank rel="noopener noreferrer" style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>Docker Contributor</a>
+<a href=https://www.linkedin.com/in/vsrecio/ target=_blank rel="noopener noreferrer" style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>LinkedIn Advisor</a>
+<a href=mailto:vsrecio@nixversity.com style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>Contacto Directo</a></div><div class="col-6 col-md-3 col-lg-2 fcol" style=display:flex;flex-direction:column;gap:10px><h5 style=font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin-bottom:15px>Legal</h5><a href=/privacy-policy/ style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>Privacidad</a>
+<a href=/code-of-conduct/ style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>Código de Conducta</a>
+<a href=https://github.com/vsrecio/vsrsite.github.io/blob/main/LICENSE target=_blank rel="noopener noreferrer" style=font-size:.85rem;color:var(--tx2);transition:.2s onmouseover='this.style.color="var(--pur)"' onmouseout='this.style.color="var(--tx2)"'>Licencia MIT</a></div></div><hr style="border-top:1px solid var(--bd);opacity:.5;margin:50px 0 30px"><div class="d-flex align-items-center justify-content-between flex-wrap gap-3"><p style=font-size:.8rem;color:var(--tx3);margin:0>&copy; 2026 Víctor S. Recio &bull; Cloud Native & Enterprise Architecture. Todos los derechos reservados.</p><div class="d-flex align-items-center gap-1" style=font-size:.75rem;color:var(--tx3)><span>Diseño premium adaptado a sistemas AaC</span></div></div></div></footer><script src=/js/jquery-3.7.1.min.js></script><script src=/js/bootstrap.bundle.min.js></script><script src=/js/aos.js></script><script src=/js/chart.umd.min.js></script><script src=/js/jquery.magnific-popup.min.js></script><script src=/js/sre-dashboard.js></script><script>AOS.init({duration:800,once:!0})</script></body></html>
